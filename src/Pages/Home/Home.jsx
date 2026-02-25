@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 
 
@@ -15,22 +15,24 @@ const Home = () => {
 
 
 
-    const dispatch  = useDispatch();
-    const product = useSelector((state)=>state.products.products);
+    const dispatch = useDispatch();
+    const product = useSelector((state) => state.products.products);
 
-    const [items, setItems] = useState([]);
+    const [products, setProducts] = useState([]);
+
+    useEffect(()=>{
+        getProducts()
+    },[])
 
 
-    // async function fetchApi() {
-
-    //     try {
-    //         let respose = await axios.get("https://fakestoreapi.com/products")
-    //         console.log(respose.data);
-
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }
+    const getProducts = async () => {
+        try {
+            let response = await axios.get("https://fakestoreapi.com/products");
+            setProducts(response.data);
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
 
 
@@ -86,22 +88,22 @@ const Home = () => {
 
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-7 '>
 
-                    <div className='bg-blue-100 flex flex-col justify-center items-start rounded-md py-10 px-5 cursor-pointer'>
+                    <div className='bg-blue-100 flex flex-col justify-center items-start rounded-md py-10 px-5 cursor-pointer border border-transparent hover:border hover:border-gray-600'>
                         <h3 className='text-2xl font-bold'>Women's Wear</h3>
                         <p className='text-md font-medium text-gray-500'>Fashionable clothing for women</p>
                     </div>
-                    
-                    <div className='bg-blue-100 flex flex-col justify-center items-start rounded-md py-10 px-5 cursor-pointer'>
+
+                    <div className='bg-blue-100 flex flex-col justify-center items-start rounded-md py-10 px-5 cursor-pointer border border-transparent hover:border hover:border-gray-600'>
                         <h3 className='text-2xl font-bold'>Men's Wear</h3>
                         <p className='text-md font-medium text-gray-500'>Stylish apparel for men</p>
                     </div>
 
-                    <div className='bg-blue-100 flex flex-col justify-center items-start rounded-md py-10 px-5 cursor-pointer'>
+                    <div className='bg-blue-100 flex flex-col justify-center items-start rounded-md py-10 px-5 cursor-pointer border border-transparent hover:border hover:border-gray-600'>
                         <h3 className='text-2xl font-bold'>Electronicsr</h3>
                         <p className='text-md font-medium text-gray-500'>Gadgets and devices</p>
                     </div>
 
-                    <div className='bg-blue-100 flex flex-col justify-center items-start rounded-md py-10 px-5 cursor-pointer'>
+                    <div className='bg-blue-100 flex flex-col justify-center items-start rounded-md py-10 px-5 cursor-pointer border border-transparent hover:border hover:border-gray-600'>
                         <h3 className='text-2xl font-bold'>Jewelry</h3>
                         <p className='text-md font-medium text-gray-500'>Beautiful and elegant pieces</p>
                     </div>
@@ -110,9 +112,39 @@ const Home = () => {
             </section>
 
 
+
+
+
+
+            {/* FEATURE PRODUCTS SECTION*/}
+            <section className='py-12 px-4 space-y-8 sm:space-y-10 lg:space-y-12'>
+
+                <div className=''>
+                    <h2 className='text-3xl lg:text-4xl font-bold mb-1 md:mb-2 lg:mb-3'>
+                        Featured Products
+                    </h2>
+
+                    <p className='text-gray-500 text-sm md:text-md lg:text-lg font-medium'>Check out our carefully curated selection</p>
+                </div>
+
+
+
+
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 '>
+
+                    {products.map((item)=>{
+                        return <div id={item.id}>
+                            {item.title}
+                        </div>
+                    })}
+
+                </div>
+            </section>
+
+
             <button
-            className='h-10 w-20 border'
-            onClick={()=>dispatch(getProducts())}>Press</button>
+                className='h-10 w-20 border'
+                onClick={() => dispatch(getProducts())}>Press</button>
 
         </>
     )
