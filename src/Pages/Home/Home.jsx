@@ -71,41 +71,41 @@ const Home = () => {
 
 
             {/* SHOP BY CATEGORY */}
-            <section className='py-12 px-4 space-y-12'>
+            <section className='py-12 px-4 space-y-8 sm:space-y-10 lg:space-y-12'>
 
                 <div className=''>
-                    <h2 className='text-4xl font-bold mb-3'>
+                    <h2 className='text-3xl lg:text-4xl font-bold mb-1 md:mb-2 lg:mb-3'>
                         Shop by Category
                     </h2>
 
-                    <p className='text-gray-500 text-lg font-medium'>Explore our diverse product categories</p>
+                    <p className='text-gray-500 text-sm md:text-md lg:text-lg font-medium'>Explore our diverse product categories</p>
                 </div>
 
 
 
 
-                <div className='grid grid-cols-2 gap-7 p-6'>
+                <div className='grid grid-cols-1 lg:grid-cols-2 gap-7 '>
 
-                    <div className='bg-blue-100 flex flex-col justify-center items-start rounded-md py-8 px-5'>
-                        <h3 className='text-2xl font-bold'>Men's Wear</h3>
-                        <p className='text-md font-medium text-gray-500'>Stylish apparel for men</p>
+                    <div className='bg-blue-100 flex flex-col justify-center items-start rounded-md py-10 px-5 cursor-pointer'>
+                        <h3 className='text-2xl font-bold'>Women's Wear</h3>
+                        <p className='text-md font-medium text-gray-500'>Fashionable clothing for women</p>
                     </div>
                     
-                    <div className='bg-blue-100 flex flex-col justify-center items-start rounded-md py-8 px-5'>
+                    <div className='bg-blue-100 flex flex-col justify-center items-start rounded-md py-10 px-5 cursor-pointer'>
                         <h3 className='text-2xl font-bold'>Men's Wear</h3>
                         <p className='text-md font-medium text-gray-500'>Stylish apparel for men</p>
                     </div>
 
-                    <div className='bg-blue-100 flex flex-col justify-center items-start rounded-md py-8 px-5'>
-                        <h3 className='text-2xl font-bold'>Men's Wear</h3>
-                        <p className='text-md font-medium text-gray-500'>Stylish apparel for men</p>
+                    <div className='bg-blue-100 flex flex-col justify-center items-start rounded-md py-10 px-5 cursor-pointer'>
+                        <h3 className='text-2xl font-bold'>Electronicsr</h3>
+                        <p className='text-md font-medium text-gray-500'>Gadgets and devices</p>
                     </div>
 
-                    <div className='bg-blue-100 flex flex-col justify-center items-start rounded-md py-8 px-5'>
-                        <h3 className='text-2xl font-bold'>Men's Wear</h3>
-                        <p className='text-md font-medium text-gray-500'>Stylish apparel for men</p>
+                    <div className='bg-blue-100 flex flex-col justify-center items-start rounded-md py-10 px-5 cursor-pointer'>
+                        <h3 className='text-2xl font-bold'>Jewelry</h3>
+                        <p className='text-md font-medium text-gray-500'>Beautiful and elegant pieces</p>
                     </div>
-                    
+
                 </div>
             </section>
 
