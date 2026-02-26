@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios';
+
+import { motion } from 'framer-motion';
 
 
 
@@ -20,9 +21,9 @@ const Home = () => {
 
     const [products, setProducts] = useState([]);
 
-    useEffect(()=>{
+    useEffect(() => {
         getProducts()
-    },[])
+    }, [])
 
 
     const getProducts = async () => {
@@ -42,15 +43,33 @@ const Home = () => {
                 className=' h-screen w-full flex justify-center items-center space-y-10 
                         bg-[url("https://i.pinimg.com/1200x/09/ab/dd/09abdd904702ef068837a7ac010e926b.jpg")]  bg-cover bg-no-repeat bg-center'>
 
-                <div className='flex flex-col justify-center items-center space-y-10 border border-gray-200 rounded-lg p-4 md:p-6 lg:p-8 xl:p-10 bg-white/10 backdrop-blur-xs'>
+                <motion.div
+                 className='flex flex-col justify-center items-center space-y-10 border border-gray-200 rounded-lg p-4 md:p-6 lg:p-8 xl:p-10 bg-white/10 backdrop-blur-xs'
 
-                    <h2 className="text-3xl xl:text-7xl text-gray-800 font-bold text-center mt-30">Welcome to StoreMart</h2>
+                 initial={{y:-100, opacity:0}}
+                 animate={{y:0, opacity:1}}
+                 transition={{duration: 0.9}}
+
+                >
+
+                    <motion.h2 className="text-3xl xl:text-7xl text-gray-800 font-bold text-center mt-30"
+                        initial={{ opacity: 0, y: -40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1 }}
+                    >
+                        Welcome to StoreMart
+                    </motion.h2>
 
                     <div className='text-center'>
-                        <p className='text-sm xl:text-lg font-medium text-white'>
+                        <motion.p 
+                        className='text-sm xl:text-lg font-medium text-white'
+                            initial={{opacity:0, y: -40}}
+                            animate={{opacity:1, y:20}}
+                            transition={{duration: 1}}
+                            >
                             Discover an amazing collection of products at unbeatable prices. <br />
                             Shop your favorite categories and enjoy fast, reliable delivery.
-                        </p>
+                        </motion.p>
                     </div>
 
 
@@ -64,7 +83,7 @@ const Home = () => {
                         </button>
                     </div>
 
-                </div>
+                </motion.div>
 
 
 
@@ -132,7 +151,7 @@ const Home = () => {
 
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 '>
 
-                    {products.map((item)=>{
+                    {products.map((item) => {
                         return <div id={item.id}>
                             {item.title}
                         </div>

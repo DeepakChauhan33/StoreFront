@@ -9,7 +9,7 @@ const Navbar = () => {
     const [wishlistCount, setWishlistCount] = useState(0); // Example count for wishlist
 
     return (
-        <nav className="w-full bg-white  opacity-85  drop-shadow-lg fixed top-0 left-0 z-50">
+        <nav className="w-full bg-white  opacity-90   drop-shadow-lg fixed top-0 left-0 z-50">
             <div className=" mx-auto px-6">
                 <div className="flex justify-between items-center h-18">
 
