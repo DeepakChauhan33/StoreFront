@@ -4,7 +4,7 @@ import { getProducts } from '../Product/ProductSlice';
 import { useGetProductsQuery } from '../Product/ProductApi';
 
 // Components
-import Categories from './Categories';
+import CategoryCard from '../../Components/CategoryCard';
 
 
 // React ICons
@@ -12,6 +12,7 @@ import { TiArrowRight } from "react-icons/ti";
 
 // Import Framer Motion Library For Animation
 import { motion } from 'framer-motion';
+import ProductCard from '../../Components/ProductCard';
 
 
 
@@ -37,7 +38,7 @@ const Home = () => {
     return (
         <>
             <div
-                className=' h-screen w-full flex justify-center items-center space-y-10 
+                className='h-[85dvh] md:h-screen w-full flex justify-center items-center space-y-10 
                         bg-[url("https://i.pinimg.com/1200x/09/ab/dd/09abdd904702ef068837a7ac010e926b.jpg")]  bg-cover bg-no-repeat bg-center'>
 
                 <motion.div
@@ -91,7 +92,7 @@ const Home = () => {
             {/* SHOP BY CATEGORY */}
             <motion.section
 
-                className='py-12 px-4 space-y-8 sm:space-y-10 lg:space-y-12'
+                className='py-12 px-5 space-y-8 sm:space-y-10 lg:space-y-12'
 
                 initial={{ opacity: 0, y: 40 }}  //Animation
                 whileInView={{ opacity: 1, y: 0 }}
@@ -134,41 +135,21 @@ const Home = () => {
 
                     <div className='py-4 px-3 rounded-md bg-gray-100 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
 
-                        {isLoading ? <p>Loading....</p> : <Categories product={filterProduct("women's clothing")} heading={"Women's Wear"} />}
+                        {isLoading ? <p>Loading....</p> : <CategoryCard product={filterProduct("women's clothing")} heading={"Women's Wear"} />}
                     </div>
 
                     <div className='py-4 px-3 rounded-md bg-gray-100 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
-                        {isLoading ? <p>Loading....</p> : <Categories product={filterProduct("jewelery")} heading={"Jewelry"} />}
+                        {isLoading ? <p>Loading....</p> : <CategoryCard product={filterProduct("jewelery")} heading={"Jewelry"} />}
                     </div>
 
                     <div className='py-4 px-3 rounded-md bg-gray-100 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
-                        {isLoading ? <p>Loading....</p> : <Categories product={filterProduct("men's clothing")} heading={"Men's Wear"} />}
+                        {isLoading ? <p>Loading....</p> : <CategoryCard product={filterProduct("men's clothing")} heading={"Men's Wear"} />}
                     </div>
 
                     <div className='py-4 px-3 rounded-md bg-gray-100 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
-                        {isLoading ? <p>Loading....</p> : <Categories product={filterProduct("electronics")} heading={"Electronics"} />}
+                        {isLoading ? <p>Loading....</p> : <CategoryCard product={filterProduct("electronics")} heading={"Electronics"} />}
                     </div>
 
-
-
-
-
-                    {/* <div className='bg-blue-100 grid grid-cols-2 lg:grid-col-4 rounded-md py-10 px-5 cursor-pointer border border-transparent hover:border hover:border-gray-600'>
-
-                        {isLoading?   <p>Loading....</p> : <Categories product={filterProduct("men's clothing")}/>}
-                    </div>
-
-                    <div className='bg-blue-100 grid grid-cols-2 lg:grid-col-4 rounded-md py-10 px-5 cursor-pointer border border-transparent hover:border hover:border-gray-600'>
-                        {isLoading?   <p>Loading....</p> : <Categories product={filterProduct("women's clothing")}/>}
-                    </div>
-
-                    <div className='bg-blue-100 grid grid-cols-2 lg:grid-col-4 rounded-md py-10 px-5 cursor-pointer border border-transparent hover:border hover:border-gray-600'>
-                        {isLoading?   <p>Loading....</p> : <Categories product={filterProduct("electronics")}/>}
-                    </div>
-
-                    <div className='bg-blue-100 grid grid-cols-2 lg:grid-col-4 rounded-md py-10 px-5 cursor-pointer border border-transparent hover:border hover:border-gray-600'>
-                        {isLoading?   <p>Loading....</p> : <Categories product={filterProduct("jewelery")}/>}
-                    </div> */}
 
                 </div>
             </motion.section>
@@ -194,11 +175,7 @@ const Home = () => {
 
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 '>
 
-                    {Products?.map((item) => {
-                        return <div>
-                            <p>{item.title}</p>
-                        </div>
-                    })}
+                    {Products?.map((item)=><ProductCard product={item} />)}
 
                 </div>
             </section>

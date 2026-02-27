@@ -13,13 +13,13 @@ const Categories = ({ product, heading }) => {
         <NavLink to="/products">
 
 
-            <div className='text-start md:text-center cursor-pointer'>
+            <div className='text-center cursor-pointer'>
 
 
                 {/* Displaying the category name here, which we get as props "heading" */}
                 <motion.h2
 
-                    className='text-xl font-bold mb-4' //Styling
+                    className='text-xl font-extrabold mb-4' //Styling
 
                     initial={{ opacity: 0, x: -30 }} // Animation
                     whileInView={{ opacity: 1, x: 0 }}

@@ -11,6 +11,7 @@ import OrderPage from './Pages/Order/OrderPage';
 
 // Importing Footer
 import Footer from './Components/Footer';
+import Wishlist from './Pages/Wishlist';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
           <Route path='/' element={<Home />}></Route>
           <Route path='/products' element={<ProductPage />}></Route>
           <Route path='/orders' element={<OrderPage />}></Route>
+          <Route path='/wishlist' element={<Wishlist/>}></Route>
         </Routes>
       </div>
       <Footer />
