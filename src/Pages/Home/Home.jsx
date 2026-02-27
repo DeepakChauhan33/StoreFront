@@ -20,12 +20,12 @@ const Home = () => {
 
 
 
-    const {data:Products, isLoading} = useGetProductsQuery();
+    const { data: Products, isLoading } = useGetProductsQuery();
 
 
 
-    const filterProduct=(category)=>{
-        
+    const filterProduct = (category) => {
+
         return Products?.filter((item) => item.category === category);
     }
 
@@ -40,11 +40,11 @@ const Home = () => {
                         bg-[url("https://i.pinimg.com/1200x/09/ab/dd/09abdd904702ef068837a7ac010e926b.jpg")]  bg-cover bg-no-repeat bg-center'>
 
                 <motion.div
-                 className='flex flex-col justify-center items-center space-y-10 border border-gray-200 rounded-lg p-4 md:p-6 lg:p-8 xl:p-10 bg-white/10 backdrop-blur-xs'
+                    className='flex flex-col justify-center items-center space-y-10 border border-gray-200 rounded-lg p-4 md:p-6 lg:p-8 xl:p-10 bg-white/10 backdrop-blur-xs'
 
-                 initial={{y:-100, opacity:0}}
-                 animate={{y:0, opacity:1}}
-                 transition={{duration: 0.9}}
+                    initial={{ y: -100, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.9 }}
 
                 >
 
@@ -57,12 +57,12 @@ const Home = () => {
                     </motion.h2>
 
                     <div className='text-center'>
-                        <motion.p 
-                        className='text-sm xl:text-lg font-medium text-white'
-                            initial={{opacity:0, y: -40}}
-                            animate={{opacity:1, y:20}}
-                            transition={{duration: 1}}
-                            >
+                        <motion.p
+                            className='text-sm xl:text-lg font-medium text-white'
+                            initial={{ opacity: 0, y: -40 }}
+                            animate={{ opacity: 1, y: 20 }}
+                            transition={{ duration: 1 }}
+                        >
                             Discover an amazing collection of products at unbeatable prices. <br />
                             Shop your favorite categories and enjoy fast, reliable delivery.
                         </motion.p>
@@ -101,22 +101,23 @@ const Home = () => {
 
 
 
-                <div className='grid grid-cols-1 lg:grid-cols-4 gap-7 '>
+                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 '>
 
-                    <div className='py-4 px-3 rounded-md bg-blue-50 hover:shadow-lg hover:scale-105 transition-transform duration-400 ease-in-out'>
-                        {isLoading?   <p>Loading....</p> : <Categories product={filterProduct("women's clothing")}/>}
+                    <div className='py-4 px-3 rounded-md bg-gray-100 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
+
+                        {isLoading ? <p>Loading....</p> : <Categories product={filterProduct("women's clothing")} heading={"Women's Wear"} />}
                     </div>
 
-                    <div className='py-4 px-3 rounded-md bg-blue-50 hover:shadow-lg hover:scale-105 transition-transform duration-400 ease-in-out'>
-                        {isLoading?   <p>Loading....</p> : <Categories product={filterProduct("jewelery")}/>}
+                    <div className='py-4 px-3 rounded-md bg-gray-100 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
+                        {isLoading ? <p>Loading....</p> : <Categories product={filterProduct("jewelery")} heading={"Jewelry"} />}
                     </div>
 
-                    <div className='py-4 px-3 rounded-md bg-blue-50 hover:shadow-lg hover:scale-105 transition-transform duration-400 ease-in-out'>
-                        {isLoading?   <p>Loading....</p> : <Categories product={filterProduct("men's clothing")}/>}
+                    <div className='py-4 px-3 rounded-md bg-gray-100 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
+                        {isLoading ? <p>Loading....</p> : <Categories product={filterProduct("men's clothing")} heading={"Men's Wear"} />}
                     </div>
 
-                    <div className='py-4 px-3 rounded-md bg-blue-50 hover:shadow-lg hover:scale-105 transition-transform duration-400 ease-in-out'>
-                        {isLoading?   <p>Loading....</p> : <Categories product={filterProduct("electronics")}/>}
+                    <div className='py-4 px-3 rounded-md bg-gray-100 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
+                        {isLoading ? <p>Loading....</p> : <Categories product={filterProduct("electronics")} heading={"Electronics"}/>}
                     </div>
 
 
@@ -164,7 +165,7 @@ const Home = () => {
 
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 '>
 
-                    {Products?.map((item)=>{
+                    {Products?.map((item) => {
                         return <div>
                             <p>{item.title}</p>
                         </div>
