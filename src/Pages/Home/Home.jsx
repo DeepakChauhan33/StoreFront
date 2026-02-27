@@ -11,8 +11,8 @@ import { TiArrowRight } from "react-icons/ti";
 
 // Import Framer Motion Library For Animation
 import { motion } from 'framer-motion';
-import { useState } from 'react';
-import { div } from 'framer-motion/client';
+import Categories from './Categories';
+import { p } from 'framer-motion/client';
 
 
 
@@ -20,7 +20,14 @@ const Home = () => {
 
 
 
-    const {data:Products} = useGetProductsQuery();
+    const {data:Products, isLoading} = useGetProductsQuery();
+
+
+
+    const filterProduct=(category)=>{
+        
+        return Products?.filter((item) => item.category === category);
+    }
 
 
 
@@ -94,27 +101,44 @@ const Home = () => {
 
 
 
-                <div className='grid grid-cols-1 lg:grid-cols-2 gap-7 '>
+                <div className='grid grid-cols-1 lg:grid-cols-4 gap-7 '>
 
-                    <div className='bg-blue-100 flex flex-col justify-center items-start rounded-md py-10 px-5 cursor-pointer border border-transparent hover:border hover:border-gray-600'>
-                        <h3 className='text-2xl font-bold'>Women's Wear</h3>
-                        <p className='text-md font-medium text-gray-500'>Fashionable clothing for women</p>
+                    <div className='py-4 px-3 rounded-md bg-blue-50 hover:shadow-lg hover:scale-105 transition-transform duration-400 ease-in-out'>
+                        {isLoading?   <p>Loading....</p> : <Categories product={filterProduct("women's clothing")}/>}
                     </div>
 
-                    <div className='bg-blue-100 flex flex-col justify-center items-start rounded-md py-10 px-5 cursor-pointer border border-transparent hover:border hover:border-gray-600'>
-                        <h3 className='text-2xl font-bold'>Men's Wear</h3>
-                        <p className='text-md font-medium text-gray-500'>Stylish apparel for men</p>
+                    <div className='py-4 px-3 rounded-md bg-blue-50 hover:shadow-lg hover:scale-105 transition-transform duration-400 ease-in-out'>
+                        {isLoading?   <p>Loading....</p> : <Categories product={filterProduct("jewelery")}/>}
                     </div>
 
-                    <div className='bg-blue-100 flex flex-col justify-center items-start rounded-md py-10 px-5 cursor-pointer border border-transparent hover:border hover:border-gray-600'>
-                        <h3 className='text-2xl font-bold'>Electronicsr</h3>
-                        <p className='text-md font-medium text-gray-500'>Gadgets and devices</p>
+                    <div className='py-4 px-3 rounded-md bg-blue-50 hover:shadow-lg hover:scale-105 transition-transform duration-400 ease-in-out'>
+                        {isLoading?   <p>Loading....</p> : <Categories product={filterProduct("men's clothing")}/>}
                     </div>
 
-                    <div className='bg-blue-100 flex flex-col justify-center items-start rounded-md py-10 px-5 cursor-pointer border border-transparent hover:border hover:border-gray-600'>
-                        <h3 className='text-2xl font-bold'>Jewelry</h3>
-                        <p className='text-md font-medium text-gray-500'>Beautiful and elegant pieces</p>
+                    <div className='py-4 px-3 rounded-md bg-blue-50 hover:shadow-lg hover:scale-105 transition-transform duration-400 ease-in-out'>
+                        {isLoading?   <p>Loading....</p> : <Categories product={filterProduct("electronics")}/>}
                     </div>
+
+
+
+
+
+                    {/* <div className='bg-blue-100 grid grid-cols-2 lg:grid-col-4 rounded-md py-10 px-5 cursor-pointer border border-transparent hover:border hover:border-gray-600'>
+
+                        {isLoading?   <p>Loading....</p> : <Categories product={filterProduct("men's clothing")}/>}
+                    </div>
+
+                    <div className='bg-blue-100 grid grid-cols-2 lg:grid-col-4 rounded-md py-10 px-5 cursor-pointer border border-transparent hover:border hover:border-gray-600'>
+                        {isLoading?   <p>Loading....</p> : <Categories product={filterProduct("women's clothing")}/>}
+                    </div>
+
+                    <div className='bg-blue-100 grid grid-cols-2 lg:grid-col-4 rounded-md py-10 px-5 cursor-pointer border border-transparent hover:border hover:border-gray-600'>
+                        {isLoading?   <p>Loading....</p> : <Categories product={filterProduct("electronics")}/>}
+                    </div>
+
+                    <div className='bg-blue-100 grid grid-cols-2 lg:grid-col-4 rounded-md py-10 px-5 cursor-pointer border border-transparent hover:border hover:border-gray-600'>
+                        {isLoading?   <p>Loading....</p> : <Categories product={filterProduct("jewelery")}/>}
+                    </div> */}
 
                 </div>
             </section>
@@ -140,7 +164,7 @@ const Home = () => {
 
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 '>
 
-                    {Products.map((item)=>{
+                    {Products?.map((item)=>{
                         return <div>
                             <p>{item.title}</p>
                         </div>
