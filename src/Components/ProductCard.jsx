@@ -56,12 +56,12 @@ const ProductCard = ({ product }) => {
                 </div>
 
 
-                <div className='flex justify-between w-full '>
+                <div className='flex justify-between w-full  '>
                     <p className='text-2xl lg:text-3xl font-extrabold'>
                         {`$${product.price}`}
                     </p>
 
-                    <button className='"bg-black text-white px-4 py-2 rounded-sm bg-gray-800'>
+                    <button className='  text-white px-4 py-2 rounded-sm bg-gray-800'>
                         Add to cart
                     </button>
                 </div>
