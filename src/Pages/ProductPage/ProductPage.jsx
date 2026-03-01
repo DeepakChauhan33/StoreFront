@@ -99,6 +99,13 @@ const ProductsPage = () => {
                         <button onClick={handleClick} className='block md:hidden absolute top-2 left-2 p-2 rounded-full '>
                             <BsArrowLeft className='inline-block text-2xl font-light ' />
                         </button>
+
+
+                        <button className='block md:hidden absolute top-2 right-2 text-2xl border p-1 rounded-sm' title='Add to wishlist'>
+                            <FaRegHeart />
+                        </button>
+
+
                     </div>
 
 
@@ -109,42 +116,23 @@ const ProductsPage = () => {
                         <p className='hidden md:block w-fit text-md font-normal border border-gray-300 rounded-3xl px-3 py-2 ronded-5xl'>{product.category}</p>
 
 
-                        <div className='flex  justify-between items-center'>
-                            {/* Product Title */}
+                        {/* Product Title */}
+                        <div className='flex  justify-between items-start'>
                             <p className="underline text-lg  md:text-2xl xl:text-3xl font-bold md:font-semibold">
                                 {product.title}
                             </p>
 
-                            {/* <div className='wishlistCant cursor-pointer flex items-start' title='Add to wishlist' onClick={() => {
-                            addToWishList()
-                        }}>
-                            <CiHeart className='text-3xl ' />
-                        </div> */}
+                            <button className='block md:hidden text-2xl border p-1 rounded-sm' title='Share'>
+                                <IoShareSocial />
+                            </button>
+
+
                         </div>
-
-
-
-                        {/* Description */}
-
-                        <div className="">
-                            <h4 className="text-md font-semibold mb-2">Description</h4>
-
-                            <p className="text-sm lg:text-lg">{product.description}</p>
-                        </div>
-
-
-
-
-                        {/* Quantity Button */}
-                        <div className=''>
-                            <QuantityBtn />
-                        </div>
-
 
 
 
                         {/* Price & Ratting */}
-                        <div className="flex  justify-between items-start lg:items-center  ">
+                        <div className="flex  justify-between items-center lg:items-center  ">
                             {/* Price */}
                             <div className="space-x-2  ">
 
@@ -171,17 +159,40 @@ const ProductsPage = () => {
 
 
 
+                        {/* Description */}
 
-                        {/* Buy & Add to cart button */}
-                        <div className="flex flex-col lg:flex-row gap-x-2 ">
+                        <div className="">
+                            <h4 className="text-md font-semibold mb-2">Description</h4>
+
+                            <p className="text-sm lg:text-lg">{product.description}</p>
+                        </div>
+
+
+
+
+                        {/* Quantity Button */}
+                        <div className=''>
+                            <QuantityBtn />
+                        </div>
+
+
+
+
+
+
+
+
+
+                        {/*  Add to cart button */}
+                        <div className="flex flex-col md:flex-row gap-x-2 ">
 
                             <ButtonComp width={"w-full"}>Add to cart</ButtonComp>
 
-                            <button className='text-2xl border p-1 rounded-sm' title='Share'>
+                            <button className='hidden md:block text-2xl border p-1 rounded-sm' title='Share'>
                                 <IoShareSocial />
                             </button>
 
-                            <button className='text-2xl border p-1 rounded-sm' title='Add to wishlist'>
+                            <button className='hidden md:block  text-2xl border p-1 rounded-sm' title='Add to wishlist'>
                                 <FaRegHeart />
                             </button>
                         </div>
