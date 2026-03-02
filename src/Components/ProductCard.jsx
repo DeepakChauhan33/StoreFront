@@ -4,6 +4,7 @@ import React from 'react'
 
 // React Icons
 import { FaRegHeart } from "react-icons/fa";
+import { IoCartOutline } from "react-icons/io5";
 
 // Component
 import ButtonComp from './ButtonComp';
@@ -41,7 +42,7 @@ const ProductCard = ({ product }) => {
                     <img src={product.image} alt={product.title} className='h-full w-full bg-gray-200 p-3 object-contain' />
                 </NavLink>
 
-                <button className=' absolute top-2 right-2  bg-white p-2 rounded-full hover:scale-105 transition-transform duration-200 '>
+                <button className=' absolute top-2 right-2  bg-white p-2 rounded-full hover:scale-107 transition-transform duration-200 '>
                     <FaRegHeart className='text-lg md:text-xl ' />
                 </button>
 
@@ -74,7 +75,7 @@ const ProductCard = ({ product }) => {
 
 
                 {/*Add to Cart Button */}
-                <ButtonComp width={"w-[50%]"}>Add to cart</ButtonComp>
+                <ButtonComp width={"w-[50%]"}><IoCartOutline className='inline ' /> Add to cart</ButtonComp>
 
 
             </div>

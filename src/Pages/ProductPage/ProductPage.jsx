@@ -13,6 +13,7 @@ import { IoShareSocial } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
 import { BsArrowLeft } from "react-icons/bs";
 
+
 import { useNavigate, useParams } from 'react-router-dom'
 import { useGetDynamicProductQuery, useGetProductsQuery } from '../Product/ProductApi';
 import ProductCard from '../../Components/ProductCard';
