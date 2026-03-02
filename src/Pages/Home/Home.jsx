@@ -160,7 +160,7 @@ const Home = () => {
 
 
             {/* FEATURE PRODUCTS SECTION*/}
-            <section className='py-12 px-4 space-y-8 sm:space-y-10 lg:space-y-12'>
+            <section className='py-12 px-4 space-y-8 sm:space-y-10 lg:space-y-8'>
 
                 <div className=''>
                     <h2 className='text-3xl lg:text-4xl font-bold mb-1 md:mb-2 lg:mb-3'>
@@ -175,7 +175,7 @@ const Home = () => {
 
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7 '>
 
-                    {Products?.slice(0, 4).map((item) => <ProductCard product={item} />)}
+                    {Products?.slice(2, 6).map((item) => <ProductCard product={item} />)}
 
                 </div>
             </section>

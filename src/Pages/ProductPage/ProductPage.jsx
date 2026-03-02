@@ -112,7 +112,7 @@ const ProductsPage = () => {
                         <BsArrowLeft className='inline-block text-3xl font-light ' />
                     </button>
 
-                    <span>Back to home</span>
+                    <span className='text-lg font-medium'>Back to home</span>
                 </div>
 
                 <div className='flex flex-col md:flex-row items-start mt-3 space-x-4 '>
@@ -239,8 +239,8 @@ const ProductsPage = () => {
 
 
                         {/* Shipping Details */}
-                        <div className="border border-gray-200 p-3 rounded-2xl space-y-2">
-                            <h4 className="text-md lg:text-xl font-semibold">Shipping</h4>
+                        <div className="border border-gray-200  rounded-2xl space-y-2">
+                            <h4 className="text-md lg:text-xl font-semibold px-2 py-3">Shipping</h4>
 
                             <ul className="grid grid-cols-2 ">
 

@@ -29,7 +29,7 @@ const ProductCard = ({ product }) => {
     return (
 
         <div
-            className='flex flex-col justify-between rounded-lg border shadow-md border-gray-200 min-h-[450px] p-2 pb-4 space-y-3 overflow-hidden'
+            className='flex flex-col justify-between rounded-lg border shadow-md border-gray-200 min-h-[450px] p-2 pb-4 space-y-2.5 overflow-hidden'
             id={product.id}>
 
 
@@ -52,7 +52,7 @@ const ProductCard = ({ product }) => {
 
 
             {/* Product Name */}
-            <span className='text-lg text-gray-800 font-bold '>{product.title}</span>
+            <span className='text-lg text-gray-800 font-semibold'>{product.title}</span>
 
             {/* Product Rating*/}
             <div className='flex justify-between items-center  text-sm text-gray-700 font-[700]'>
