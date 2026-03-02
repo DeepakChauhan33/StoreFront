@@ -14,7 +14,8 @@ import { FaRegHeart } from "react-icons/fa";
 import { BsArrowLeft } from "react-icons/bs";
 
 import { useNavigate, useParams } from 'react-router-dom'
-import { useGetDynamicProductQuery } from '../Product/ProductApi';
+import { useGetDynamicProductQuery, useGetProductsQuery } from '../Product/ProductApi';
+import ProductCard from '../../Components/ProductCard';
 
 const ProductsPage = () => {
 
@@ -22,14 +23,31 @@ const ProductsPage = () => {
     const navigate = useNavigate();
 
     const { data: product, isLoading } = useGetDynamicProductQuery(id);
+    const { data: allProducts } = useGetProductsQuery();
 
     if (isLoading) return <p>Loading...</p>;
+
+
+
 
 
 
     const handleClick = () => {
         navigate(-1);
     }
+
+
+
+    // Copy Product Link
+    const handleCopy = async () => {
+        try {
+            await navigator.clipboard.writeText(window.location.href);
+            alert("URL copied to clipboard!");
+        } catch (err) {
+            console.error("Failed to copy: ", err);
+        }
+    };
+
 
     // Calculate 10% increase in price
     function plusPercentageValue(num) {
@@ -60,14 +78,25 @@ const ProductsPage = () => {
 
         for (let i = 1; i <= 5; i++) {
             if (i <= Math.floor(rate)) {
-                rateStar += "★ ";
+                rateStar += "★";
             } else {
-                rateStar += "☆ ";
+                rateStar += "☆";
             }
         }
         return rateStar;
     }
 
+
+
+    function relatedProducts() {
+        if (!allProducts || !product) return [];
+
+        return allProducts.filter(
+            (item) =>
+                item.category === product.category &&
+                item.id !== product.id
+        );
+    }
 
 
 
@@ -78,10 +107,12 @@ const ProductsPage = () => {
 
             <section className="bg-gray-100/30   flex flex-col p-2 md:p-5 ">
 
-                <div className='hidden md:block'>
-                    <button onClick={handleClick} className=' p-1.5 cursor-pointer rounded-full hover:bg-gray-100 ' title='Back'>
+                <div className='hidden md:block space-x-2'>
+                    <button onClick={handleClick} className=' p-1.5 cursor-pointer rounded-full hover:bg-gray-200'>
                         <BsArrowLeft className='inline-block text-3xl font-light ' />
                     </button>
+
+                    <span>Back to home</span>
                 </div>
 
                 <div className='flex flex-col md:flex-row items-start mt-3 space-x-4 '>
@@ -101,8 +132,8 @@ const ProductsPage = () => {
                         </button>
 
 
-                        <button className='block md:hidden absolute top-2 right-2 text-2xl border p-1 rounded-sm' title='Add to wishlist'>
-                            <FaRegHeart />
+                        <button className='block md:hidden absolute top-2 right-2  bg-white p-2 rounded-full' title='Add to wishlist'>
+                            <FaRegHeart className='text-lg' />
                         </button>
 
 
@@ -110,19 +141,23 @@ const ProductsPage = () => {
 
 
                     {/* Product Details Container */}
-                    <div className="flex flex-col w-full md:w-[55%] p-2 gap-y-5">
+                    <div className="flex flex-col w-full md:w-[55%] p-2 space-y-6">
 
 
                         <p className='hidden md:block w-fit text-md font-normal border border-gray-300 rounded-3xl px-3 py-2 ronded-5xl'>{product.category}</p>
 
 
-                        {/* Product Title */}
+                        {/* Product Title and Copy URL Btn */}
                         <div className='flex  justify-between items-start'>
-                            <p className="underline text-lg  md:text-2xl xl:text-3xl font-bold md:font-semibold">
+                            <p className="underline text-xl  md:text-2xl xl:text-3xl font-bold md:font-semibold">
                                 {product.title}
                             </p>
 
-                            <button className='block md:hidden text-2xl border p-1 rounded-sm' title='Share'>
+
+                            {/* Button to Copy Product Link  */}
+                            <button className='block md:hidden text-2xl border p-1 rounded-sm' title='Share'
+                                onClick={handleCopy}
+                            >
                                 <IoShareSocial />
                             </button>
 
@@ -161,7 +196,7 @@ const ProductsPage = () => {
 
                         {/* Description */}
 
-                        <div className="">
+                        <div className="border-t border-b border-gray-200 py-4">
                             <h4 className="text-md font-semibold mb-2">Description</h4>
 
                             <p className="text-sm lg:text-lg">{product.description}</p>
@@ -188,7 +223,10 @@ const ProductsPage = () => {
 
                             <ButtonComp width={"w-full"}>Add to cart</ButtonComp>
 
-                            <button className='hidden md:block text-2xl border p-1 rounded-sm' title='Share'>
+                            {/* Button to Copy Product Link  */}
+                            <button className='hidden md:block text-2xl border p-1 rounded-sm' title='Share'
+                                onClick={handleCopy}
+                            >
                                 <IoShareSocial />
                             </button>
 
@@ -282,6 +320,19 @@ const ProductsPage = () => {
                             </ul>
                         </div>
                     </div>
+                </div>
+
+
+
+
+                <div className=' mt-3 bg-gray-100/30'>
+                    <h2 className="text-2xl text-center font-bold mt-10 mb-7">Related Products</h2>
+
+                    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-7 '>
+                        {relatedProducts(product.category).map((item) => <ProductCard product={item} />)}
+                    </div>
+
+
                 </div>
             </section>
 

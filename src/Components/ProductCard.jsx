@@ -3,7 +3,7 @@ import React from 'react'
 
 
 // React Icons
-import { CiHeart } from "react-icons/ci";
+import { FaRegHeart } from "react-icons/fa";
 
 // Component
 import ButtonComp from './ButtonComp';
@@ -29,17 +29,23 @@ const ProductCard = ({ product }) => {
     return (
 
         <div
-            className='flex flex-col justify-between rounded-lg border shadow-md border-gray-200 min-h-[450px] p-3 pb-4 space-y-3 '
+            className='flex flex-col justify-between rounded-lg border shadow-md border-gray-200 min-h-[450px] p-2 pb-4 space-y-3 overflow-hidden'
             id={product.id}>
 
 
 
             {/* Image Div */}
 
-            <div className='h-70 w-full rounded-lg overflow-hidden mb-5 '>
+            <div className='relative h-70 w-full rounded-lg overflow-hidden mb-5 '>
                 <NavLink to={`/product/` + product.id}>
                     <img src={product.image} alt={product.title} className='h-full w-full bg-gray-200 p-3 object-contain' />
                 </NavLink>
+
+                <button className=' absolute top-2 right-2  bg-white p-2 rounded-full hover:scale-105 transition-transform duration-200 '>
+                    <FaRegHeart className='text-lg md:text-xl ' />
+                </button>
+
+
             </div>
 
 
@@ -64,7 +70,7 @@ const ProductCard = ({ product }) => {
             <div className='flex  justify-between mt-2 '>
 
                 {/* Product Price */}
-                <p className='text-2xl lg:text-3xl  font-bold'>${product.price}</p>
+                <p className='text-2xl lg:text-3xl  font-extrabold'>${product.price}</p>
 
 
                 {/*Add to Cart Button */}
