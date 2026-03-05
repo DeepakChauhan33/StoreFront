@@ -1,6 +1,7 @@
 import React from 'react'
 
-
+// Motion
+import { motion } from 'framer-motion';
 
 // React Icons
 import { FaRegHeart } from "react-icons/fa";
@@ -29,7 +30,13 @@ const ProductCard = ({ product }) => {
 
     return (
 
-        <div
+        <motion.div
+
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, amount: 0.4 }}
+
             className='flex flex-col justify-between rounded-lg border shadow-md border-gray-200 min-h-[450px] p-2 pb-4 space-y-2.5 overflow-hidden'
             id={product.id}>
 
@@ -73,7 +80,7 @@ const ProductCard = ({ product }) => {
             <div className='flex  justify-between mt-2 '>
 
                 {/* Product Price */}
-                <p className='text-2xl lg:text-3xl  font-extrabold'>${product.price}</p>
+                <p className='text-2xl lg:text-[2vw]  font-extrabold'>${product.price}</p>
 
 
                 {/*Add to Cart Button */}
@@ -83,7 +90,7 @@ const ProductCard = ({ product }) => {
             </div>
 
 
-        </div>
+        </motion.div>
     )
 }
 

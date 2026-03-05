@@ -2,6 +2,8 @@ import React from 'react'
 
 import { useState } from 'react';
 
+
+
 // Components
 import ProductCard from '../../Components/ProductCard';
 import CategoryAccordion from '../../Components/CategoryAccordion';
@@ -17,11 +19,34 @@ const ProductPage = () => {
 
 
 
+
+
+
     const [selected, setSelected] = useState("All Products");
 
     if (isLoading) {
         return <p>Loading...</p>
     }
+
+
+
+    let msg = "";
+
+
+    if (selected === "All Products") {
+        msg = "Explore our full collection—something for everyone!"
+    } else if (selected === "electronics") {
+        msg = "Latest gadgets and smart tech to power your life."
+    } else if (selected === "jewelery") {
+        msg = "Elegant designs that shine with every occasion."
+    } else if (selected === "men's clothing") {
+        msg = "Stylish fits and everyday essentials for him."
+    } else if (selected === "women's clothing") {
+        msg = "Trendy outfits and timeless fashion for her."
+    } else {
+        msg = "See Products"
+    }
+
 
 
 
@@ -35,7 +60,7 @@ const ProductPage = () => {
             {/* Product page header */}
             <div className=' p-2 py-4'>
                 <h2 className='text-3xl font-bold'>See Products</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, autem!</p>
+                <p>{msg}</p>
             </div>
 
             {/* COntainer for products */}
@@ -50,7 +75,7 @@ const ProductPage = () => {
                 {/* Products Container */}
                 <div className='w-full md:w-[80%]'>
 
-                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 '>
+                    <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7 '>
 
                         {filterProducts?.map((item) => <ProductCard product={item} />)}
 

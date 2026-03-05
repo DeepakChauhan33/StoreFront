@@ -24,7 +24,6 @@ export default function CategoryFilter({ selected, setSelected }) {
         <Disclosure defaultOpen>
             {({ open }) => (
                 <>
-                    <h1>{selected}</h1>
 
                     <Disclosure.Button className="font-bold text-lg flex items-center justify-between w-full px-4 py-2 text-left text-gray-800 bg-gray-100 rounded-lg hover:bg-gray-200 focus:outline-none ">
                         Category {open ? <IoIosArrowDown className="inline" /> : <IoIosArrowUp className="inline" />}

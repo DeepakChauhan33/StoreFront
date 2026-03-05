@@ -1,5 +1,4 @@
 
-import { getProducts } from '../Product/ProductSlice';
 
 import { useGetProductsQuery } from '../Product/ProductApi';
 
@@ -132,7 +131,7 @@ const Home = () => {
 
 
 
-                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 '>
+                <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-7 '>
 
                     <div className='py-4 px-3 rounded-md bg-gray-100 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
 
