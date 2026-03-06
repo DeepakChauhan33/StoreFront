@@ -1,4 +1,8 @@
 
+// Hooks
+import { useSelector } from 'react-redux';
+
+
 
 import { useGetProductsQuery } from '../Product/ProductApi';
 
@@ -23,6 +27,9 @@ const Home = () => {
 
 
     const { data: Products, isLoading } = useGetProductsQuery();
+
+
+    
 
 
 

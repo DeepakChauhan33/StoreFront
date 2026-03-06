@@ -1,4 +1,11 @@
 
+// Hooks
+import { useDispatch, useSelector } from 'react-redux';
+
+// Actions
+import { addToWishlist } from '../Wishlist/WishlistSlice';
+
+
 // Components
 import QuantityBtn from '../../Components/QuantityBtn';
 import ButtonComp from '../../Components/ButtonComp';
@@ -24,6 +31,8 @@ const ProductsPage = () => {
     const { id } = useParams();
     const navigate = useNavigate();
 
+    const dispatch = useDispatch();
+
     const { data: product, isLoading } = useGetDynamicProductQuery(id);
     const { data: allProducts } = useGetProductsQuery();
 
@@ -31,6 +40,14 @@ const ProductsPage = () => {
 
 
 
+
+
+
+    // Handle Add to Wishlist  
+    function handleWishlist() {
+        dispatch(addToWishlist(product));
+        // console.log(wishlist);
+    }
 
 
 
@@ -180,13 +197,13 @@ const ProductsPage = () => {
                                 <div className="flex items-center gap-3">
                                     <span className="text-md lg:text-xl text-red-500">-10%</span>
 
-                                    <span className="text-2xl xl:text-3xl font-bold">${product.price}</span>
+                                    <span className="text-2xl xl:text-3xl font-bold">${product.price.toFixed(2)}</span>
                                 </div>
 
                                 <div className="text-md lg:text-lg ">
                                     <span>{`M.R.P : $`}</span>
                                     <span className="line-through font-normal">
-                                        {plusPercentageValue(product.price)}</span>
+                                        {plusPercentageValue(product.price).toFixed(2)}</span>
                                 </div>
                             </div>
 
@@ -224,7 +241,7 @@ const ProductsPage = () => {
 
 
 
-                        {/*  Add to cart button */}
+                        {/*  Add to cart button and Add to wishlist  */}
                         <div className="flex flex-col md:flex-row gap-x-2 ">
 
                             <ButtonComp width={"w-full"}>Add to cart</ButtonComp>
@@ -236,7 +253,8 @@ const ProductsPage = () => {
                                 <IoShareSocial />
                             </button>
 
-                            <button className='hidden md:block  text-2xl border p-1.5 rounded-sm ' title='Add to wishlist'>
+                            <button className='hidden md:block  text-2xl border p-1.5 rounded-sm ' title='Add to wishlist'
+                                onClick={() => handleWishlist()}>
                                 <FaRegHeart />
                             </button>
                         </div>

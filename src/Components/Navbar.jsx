@@ -1,3 +1,6 @@
+
+// Hooks
+import { useSelector } from 'react-redux';
 import React, { useState } from "react";
 
 // Reac Icons
@@ -12,7 +15,10 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const [wishlistCount, setWishlistCount] = useState(0); // Example count for wishlist
+    const wishlistNUm = useSelector((state) => state.wishlist.wishlist)
+    const wishlistCount = wishlistNUm.length; // Example count for wishlist
+
+    // const [wishlistCount, setWishlistCount] = useState(0); // Example count for wishlist
 
     return (
         <nav className="w-full bg-white  opacity-90   drop-shadow-lg fixed top-0 left-0 z-50">
@@ -69,14 +75,15 @@ const Navbar = () => {
                         <div className="relative cursor-pointer p-2 hover:bg-black hover:text-white rounded-lg  transition transform hover:scale-110 ease-in-out duration-300" title="Wishlist">
                             <NavLink to="/wishlist">
                                 <FiHeart size={20} />
-                                <span className="absolute -top-2 -right-2 inline-flex items-center justify-center px-2 py-1 text-xs font-normal leading-none text-white bg-red-600 rounded-full">{wishlistCount}</span>
+                                {wishlistCount > 0 && <span className="absolute -top-2 -right-2 inline-flex items-center justify-center px-2 py-1 text-xs font-normal leading-none text-white bg-red-600 rounded-full">{wishlistCount}</span>}
+
                             </NavLink>
                         </div>
 
 
                         <div className="relative cursor-pointer p-2 hover:bg-black hover:text-white rounded-lg  transition transform hover:scale-110 ease-in-out duration-300" title="Cart" >
                             <FiShoppingCart size={20} />
-                            {wishlistCount > 0 && <span className="absolute -top-2 -right-2 inline-flex items-center justify-center px-2 py-1 text-xs font-normal leading-none text-white bg-red-600 rounded-full">{wishlistCount}</span>}
+                            <span className="absolute -top-2 -right-2 inline-flex items-center justify-center px-2 py-1 text-xs font-normal leading-none text-white bg-red-600 rounded-full">{wishlistCount}</span>
                         </div>
 
 

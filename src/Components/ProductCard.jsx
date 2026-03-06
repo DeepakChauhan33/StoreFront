@@ -1,5 +1,12 @@
 import React from 'react'
 
+// Hooks
+import { useDispatch, useSelector } from 'react-redux';
+
+
+// Actions
+import { addToWishlist } from '../Pages/Wishlist/WishlistSlice';
+
 // Motion
 import { motion } from 'framer-motion';
 
@@ -14,6 +21,17 @@ import { NavLink } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
     // console.log(product)
+
+    const dispatch = useDispatch();
+    const wishlist = useSelector((state) => state.wishlist.wishlist);
+
+
+    function handleWishlist() {
+        dispatch(addToWishlist(product));
+        // console.log(wishlist);
+    }
+
+
 
     function handleRating(rate) {
         let rateStar = "";
@@ -49,7 +67,9 @@ const ProductCard = ({ product }) => {
                     <img src={product.image} alt={product.title} className='h-full w-full bg-gray-200 p-3 object-contain ' />
                 </NavLink>
 
-                <button className=' absolute top-2 right-2  bg-white p-2 rounded-full hover:scale-107 transition-transform duration-200 '>
+                <button className=' absolute top-2 right-2  bg-white p-2 rounded-full hover:scale-107 transition-transform duration-200'
+                    onClick={() => handleWishlist()}
+                >
                     <FaRegHeart className='text-lg md:text-xl ' />
                 </button>
 
