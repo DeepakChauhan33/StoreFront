@@ -89,7 +89,7 @@ const Wishlist = () => {
 
 
                     <div className='flex gap-4'>
-                      <ButtonComp width={"w-full cursor-pointer"} >Add to cart</ButtonComp>
+                      <ButtonComp width={"w-full cursor-pointer"} product={item} >Add to cart</ButtonComp>
 
                       <button
                         className="  bg-white  px-1.5"
@@ -155,7 +155,7 @@ const Wishlist = () => {
                       <td>
                         <ButtonComp
                           width={"w-32 cursor-pointer"}
-                          onClick={() => navigate(`/product/${item.id}`)}
+                          product={item}
                         >
                           Add to Cart
                         </ButtonComp>
@@ -179,8 +179,22 @@ const Wishlist = () => {
                 </tbody>
 
               </table>
-            </div></>
+
+
+            </div>
+
+            <div className='text-center mt-5'>
+              <button
+                onClick={() => navigate("/products")}
+                className='bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors duration-200'>
+                Shop more
+              </button>
+            </div>
+
+          </>
         )}
+
+
       </div>
     </section>
   )

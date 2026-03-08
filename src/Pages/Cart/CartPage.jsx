@@ -6,6 +6,10 @@ import { useSelector, useDispatch } from 'react-redux';
 // Components
 import QuantityBtn from "../../Components/QuantityBtn";
 
+
+// Actions
+import { removeFromCart } from './CartSlice';
+
 // React Icons
 import { LuBox } from "react-icons/lu";
 import { MdDelete } from "react-icons/md";
@@ -15,12 +19,15 @@ import { MdDelete } from "react-icons/md";
 import { motion } from 'framer-motion';
 
 
-import { useNavigate } from 'react-router-dom';
-import { div } from 'framer-motion/client';
+import { NavLink, useNavigate } from 'react-router-dom';
+
+
 
 const CartPage = () => {
 
     const cart = useSelector((state) => state.cart.cart);
+
+    const dispatch = useDispatch();
 
     const navigate = useNavigate();
 
@@ -28,22 +35,25 @@ const CartPage = () => {
 
 
     return (
-        <section className=' p-2 py-4'>
+        <section className=' p-2 py-4 '>
 
+
+            {/* Heading and Desc */}
             <motion.div
-                className='px-3'
+                className='px-2'
 
                 initial={{ y: -30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8 }}
             >
-                <h2 className='text-4xl font-light'>Your Cart</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, autem!</p>
+                <h2 className='text-2xl md:text-4xl font-black md:font-light'>Your Cart</h2>
+                <p>Your cart have {cart.length} items</p>
             </motion.div>
 
 
+
             <motion.div
-                className='h-96 flex justify-center items-center '
+                className='min-h-96 flex justify-center items-center '
 
                 initial={{ y: 0, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -67,38 +77,43 @@ const CartPage = () => {
                         </div>)
                         :
                         (
-                            <div className='bg-gray-100 p-2 w-full'>
+                            <div className='p-2 w-full flex flex-col lg:flex-row gap-6'>
 
                                 {/* Products */}
-                                <div className='flex flex-col gap-3'>
+                                <div className='w-full lg:w-[60%] flex flex-col gap-3 rounded-md p-2 '>
                                     {cart.map((item) => (
-                                        <div className='flex border bg-white gap-3 '>
+                                        <div className='flex  bg-gray-200/30 shadow-md gap-3 overflow-hidden'>
 
 
                                             {/* Image Div */}
-                                            <div className='h-20 w-20'>
-                                                <img src={item.image} alt={item.category} className='h-full w-full object-contain' />
+                                            <div className='h-25 w-20 p-1'>
+                                                <NavLink to={`/product/${item.id}`}>
+                                                    <img src={item.image} alt={item.category} className='h-full w-full object-contain' />
+                                                </NavLink>
                                             </div>
 
                                             {/* Product NAme and Quantity */}
-                                            <div className='flex flex-1 justify-between p-2 gap-2 border'>
+                                            <div className='flex flex-1 justify-between p-2 gap-2 '>
 
                                                 {/* Name and Price */}
                                                 <div className='space-y-3'>
-                                                    <p className='line-clamp-2 md:line-clamp-3 text-sm md:text-lg font-bold '>{item.title}</p>
-                                                    <span>{item.price}</span>
+                                                    <p className='line-clamp-2 md:line-clamp-3 text-md md:text-lg font-semibold '>{item.title}</p>
+                                                    <span className='text-xl font-black'>$ {item.price}</span>
                                                 </div>
 
                                                 {/* Quantity & Delete Button */}
                                                 <div className=' flex flex-col justify-between items-end '>
 
-                                                    <div className="min-w-23 ">
+                                                    <div className="min-w-26 ">
                                                         <QuantityBtn />
                                                     </div>
 
-                                                    <span className='text-2xl'>
+                                                    <button
+                                                        className='text-2xl  text-red-300 hover:text-red-500 hover:scale-110 transition-transform duration-200 cursor-pointer'
+                                                        onClick={() => dispatch(removeFromCart(item.id))}
+                                                    >
                                                         <MdDelete />
-                                                    </span>
+                                                    </button>
                                                 </div>
                                             </div>
 
@@ -109,6 +124,11 @@ const CartPage = () => {
 
 
                                 {/* Bill Summary */}
+
+                                <div className='p- border w-full lg:w-[40%] min-h-60 rounded-lg'>
+
+                                    <h2>Order Smmary</h2>
+                                </div>
                             </div>
                         )
                 }

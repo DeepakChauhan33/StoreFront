@@ -23,7 +23,7 @@ const QuantityBtn = () => {
             <button
                 className='px-2 bg-gray-300 hover:bg-gray-400 transition-colors duration-300 ease-in-out'
                 onClick={hannleDecrease}>-</button>
-            <span className='inline-block py-0 px-4  bg-gray-100'>{quantity}</span>
+            <span className='inline-block py-0 px-3  bg-gray-100'>{quantity}</span>
             <button
                 className='px-2 bg-gray-300 hover:bg-gray-400 transition-colors duration-300 ease-in-out'
                 onClick={handleIncrease}>+</button>

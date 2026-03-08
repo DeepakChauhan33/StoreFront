@@ -56,6 +56,8 @@ const ProductsPage = () => {
 
 
 
+
+
     const handleClick = () => {
         navigate(-1);
     }
@@ -250,7 +252,7 @@ const ProductsPage = () => {
                         {/*  Add to cart button and Add to wishlist  */}
                         <div className="flex flex-col md:flex-row gap-x-2 ">
 
-                            <ButtonComp width={"w-full"}>Add to cart</ButtonComp>
+                            <ButtonComp width={"w-full"} product={product}>Add to cart</ButtonComp>
 
                             {/* Button to Copy Product Link  */}
                             <button className='hidden md:block text-2xl border p-1.5 rounded-sm ' title='Share'
