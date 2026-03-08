@@ -17,8 +17,15 @@ const cartSlice = createSlice({
         },
 
         removeFromCart: (state, action) => {
-            console.log("called")
+
+            const productID = action.payload;
+
+            const exist = state.cart.find((item)=> item.id===productID)
             state.cart = state.cart.filter((item) => item.id !== action.payload)
+
+            if(exist){
+                
+            }
         }
     }
 })

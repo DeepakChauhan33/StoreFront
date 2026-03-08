@@ -1,6 +1,4 @@
 
-import React from 'react'
-
 // Hooks
 import { useDispatch } from 'react-redux';
 

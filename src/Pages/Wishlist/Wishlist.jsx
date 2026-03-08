@@ -4,7 +4,7 @@ import React, { useEffect } from 'react'
 import ButtonComp from '../../Components/ButtonComp';
 
 // Hooks
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
 
 // Motion
@@ -16,11 +16,18 @@ import { IoIosClose } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
 
 
+
+// Action
+import { removeFromWishlist } from './WishlistSlice';
+
+
 const Wishlist = () => {
 
   const navigate = useNavigate();
 
   const wishlist = useSelector((state) => state.wishlist.wishlist);
+
+  const dispatch = useDispatch();
 
   // useEffect(() => {
   //   console.log(wishlist);
@@ -93,7 +100,7 @@ const Wishlist = () => {
 
                       <button
                         className="  bg-white  px-1.5"
-                        onClick={() => console.log("Remove from wishlist")}
+                        onClick={() => dispatch(removeFromWishlist(item.id))}
                       >
                         <MdDelete className='text-2xl text-red-400/90 ' />
                       </button>
@@ -165,7 +172,7 @@ const Wishlist = () => {
                       <td className="px-6 py-4">
                         <button
                           className="  hover:bg-red-200 rounded-full transition-colors duration-200"
-                          onClick={() => console.log("Remove from wishlist")}
+                          onClick={() => dispatch(removeFromWishlist(item.id))}
                         >
                           <IoIosClose className='text-3xl text-gray-400 hover:text-red-500 hover:scale-110 transition-transform duration-200 ' />
                         </button>

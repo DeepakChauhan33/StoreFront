@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom'
 
 // Actions
-import { addToWishlist } from '../Wishlist/WishlistSlice';
+import { addToWishlist, toggleWishlist } from '../Wishlist/WishlistSlice';
 
 
 // Components
@@ -21,6 +21,7 @@ import { TbTruckReturn } from "react-icons/tb";
 import { IoShareSocial } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
 import { BsArrowLeft } from "react-icons/bs";
+import { FaHeart } from "react-icons/fa";
 
 
 // Custom Hooks
@@ -39,20 +40,9 @@ const ProductsPage = () => {
     const { data: product, isLoading } = useGetDynamicProductQuery(id);
     const { data: allProducts } = useGetProductsQuery();
 
+    const wishlist = useSelector((state) => state.wishlist.wishlist);
+
     if (isLoading) return <p>Loading...</p>;
-
-
-
-
-
-
-
-
-    // Handle Add to Wishlist  
-    function handleWishlist() {
-        dispatch(addToWishlist(product));
-        // console.log(wishlist);
-    }
 
 
 
@@ -61,6 +51,11 @@ const ProductsPage = () => {
     const handleClick = () => {
         navigate(-1);
     }
+
+
+    const checkIsInWishlist = wishlist.some(
+        (item) => item.id === product.id
+    );
 
 
 
@@ -262,8 +257,8 @@ const ProductsPage = () => {
                             </button>
 
                             <button className='hidden md:block  text-2xl border p-1.5 rounded-sm ' title='Add to wishlist'
-                                onClick={() => handleWishlist()}>
-                                <FaRegHeart />
+                                onClick={() => dispatch(toggleWishlist(product))}>
+                                {checkIsInWishlist ? (<FaHeart className='text-lg md:text-xl ' />) : (<FaRegHeart className='text-lg md:text-xl ' />)}
                             </button>
                         </div>
 

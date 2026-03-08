@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 
 // Actions
-import { addToWishlist } from '../Pages/Wishlist/WishlistSlice';
+import { addToWishlist, toggleWishlist } from '../Pages/Wishlist/WishlistSlice';
 import { addToCart } from '../Pages/Cart/CartSlice';
 
 // Motion
@@ -14,6 +14,7 @@ import { motion } from 'framer-motion';
 // React Icons
 import { FaRegHeart } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
+import { FaHeart } from "react-icons/fa";
 
 // Component
 import ButtonComp from './ButtonComp';
@@ -24,14 +25,13 @@ const ProductCard = ({ product }) => {
 
 
     const dispatch = useDispatch();
-    const wishlist = useSelector((state) => state.wishlist.wishlist);
+
+    const wishlist = useSelector((state) => state.wishlist.wishlist)
 
 
-    function handleWishlist() {
-        dispatch(addToWishlist(product));
-        // console.log(wishlist);
-    }
-
+    const checkIsInWishlist = wishlist.some(
+        (item) => item.id === product.id
+    );
 
 
     function handleRating(rate) {
@@ -69,9 +69,9 @@ const ProductCard = ({ product }) => {
                 </NavLink>
 
                 <button className=' absolute top-2 right-2  bg-white p-2 rounded-full hover:scale-107 transition-transform duration-200'
-                    onClick={() => handleWishlist()}
+                    onClick={() => dispatch(toggleWishlist(product))}
                 >
-                    <FaRegHeart className='text-lg md:text-xl ' />
+                    {checkIsInWishlist ? (<FaHeart className='text-lg md:text-xl ' />) : (<FaRegHeart className='text-lg md:text-xl ' />)}
                 </button>
 
 

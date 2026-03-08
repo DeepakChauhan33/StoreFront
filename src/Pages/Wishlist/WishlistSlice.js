@@ -18,12 +18,21 @@ const wishlistSlice = createSlice({
 
 
         removeFromWishlist: (state, action) => {
-
+            state.wishlist = state.wishlist.filter((item) => item.id !== action.payload)
         },
 
 
-        toggleWishlist: () => {
+        toggleWishlist: (state, action) => {
 
+            const product = action.payload;
+
+            const exist = state.wishlist.find((item) => item.id === product.id);
+
+            if (exist) {
+                state.wishlist = state.wishlist.filter((item) => item.id !== product.id)
+            } else {
+                state.wishlist.push(product)
+            }
         }
     }
 })
