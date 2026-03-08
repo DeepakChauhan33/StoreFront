@@ -19,6 +19,7 @@ import Layout from './Layout/Layout';
 
 // Importing Components
 import BottomNavbar from './Components/BottomNavbar';
+import CartPage from './Pages/Cart/CartPage';
 
 
 
@@ -32,20 +33,20 @@ function App() {
     <>
 
 
-      
-        <Routes>
-          <Route path='/' element={<Layout />}>
-            <Route path='/' element={<Home />}></Route>
-            <Route path='/products' element={<Products />}></Route>
-            <Route path='/orders' element={<OrderPage />}></Route>
-            <Route path='/wishlist' element={<Wishlist />}></Route>
-            <Route path="/product/:id" element={<ProductPage />}></Route>
-          </Route>
 
-          <Route path="/search" element={<Search />}></Route>
-          <Route path='*' element={<ErrorPage />}></Route>
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route path='/' element={<Home />}></Route>
+          <Route path='/products' element={<Products />}></Route>
+          <Route path='/cart' element={<CartPage />}></Route>
+          <Route path='/wishlist' element={<Wishlist />}></Route>
+          <Route path="/product/:id" element={<ProductPage />}></Route>
+        </Route>
 
-        </Routes>
+        <Route path="/search" element={<Search />}></Route>
+        <Route path='*' element={<ErrorPage />}></Route>
+
+      </Routes>
 
 
 

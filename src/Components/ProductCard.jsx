@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 // Actions
 import { addToWishlist } from '../Pages/Wishlist/WishlistSlice';
+import { addToCart } from '../Pages/Cart/CartSlice';
 
 // Motion
 import { motion } from 'framer-motion';
@@ -20,7 +21,7 @@ import { NavLink } from 'react-router-dom';
 
 
 const ProductCard = ({ product }) => {
-    // console.log(product)
+
 
     const dispatch = useDispatch();
     const wishlist = useSelector((state) => state.wishlist.wishlist);
@@ -108,7 +109,7 @@ const ProductCard = ({ product }) => {
 
 
                 {/*Add to Cart Button */}
-                <ButtonComp width={"w-[50%]"}><IoCartOutline className='inline ' /> Add to cart</ButtonComp>
+                <ButtonComp width={"w-[50%]"} product={product}><IoCartOutline className='inline ' /> Add to cart</ButtonComp>
 
 
             </div>

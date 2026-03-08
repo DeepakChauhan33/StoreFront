@@ -23,7 +23,7 @@ const BottomNavbar = () => {
                 </button>
 
                 <button>
-                    <NavLink to="/orders">
+                    <NavLink to="/cart">
                         <FiShoppingCart />
                     </NavLink>
                 </button>

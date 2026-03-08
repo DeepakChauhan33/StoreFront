@@ -6,6 +6,7 @@ import React, { useState } from "react";
 // Reac Icons
 import { FiHeart, FiShoppingCart, FiMenu, FiX } from "react-icons/fi";
 import { BsSearch } from "react-icons/bs";
+import { CgProfile } from "react-icons/cg";
 
 
 
@@ -75,25 +76,32 @@ const Navbar = () => {
                     <div className="flex items-center gap space-x-4 md:xl:space-x-6">
 
 
-                        <div className="" title="Wishlist">
+                        <div className="" >
                             <NavLink to="/search">
                                 <BsSearch size={20} />
                             </NavLink>
                         </div>
 
 
-                        <div className="relative cursor-pointer p-2 hover:bg-black hover:text-white rounded-lg  transition transform hover:scale-110 ease-in-out duration-300" >
-                            <NavLink to="/wishlist">
+                        <NavLink to="/wishlist">
+                            <div className="relative cursor-pointer p-2 hover:bg-black hover:text-white rounded-lg  transition transform hover:scale-110 ease-in-out duration-300" title="Wishlist" >
+
                                 <FiHeart size={20} />
                                 {wishlistCount > 0 && <span className="absolute -top-2 -right-2 inline-flex items-center justify-center px-2 py-1 text-xs font-normal leading-none text-white bg-red-600 rounded-full">{wishlistCount}</span>}
+                            </div>
+                        </NavLink>
 
-                            </NavLink>
-                        </div>
+                        <NavLink to="/cart">
+                            <div className="hidden md:block relative cursor-pointer p-2 hover:bg-black hover:text-white rounded-lg  transition transform hover:scale-110 ease-in-out duration-300" title="Cart" >
+                                <FiShoppingCart size={20} />
+                                <span className="absolute -top-2 -right-2 inline-flex items-center justify-center px-2 py-1 text-xs font-normal leading-none text-white bg-red-600 rounded-full">{wishlistCount}</span>
+                            </div>
+                        </NavLink>
 
 
-                        <div className="hidden md:block relative cursor-pointer p-2 hover:bg-black hover:text-white rounded-lg  transition transform hover:scale-110 ease-in-out duration-300" title="Cart" >
-                            <FiShoppingCart size={20} />
-                            <span className="absolute -top-2 -right-2 inline-flex items-center justify-center px-2 py-1 text-xs font-normal leading-none text-white bg-red-600 rounded-full">{wishlistCount}</span>
+
+                        <div className="hidden md:block relative cursor-pointer p-2 " title="Profile">
+                            <CgProfile size={26} />
                         </div>
 
 
