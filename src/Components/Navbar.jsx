@@ -102,7 +102,9 @@ const Navbar = () => {
 
 
                         <div className="hidden md:block relative cursor-pointer p-2 " title="Profile">
-                            <CgProfile size={26} />
+                            <NavLink to="/login">
+                                <CgProfile size={26} />
+                            </NavLink>
                         </div>
 
 
