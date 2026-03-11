@@ -1,11 +1,24 @@
-import { div, form, h1, pattern } from 'framer-motion/client';
-import React, { useState } from 'react'
+// HOOKS
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+
+// ACTIONS
+import { login, logout } from './authSlice';
+
+// TOAST MESSAGE LIBRARY
 import toast from 'react-hot-toast';
 
 const LoginForm = () => {
 
 
-    const [isLogin, setIslogin] = useState(false);
+    const isLogin = useSelector((state) => state.auth.isLogin);
+
+
+    const dispatch = useDispatch();
+
+
+
 
     // EMAIL
     const [email, setEmail] = useState("");
@@ -15,8 +28,8 @@ const LoginForm = () => {
 
     // ERROR MESSAGE
     const [errMsg, setErrMsg] = useState({
-        emailError: "",
-        passwordError: ""
+        emailError: " ",
+        passwordError: " "
     })
 
     // 
@@ -34,7 +47,7 @@ const LoginForm = () => {
             emailError = "Enter a valid email"
             isValid = false;
         } else {
-            emailError = "";
+            emailError = " ";
             isValid = true;
         }
 
@@ -59,7 +72,7 @@ const LoginForm = () => {
             passwordError = "Password have minimum 8 characters, uppercase letter, digit(0-1) and special character";
             isValid = false;
         } else {
-            passwordError = "",
+            passwordError = " ",
                 isValid = true;
         }
 
@@ -86,8 +99,10 @@ const LoginForm = () => {
         e.preventDefault();
 
         if (validateEmail(email) && validatePassword(password)) {
-            setIslogin(true);
+            dispatch(login(true));
             toast.success('Login Successfuly')
+            setEmail(" ");
+            setPassword("")
         }
     }
 
@@ -106,10 +121,11 @@ const LoginForm = () => {
                             value={email}
                             onChange={handleChange}
                             className='px-2 py-3 border border-gray-500 rounded-md' />
-                        <p className='text-sm font-bold text-red-500'>{errMsg.emailError}</p>
+                        <p className='text-sm font-normal text-red-500'>{errMsg.emailError}</p>
                     </div>
 
                     <div className='flex flex-col space-y-2'>
+
                         <label htmlFor="name" className='font-bold'>Password</label>
                         <input
                             type="password"
@@ -118,17 +134,22 @@ const LoginForm = () => {
                             value={password}
                             onChange={handleChange}
                             className='px-2 py-3 border border-gray-500 rounded-md' />
-                        <p className='text-sm font-bold text-red-500'>{errMsg.passwordError}</p>
+
+                        <p className='text-sm font-normal text-red-500'>{errMsg.passwordError}</p>
                     </div>
 
-                    <p className='text-end text-md font-normal  text-blue-700 cursor-pointer '>forget password?</p>
 
-                    <button className=' w-full py-2.5 rounded-md mt-4 bg-blue-400 hover:bg-blue-600/80 cursor-pointer'>
+
+                    <button className=' w-full py-2.5 rounded-md mt-5 bg-blue-400 hover:bg-blue-600/80 cursor-pointer'>
                         Submit
                     </button>
                 </form>)
 
-                : (<h1>Submitted Sucessfuly</h1>)}
+                :
+                (<div><h1>Submitted Sucessfuly</h1>
+                    <button className='px-4 py-2 bg-purple-900 text-white ' onClick={() => dispatch(logout(false))}>Logout</button>
+                </div>
+                )}
         </div>
     )
 }
