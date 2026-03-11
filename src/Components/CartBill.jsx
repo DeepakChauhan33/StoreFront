@@ -1,6 +1,20 @@
+import { div, p } from 'framer-motion/client';
 import React from 'react'
+import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom';
 
 const CartBill = () => {
+
+    const cart = useSelector((state) => state.cart.cart);
+
+
+    const navigate = useNavigate();
+
+    let total = cart.reduce((acc, crr) => {
+        return acc + crr.price * crr.quantity
+    }, 0)
+
+
     return (
         <section>
             <h2 className='text-xl font-semibold mb-3'>Order Smmary</h2>
@@ -16,15 +30,33 @@ const CartBill = () => {
                 {/* Price Details */}
                 <div className="space-y-2 text-sm">
 
-                    <div className="flex justify-between">
-                        <span>Sub Total</span>
-                        <span className="font-medium">$2000</span>
+
+
+                    <div className='  '>
+                        {cart.map((item) => (
+                            <div className='flex justify-between space-y-2'>
+                                <span className='line-clamp-1 w-[70%]'>{item.title}</span>
+                                <span>${(item.price).toFixed(2)}</span>
+                            </div>
+                        ))}
+
                     </div>
 
-                    <div className="flex justify-between text-green-600">
-                        <span>Discount (10%)</span>
-                        <span>- $200</span>
+                    {/* Divider */}
+                    <hr className="my-4" />
+
+                    <div className='flex justify-between '>
+                        <span>SUb-total</span>
+                        <span>{(total).toFixed(2)}</span>
+
                     </div>
+
+                    <div className="flex justify-between">
+                        <span></span>
+                        <span className="font-medium">{ }</span>
+                    </div>
+
+
 
                     <div className="flex justify-between">
                         <span>Delivery fee</span>
@@ -39,13 +71,13 @@ const CartBill = () => {
                 {/* Total */}
                 <div className="flex justify-between text-lg font-semibold mb-4">
                     <span>Total</span>
-                    <span>$1850</span>
+                    <span>${(total + 50).toFixed(2)}</span>
                 </div>
 
                 {/* Checkout & Shoping Btn */}
-                <div className='space-y-3'>
+                <div className='space-y-3 mt-10'>
                     <button className="w-full bg-black text-white py-3 rounded-full hover:bg-gray-900  ">Checkout Now</button>
-                    <button className="w-full bg-gray-50 border text-black py-3 rounded-full ">Continue shopping</button>
+                    <button className="w-full bg-gray-50 border text-black py-3 rounded-full " onClick={() => navigate("/products")}>Continue shopping</button>
                 </div>
 
 

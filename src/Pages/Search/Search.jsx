@@ -16,6 +16,7 @@ const Search = () => {
 
     const { data: Products, isLoading } = useGetProductsQuery();
 
+    const navigate = useNavigate();
 
     const [val, setVal] = useState("");
 
@@ -45,7 +46,6 @@ const Search = () => {
 
     const searchWithDebounce = debounce(search, 1000);
 
-    const navigate = useNavigate();
     return (
         <section className="bg-purple-50 h-[100vh]">
 
@@ -55,7 +55,7 @@ const Search = () => {
                     className="group text-2xl font-bold text-gray-800 md:p-2 rounded-full md:bg-gray-300"
                     onClick={() => navigate(-1)} >
                     <BsArrowLeft className="transition-transform hover:-translate-x-0.5 ease-in-out duration-300"
-                        onClick={() => navigate(-1)} />
+                    />
                 </button>
 
                 <div className="relative flex-1 flex items-center border">
@@ -70,7 +70,7 @@ const Search = () => {
 
 
             <div>
-                
+
             </div>
         </section>
     )

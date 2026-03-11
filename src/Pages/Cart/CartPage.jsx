@@ -74,7 +74,7 @@ const CartPage = () => {
 
                             <div className="block sm:hidden w-full space-y-4">
                                 {cart.map((item) => (
-                                    <div className="flex  bg-gray-200/30 shadow-md gap-3 overflow-hidden">
+                                    <div className="flex  bg-gray-200/30 shadow-md gap-3 overflow-hidden ">
                                         {/* Image Div */}
                                         <div className="h-auto w-20 md:w-25 p-1">
                                             <NavLink to={`/product/${item.id}`}>
@@ -89,8 +89,8 @@ const CartPage = () => {
                                         {/* Product NAme and Quantity */}
                                         <div className="flex flex-1 justify-between p-2 gap-2 ">
                                             {/* Name and Price */}
-                                            <div className="space-y-3">
-                                                <p className="line-clamp-2 md:line-clamp-3 text-md md:text-lg font-semibold ">
+                                            <div className="space-y-3 flex flex-col justify-between">
+                                                <p className="line-clamp-3 md:line-clamp-3 text-md md:text-lg font-semibold ">
                                                     {item.title}
                                                 </p>
                                                 <span className="text-xl font-black">
@@ -99,15 +99,15 @@ const CartPage = () => {
                                             </div>
 
                                             {/* Quantity & Delete Button */}
-                                            <div className=" flex flex-col justify-between items-end gap-3 ">
+                                            <div className=" flex flex-col justify-between items-end gap-4 ">
                                                 <div className="min-w-26 flex justify-end ">
-                                                    <QuantityBtn />
+                                                    <QuantityBtn id={item.id} quantity={item.quantity} />
                                                 </div>
 
                                                 <div>
                                                     <p className="text-sm font-normal">sub total</p>
                                                     <span className="text-md font-black">
-                                                        ${item.price}
+                                                        ${(item.price * item.quantity).toFixed(2)}
                                                     </span>
                                                 </div>
 
@@ -131,7 +131,8 @@ const CartPage = () => {
                                             <th className="text-left px-6 py-3">Product</th>
                                             <th className="text-left px-6 py-3">Quantity</th>
                                             <th className="text-left px-6 py-3">Price</th>
-                                            <th className="text-left px-6 py-3">Remove</th>
+                                            <th className="text-left px-6 py-3">Total</th>
+                                            <th className="text-left px-6 py-3 ">Remove</th>
                                         </tr>
                                     </thead>
 
@@ -142,7 +143,7 @@ const CartPage = () => {
                                                 className="shadow-[0_2px_4px_rgba(0,0,0,0.1)]  hover:bg-gray-100/60 transition-colors duration-200"
                                             >
                                                 <td
-                                                    className="w-[40%] group  px-6 py-4 font-medium cursor-pointer"
+                                                    className="w-[35%] group  px-2 py-3 font-medium cursor-pointer"
                                                     title="product details"
                                                 >
                                                     <NavLink to={`/product/${item.id}`}>
@@ -161,15 +162,25 @@ const CartPage = () => {
                                                     </NavLink>
                                                 </td>
 
-                                                <td className="px-6 py-4 ">
+                                                <td className="px-4 py-3 ">
                                                     <span className=" inline-block min-w-27">
-                                                        <QuantityBtn />
+                                                        <QuantityBtn id={item.id} quantity={item.quantity} />
                                                     </span>
                                                 </td>
 
-                                                <td className="px-6 py-4 ">${item.price.toFixed(2)}</td>
+                                                <td className="px-3 py-4  ">{
 
-                                                <td className="px-6 py-4  ">
+                                                    <span className="inline">{`$ ${item.price.toFixed(2)}`}</span>
+
+
+                                                }</td>
+
+
+                                                <td className="px-2 py-3 ">
+                                                    <p>$ {(item.price * item.quantity).toFixed(2)}</p>
+                                                </td>
+
+                                                <td className="px-2 py-3 text-center ">
                                                     <button
                                                         className="text-2xl  text-red-300 hover:text-red-500 hover:scale-110 transition-transform duration-200 cursor-pointer"
                                                         onClick={() => dispatch(removeFromCart(item.id))}

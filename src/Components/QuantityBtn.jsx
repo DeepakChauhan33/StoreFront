@@ -1,20 +1,24 @@
+// HOOKS
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
 
-const QuantityBtn = () => {
 
-    const [quantity, setQuantity] = useState(1);
+// ACTIONS
+import { increaseQuantity, decreaseQunatity } from '../Pages/Cart/CartSlice';
 
+
+const QuantityBtn = ({ id, quantity }) => {
+
+
+
+    const dispatch = useDispatch();
 
     function hannleDecrease() {
-        if (quantity > 1) {
-            setQuantity(quantity - 1);
-        } else {
-            setQuantity(1);
-        }
+        dispatch(decreaseQunatity(id));
     }
 
     function handleIncrease() {
-        setQuantity(quantity + 1);
+        dispatch(increaseQuantity(id));
     }
 
     return (

@@ -31,6 +31,8 @@ const Home = () => {
 
     const { data: Products, isLoading } = useGetProductsQuery();
 
+    const isLogin = useSelector((state) => state.auth.isLogin);
+
     const navigate = useNavigate();
 
 
@@ -47,9 +49,12 @@ const Home = () => {
 
 
     // This is not work properly as I come back from product page to home it show toast again and twice
-    useEffect(() => { 
-        toast(`Please login first `, { icon: "➜]", position: "top-right", duration: 2000, style: { marginTop: "80px" } })
+    useEffect(() => {
+        { isLogin ? (" ") : (toast(`Please login first `, { icon: "➜]", position: "top-right", duration: 2000, style: { marginTop: "80px" } })) }
     }, [])
+
+
+
 
 
     return (
