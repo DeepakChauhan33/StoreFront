@@ -42,13 +42,14 @@ function App() {
 
 
       <Routes>
-        
+
         <Route path='/' element={<Layout />}>
           <Route path='/' element={<Home />}></Route>
           <Route path='/products' element={<Products />}></Route>
           <Route path='/cart' element={<CartPage />}></Route>
           <Route path='/wishlist' element={<Wishlist />}></Route>
           <Route path="/product/:id" element={<ProductPage />}></Route>
+          <Route path='/orders' element={<OrderPage />}></Route>
           <Route path="/login" element={<LoginPage />}></Route>
         </Route>
 

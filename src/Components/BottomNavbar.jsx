@@ -29,7 +29,7 @@ const BottomNavbar = () => {
                 </button>
 
                 <button>
-                    <NavLink to="/wishlist">
+                    <NavLink to="/login">
                         <CgProfile />
                     </NavLink>
                 </button>

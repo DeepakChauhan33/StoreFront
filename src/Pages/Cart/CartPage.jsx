@@ -112,7 +112,7 @@ const CartPage = () => {
                                                 </div>
 
                                                 <button
-                                                    className="text-2xl  text-red-300 hover:text-red-500 hover:scale-110 transition-transform duration-200 cursor-pointer"
+                                                    className="text-2xl  text-red-400 hover:text-red-500 hover:scale-110 transition-transform duration-200 cursor-pointer"
                                                     onClick={() => dispatch(removeFromCart(item.id))}
                                                 >
                                                     <MdDelete />
