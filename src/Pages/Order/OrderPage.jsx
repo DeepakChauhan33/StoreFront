@@ -7,13 +7,16 @@ import { LuBox } from "react-icons/lu";
 // Motion
 import { motion } from 'framer-motion';
 
-
+// Hooks
 import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
 
 const OrderPage = () => {
 
 
+  const orders = useSelector((state) => state.orders.orders);
+  console.log(orders)
   const [orderMsg, setOrderMsg] = useState("No orders here—why not start shopping?");
 
   const navigate = useNavigate();
@@ -48,6 +51,7 @@ const OrderPage = () => {
             onClick={() => navigate("/products")}
             className='bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors duration-200'>
             Shop Now
+
           </button>
         </div>
       </motion.div>

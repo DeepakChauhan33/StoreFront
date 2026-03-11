@@ -1,18 +1,26 @@
 import { div, p } from 'framer-motion/client';
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
+
+
+import { addOrder } from '../Pages/Order/orderSlice';
 
 const CartBill = () => {
 
     const cart = useSelector((state) => state.cart.cart);
-
+    const dispatch = useDispatch();
 
     const navigate = useNavigate();
 
     let total = cart.reduce((acc, crr) => {
         return acc + crr.price * crr.quantity
     }, 0)
+
+
+    function handleOrder() {
+        dispatch(addOrder(cart));
+    }
 
 
     return (
@@ -76,7 +84,7 @@ const CartBill = () => {
 
                 {/* Checkout & Shoping Btn */}
                 <div className='space-y-3 mt-10'>
-                    <button className="w-full bg-black text-white py-3 rounded-full hover:bg-gray-900  ">Checkout Now</button>
+                    <button className="w-full bg-black text-white py-3 rounded-full hover:bg-gray-900  " onClick={() => handleOrder()}>Checkout Now</button>
                     <button className="w-full bg-gray-50 border text-black py-3 rounded-full " onClick={() => navigate("/products")}>Continue shopping</button>
                 </div>
 

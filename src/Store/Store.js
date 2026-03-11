@@ -3,7 +3,9 @@ import productReducer from "../Pages/Product/ProductSlice";
 import { ProductApi } from "../Pages/Product/ProductApi";
 import wishlistReducer from "../Pages/Wishlist/WishlistSlice";
 import cartReducer from "../Pages/Cart/CartSlice";
-import authSlice from "../Pages/Login/authSlice"
+import authReducer from "../Pages/Login/authSlice";
+import orderReducer from "../Pages/Order/orderSlice";
+
 
 const Store = configureStore({
     reducer: {
@@ -11,7 +13,8 @@ const Store = configureStore({
         [ProductApi.reducerPath]: ProductApi.reducer,
         wishlist: wishlistReducer,
         cart: cartReducer,
-        auth: authSlice
+        auth: authReducer,
+        orders: orderReducer,
 
 
     },
