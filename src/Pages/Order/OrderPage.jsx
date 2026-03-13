@@ -69,23 +69,23 @@ const OrderPage = () => {
               {orders.map((order) => (
                 <div key={order.id}  >
 
-                  <div className='flex justify-between bg-gray-100 px-6 py-2.5 '>
+                  <div className='flex justify-between bg-gray-100 px-1.5 py-2 lg:px-6 lg:py-2.5 text-sm  md:text-md lg:text-lg'>
                     {/* Order ID */}
-                    <div className='flex flex-col justify-center items-start gap-3 p-3'>
+                    <div className='flex flex-col justify-center items-center lg:items-start gap-3 p-2 lg:p-3'>
                       <FaBox />
-                      <p>{order.id}</p>
+                      <p>ID : {order.id}</p>
                     </div>
 
                     {/* Order Date */}
-                    <div className='flex flex-col justify-center items-start gap-3 p-3'>
+                    <div className='flex flex-col justify-center items-center lg:items-start gap-3 p-2 lg:p-3'>
                       <FaRegCalendarAlt />
                       <p>{order.date}</p>
                     </div>
 
-                    <div className='flex flex-col justify-center items-start gap-3 p-3'>
+                    <div className='flex flex-col justify-center items-center lg:items-start gap-3 p-2 lg:p-3' title='Total amount'>
                       {/* Order Total */}
                       <FaDollarSign />
-                      <p>$ {(order.total).toFixed(2)}</p>
+                      <p className='font-bold'>{(order.total + 50).toFixed(2)}</p>
                     </div>
                   </div>
 
@@ -93,7 +93,7 @@ const OrderPage = () => {
                     <p className='text-md font-semibold mb-3'>Order items</p>
                     {order.products.map((item) => (
                       <div className='flex justify-between space-y-4'>
-                        <div>
+                        <div className='w-[70%] '>
                           <p className='text-sm'>{item.title}</p>
                           <p className='text-sm font-medium text-gray-600'>Qty : {item.quantity}</p>
 
@@ -109,10 +109,10 @@ const OrderPage = () => {
                     ))}
                   </div>
 
-                  <div className='flex justify-between p-3.5 px-5 bg-gray-200'>
+                  <div className='flex justify-between p-2 lg:p-3.5 lg:px-5 bg-gray-200'>
                     <span className=' p-2 hover:underline'>View Details</span>
                     <button
-                      className='shadow-md rounded-md px-3 py-1 bg-white cursor-pointer transition-transform hover:scale-101'
+                      className='shadow-md rounded-md px-2 lg:px-3 py-1 text-sm  bg-white cursor-pointer transition-transform hover:scale-101'
                       onClick={() => (navigate("/products"))}>order again</button>
                   </div>
 

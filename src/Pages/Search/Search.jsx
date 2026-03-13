@@ -69,7 +69,7 @@ const Search = () => {
 
 
     return (
-        <section className="bg-purple-50 h-screen">
+        <section className="bg-purple-50 h-fit">
 
             <div className="h-18 border flex items-center gap-3 sm:gap-5 lg:gap-8 p-2 sm:p-5 lg:p-7">
 

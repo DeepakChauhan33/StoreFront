@@ -1,32 +1,40 @@
-import { section } from 'framer-motion/client'
+
 import React from 'react'
+
+// HOOKS
+import { useSelector } from 'react-redux';
+
 
 
 // Components
 import LoginForm from './LoginForm';
 
+
+
 const LoginPage = () => {
 
-
+    const isLogin = useSelector((state) => state.auth.isLogin)
     return (
 
         <section className='bg-gray-100 h-fit  py-14 flex flex-col justify-center items-center p-8'>
 
+            {isLogin ?
+                (
+                    <div className='w-full -m-8  h-screen border
+                    bg-[url("https://www.pngall.com/wp-content/uploads/19/Ecommerce-Website-Seasonal-Discount-Banner-PNG.png")]  bg-cover bg-no-repeat bg-center'>
+
+                    </div>
+                )
+
+                :
+
+                (
+                    <LoginForm />
+                )
+
+            }
 
 
-            <div className='w-full lg:w-[50%] p-4 bg-white rounded-xl shadow-xl '>
-
-
-                <div className='space-y-2 md:space-y-4 mb-4 md:mb-6 lg:mb-10 px-2'>
-                    <h2 className='text-xl md:text-2xl lg:text-4xl font-bold'>Welcome back</h2>
-                    <p className='text-sm md:text-lg lg:text-xl '>Welcome back! Please enter your details</p>
-                </div>
-
-
-
-                <LoginForm />
-
-            </div>
         </section>
     )
 }
