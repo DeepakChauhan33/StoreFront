@@ -25,7 +25,7 @@ import { NavLink } from 'react-router-dom';
 import WishlistBtn from './WishlistBtn';
 
 
-const ProductCard = ({ product }) => {
+const ProductCard = React.memo(({ product }) => {
 
 
 
@@ -44,6 +44,7 @@ const ProductCard = ({ product }) => {
 
 
     }
+
 
 
 
@@ -118,6 +119,6 @@ const ProductCard = ({ product }) => {
 
         </motion.div >
     )
-}
+})
 
 export default ProductCard

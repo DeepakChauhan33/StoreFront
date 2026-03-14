@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 
 
 
@@ -14,6 +14,10 @@ import ContentLoader from 'react-content-loader'
 
 
 import { useGetProductsQuery } from '../Product/ProductApi';
+
+
+
+
 
 const ProductPage = ({ ...rest }) => {
 
@@ -85,7 +89,9 @@ const ProductPage = ({ ...rest }) => {
 
                     <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7 '>
 
-                        {filterProducts?.map((item) => <ProductCard product={item} />)}
+                        {filterProducts?.map((item) =>
+                            <ProductCard key={item.id} product={item} />)
+                        }
 
                     </div>
                 </div>

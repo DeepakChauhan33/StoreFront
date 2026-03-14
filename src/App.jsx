@@ -1,5 +1,10 @@
-import { Routes, Route } from 'react-router-dom';
 import './App.css'
+
+
+// Hooks
+import { Routes, Route } from 'react-router-dom';
+
+
 
 // Importing Navbar
 import Navbar from './Components/Navbar'
@@ -12,6 +17,10 @@ import Wishlist from './Pages/Wishlist/Wishlist';
 import ProductPage from './Pages/ProductPage/ProductPage';
 import Search from './Pages/Search/Search';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
+import LoginPage from './Pages/Login/LoginPage';
+import CartPage from './Pages/Cart/CartPage';
+
+
 
 // Importing Layout Component
 import Layout from './Layout/Layout';
@@ -19,13 +28,15 @@ import Layout from './Layout/Layout';
 
 // Importing Components
 import BottomNavbar from './Components/BottomNavbar';
-import CartPage from './Pages/Cart/CartPage';
+import Loader from './Components/Loader';
 
 // Toast Message Library
 import { Toaster } from "react-hot-toast";
-import LoginPage from './Pages/Login/LoginPage';
 
 
+
+// Spinner
+import { FaSpinner } from 'react-icons/fa';
 
 
 
@@ -58,7 +69,6 @@ function App() {
         <Route path='*' element={<ErrorPage />}></Route>
 
       </Routes>
-
 
 
       <div className='md:hidden fixed bottom-0 left-0 w-full z-50'>

@@ -30,6 +30,7 @@ import { FaHeart } from "react-icons/fa";
 // Custom Hooks
 import { useGetDynamicProductQuery, useGetProductsQuery } from '../Product/ProductApi';
 import WishlistBtn from "../../Components/WishlistBtn";
+import Loader from "../../Components/Loader";
 
 
 const ProductsPage = () => {
@@ -46,7 +47,7 @@ const ProductsPage = () => {
 
     const wishlist = useSelector((state) => state.wishlist.wishlist);
 
-    if (isLoading) return <p>Loading...</p>;
+    if (isLoading) return <Loader />;
 
 
 

@@ -37,22 +37,16 @@ const CartBill = ({ setLoader }) => {
                 products: cart,
                 total: total,
                 date: new Date().toLocaleDateString()
-
             }
-
 
             dispatch(addOrder(orderDtat))
             dispatch(clearCart());
-            navigate("/orders")
             setLoader(false);
+            navigate("/orders")
 
         }, 2000);
     }
 
-
-    const handlePreOrder = setInterval(() => {
-
-    })
 
     return (
         <section>
