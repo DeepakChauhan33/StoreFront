@@ -14,7 +14,7 @@ const UserPage = () => {
 
     const dispatch = useDispatch();
     return (
-        <div className=' w-full  h-150  p-3 flex flex-col justify-center items-center  shadow-md
+        <div className=' w-full  h-150  p-3 flex flex-col justify-center items-center  shadow-md -mx-3 -my-10
                     bg-[url("https://www.pngall.com/wp-content/uploads/19/Ecommerce-Website-Seasonal-Discount-Banner-PNG.png")]  bg-cover bg-no-repeat object-contain bg-center opacity-85'>
 
 

@@ -4,9 +4,13 @@ import React from 'react'
 // Framer Motion Library
 import { animate, motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
+import Loader from '../../Components/Loader';
 
-const Categories = ({ product, heading }) => {
+const Categories = ({ product, heading, isLoading }) => {
 
+    if (isLoading) {
+        return <Loader />
+    }
 
     return (
 

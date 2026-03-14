@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { useGetProductsQuery } from '../Product/ProductApi';
 
 // Components
-import CategoryCard from '../../Components/CategoryCard';
+import CategoryCard from './CategoryCard';
 import ProductCard from '../../Components/ProductCard';
 
 
@@ -19,6 +19,7 @@ import { motion } from 'framer-motion';
 import { NavLink, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { useEffect } from 'react';
+import Loader from '../../Components/Loader';
 
 
 
@@ -124,10 +125,10 @@ const Home = () => {
 
                 className='py-12 px-5 space-y-8 sm:space-y-10 lg:space-y-12'
 
-                initial={{ opacity: 0, y: 40 }}  //Animation
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
-                viewport={{ once: true, amount: 0.4 }}
+            // initial={{ opacity: 0, y: 40 }}  //Animation
+            // whileInView={{ opacity: 1, y: 0 }}
+            // transition={{ duration: 1 }}
+            // viewport={{ once: true, amount: 0.4 }}
             >
 
                 {/* Title and Description */}
@@ -165,19 +166,19 @@ const Home = () => {
 
                     <div className='py-4 px-3 rounded-md bg-gray-100 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
 
-                        {isLoading ? <p>Loading....</p> : <CategoryCard product={filterProduct("women's clothing")} heading={"Women's Wear"} />}
+                        <CategoryCard product={filterProduct("women's clothing")} heading={"Women's Wear"} isLoading={isLoading} />
                     </div>
 
                     <div className='py-4 px-3 rounded-md bg-gray-100 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
-                        {isLoading ? <p>Loading....</p> : <CategoryCard product={filterProduct("jewelery")} heading={"Jewelry"} />}
+                        <CategoryCard product={filterProduct("jewelery")} heading={"Jewelry"} isLoading={isLoading} />
                     </div>
 
                     <div className='py-4 px-3 rounded-md bg-gray-100 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
-                        {isLoading ? <p>Loading....</p> : <CategoryCard product={filterProduct("men's clothing")} heading={"Men's Wear"} />}
+                        <CategoryCard product={filterProduct("men's clothing")} heading={"Men's Wear"} isLoading={isLoading} />
                     </div>
 
                     <div className='py-4 px-3 rounded-md bg-gray-100 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
-                        {isLoading ? <p>Loading....</p> : <CategoryCard product={filterProduct("electronics")} heading={"Electronics"} />}
+                        <CategoryCard product={filterProduct("electronics")} heading={"Electronics"} isLoading={isLoading} />
                     </div>
 
 

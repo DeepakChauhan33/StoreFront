@@ -78,7 +78,7 @@ const Navbar = () => {
                     <div className="flex items-center gap space-x-4 md:xl:space-x-6">
 
 
-                        <div className="" >
+                        <div className="cursor-pointer p-2 hover:bg-black hover:text-white rounded-lg  transition transform hover:scale-110 ease-in-out duration-300" >
                             <NavLink to="/search">
                                 <BsSearch size={20} />
                             </NavLink>
