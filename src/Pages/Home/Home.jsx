@@ -13,6 +13,7 @@ import ProductCard from '../../Components/ProductCard';
 
 // React ICons
 import { TiArrowRight } from "react-icons/ti";
+import { FiArrowRight } from "react-icons/fi";
 
 // Import Framer Motion Library For Animation
 import { motion } from 'framer-motion';
@@ -208,6 +209,33 @@ const Home = () => {
                     {Products?.slice(2, 6).map((item) => <ProductCard product={item} isLoading={isLoading} />)}
 
                 </div>
+            </section>
+
+
+
+
+
+
+            <section className='p-2'>
+
+                <div className=' flex flex-col justify-center items-center mb-12 rounded-md  gap-y-6 py-14 bg-linear-to-r from-stone-700 to-stone-500'>
+
+                    <div className='text-center space-y-4'>
+                        <h1 className='text-5xl font-black text-white'>Ready to shop?</h1>
+                        <p className='text-center text-lg font-normal text-gray-100'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, iste! Soluta <br />mollitia expedita ad doloremque.</p>
+                    </div>
+
+                    <div className=''>
+                        <button
+                            className='inline-block text-white bg-stone-800 px-8 py-2 rounded-sm shadow-sm shadow-gray-50/50 transition-transform hover:scale-102 hover:text-md'
+                            onClick={() => navigate('/products')}>
+                            Browse All Products <FiArrowRight className='inline' />
+                        </button>
+                    </div>
+
+                </div>
+
+
             </section>
 
 
