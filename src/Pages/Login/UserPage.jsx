@@ -27,7 +27,7 @@ const UserPage = () => {
 
                 </div>
 
-                <p className='text-2xl'>{user?.name}</p>
+                <p className='text-lg font-semibold md:text-2xl'>{user?.name}</p>
 
                 <button className='py-2  w-full mt-4 rounded-md bg-purple-500'
                     onClick={() => dispatch(logout(false))}>

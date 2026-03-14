@@ -1,5 +1,3 @@
-import './App.css'
-
 
 // Hooks
 import { Routes, Route } from 'react-router-dom';
@@ -55,7 +53,7 @@ function App() {
 
       <Routes>
 
-        
+
 
         <Route path='/' element={<Layout />}>
           <Route path='/' element={<Home />}></Route>

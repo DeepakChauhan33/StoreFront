@@ -20,6 +20,9 @@ const BottomNavbar = () => {
 
     const isLogin = useSelector((state) => state.auth.isLogin);
 
+    const cart = useSelector((state) => state.cart.cart)
+    const cartCount = cart.length;
+
     return (
         <nav>
 
@@ -44,8 +47,10 @@ const BottomNavbar = () => {
 
                 {/* CART */}
                 <NavLink to="/cart">
-                    <li className="flex flex-col justify-center items-center gap-1.5">
+                    <li className="relative flex flex-col justify-center items-center gap-1.5">
                         <FiShoppingCart />
+                        {cartCount > 0 ? (<span className="absolute -top-3 right-1 text-[#fa6b6b] text-sm">{cartCount}</span>) : (" ")}
+
                         <span className="text-xs sm:text-sm">Cart</span>
                     </li>
                 </NavLink>

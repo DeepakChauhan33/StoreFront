@@ -172,6 +172,8 @@ const LoginForm = () => {
                         id='name'
                         name='name'
                         value={name}
+                        required
+                        autoFocus
                         onChange={handleChange}
                         className='px-2 py-3 border border-gray-500 rounded-md' />
                     <p className='text-sm font-normal text-red-500'>{errMsg.nameError}</p>
@@ -185,6 +187,7 @@ const LoginForm = () => {
                         id='email'
                         name='email'
                         value={email}
+                        required
                         onChange={handleChange}
                         className='px-2 py-3 border border-gray-500 rounded-md' />
                     <p className='text-sm font-normal text-red-500'>{errMsg.emailError}</p>
@@ -198,6 +201,7 @@ const LoginForm = () => {
                         id='password'
                         name='password'
                         value={password}
+                        required
                         onChange={handleChange}
                         className='px-2 py-3 border border-gray-500 rounded-md' />
 

@@ -1,10 +1,16 @@
+// HOOKS
+import { useNavigate } from "react-router-dom";
 
+import { NavLink } from "react-router-dom";
 
 // ICONS
 import { FaInstagram, FaTwitter, FaFacebookF } from "react-icons/fa";
 
 
 const Footer = () => {
+
+  const navigate = useNavigate();
+
   return (
     <footer className="bg-[#0f0d11] text-gray-300 pb-12 md:p-0">
       <div className="max-w-7xl mx-auto px-6 py-12">
@@ -39,10 +45,21 @@ const Footer = () => {
             </h2>
 
             <ul>
-              <li className="hover:text-white cursor-pointer">Home</li>
-              <li className="hover:text-white cursor-pointer">Products</li>
-              <li className="hover:text-white cursor-pointer">Cart</li>
-              <li className="hover:text-white cursor-pointer">Orders</li>
+              <NavLink to="/">
+                <li className="hover:text-white cursor-pointer">Home</li>
+              </NavLink>
+
+              <NavLink to="/products">
+                <li className="hover:text-white cursor-pointer">Products</li>
+              </NavLink>
+
+              <NavLink to="/cart">
+                <li className="hover:text-white cursor-pointer">Cart</li>
+              </NavLink>
+
+              <NavLink to="orders">
+                <li className="hover:text-white cursor-pointer">Orders</li>
+              </NavLink>
             </ul>
           </div>
 
@@ -55,10 +72,24 @@ const Footer = () => {
             </h2>
 
             <ul>
-              <li className=" hover:text-white cursor-pointer">Men's</li>
-              <li className=" hover:text-white cursor-pointer">Women's</li>
-              <li className=" hover:text-white cursor-pointer">Electronics</li>
-              <li className=" hover:text-white cursor-pointer">Jewelry</li>
+
+              <NavLink to="/products">
+                <li className=" hover:text-white cursor-pointer">Men's</li>
+              </NavLink>
+
+              <NavLink to="/products">
+                <li className=" hover:text-white cursor-pointer">Women's</li>
+              </NavLink>
+
+              <NavLink to="/products">
+                <li className=" hover:text-white cursor-pointer">Electronics</li>
+              </NavLink>
+
+              <NavLink to="/products">
+                <li className=" hover:text-white cursor-pointer">Jewelry</li>
+              </NavLink>
+
+
             </ul>
           </div>
 
