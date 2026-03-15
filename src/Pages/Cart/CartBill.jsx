@@ -7,9 +7,14 @@ import { useNavigate } from 'react-router-dom';
 import { clearCart } from './CartSlice';
 import { addOrder } from '../Order/orderSlice';
 
+
+// Toast Message
+import toast from 'react-hot-toast';
+
 const CartBill = ({ setLoader }) => {
 
     const cart = useSelector((state) => state.cart.cart);
+    const isLogin = useSelector((state) => state.auth.isLogin);
     const dispatch = useDispatch();
 
     const navigate = useNavigate();
@@ -29,22 +34,29 @@ const CartBill = ({ setLoader }) => {
 
     function handleOrder() {
 
-        setLoader(true);
+        if (isLogin) {
 
-        setTimeout(() => {
-            const orderDtat = {
-                id: Date.now(),
-                products: cart,
-                total: total,
-                date: new Date().toLocaleDateString()
-            }
+            setLoader(true);
 
-            dispatch(addOrder(orderDtat))
-            dispatch(clearCart());
-            setLoader(false);
-            navigate("/orders")
+            setTimeout(() => {
+                const orderDtat = {
+                    id: Date.now(),
+                    products: cart,
+                    total: total,
+                    date: new Date().toLocaleDateString()
+                }
 
-        }, 2000);
+                dispatch(addOrder(orderDtat))
+                dispatch(clearCart());
+                setLoader(false);
+                navigate("/orders")
+
+            }, 2000);
+        } else {
+
+            navigate('/login');
+            (toast(`Please login first `, { icon: "➜]", position: "top-right", duration: 2000, style: { marginTop: "80px", color: 'red' } }))
+        }
     }
 
 

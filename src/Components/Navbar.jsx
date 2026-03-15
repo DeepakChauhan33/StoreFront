@@ -17,12 +17,13 @@ import { NavLink } from "react-router-dom";
 
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
 
-    const wishlist = useSelector((state) => state.wishlist.wishlist)
+    const isLogin = useSelector((state) => state.auth.isLogin);
+
+    const wishlist = useSelector((state) => state.wishlist.wishlist);
     const wishlistCount = wishlist.length;
 
-    const cart = useSelector((state) => state.cart.cart)
+    const cart = useSelector((state) => state.cart.cart);
     const cartCount = cart.length;
 
     return (
@@ -93,29 +94,16 @@ const Navbar = () => {
                             </div>
                         </NavLink>
 
-                        {/* <NavLink to="/cart">
-                            <div className="hidden md:block relative cursor-pointer p-2 hover:bg-black hover:text-white rounded-lg  transition transform hover:scale-110 ease-in-out duration-300" title="Cart" >
-                                <FiShoppingCart size={20} />
-                                <span className="absolute -top-2 -right-2 inline-flex items-center justify-center px-2 py-1 text-xs font-normal leading-none text-white bg-red-600 rounded-full">{cartCount}</span>
-                            </div>
-                        </NavLink> */}
 
 
 
-                        <div className="hidden md:block relative cursor-pointer p-2 " title="Profile">
+                        <div className={`hidden md:block relative cursor-pointer p-2  }`} title="Profile">
                             <NavLink to="/login">
-                                <CgProfile size={26} />
+                                <CgProfile size={26} className={`${isLogin ? 'text-purple-600' : 'text-gray-900'}`} />
                             </NavLink>
                         </div>
 
 
-                        {/* <div className="md:hidden cursor-pointer">
-                            {isOpen ? (
-                                <FiX size={24} onClick={() => setIsOpen(false)} />
-                            ) : (
-                                <FiMenu size={24} className="" onClick={() => setIsOpen(true)} />
-                            )}
-                        </div> */}
 
 
 

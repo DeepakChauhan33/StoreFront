@@ -1,6 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { act } from "react";
-import { useSelector } from "react-redux";
 
 
 // Function
@@ -32,21 +30,23 @@ const cartSlice = createSlice({
             } else {
                 state.cart.push({ ...product, quantity: 1 }) //Here I add our own quantity property 
             }
+
+            setLocalStorage("cart", state.cart);
         },
 
         removeFromCart: (state, action) => {
 
             const productID = action.payload;
 
-            const exist = state.cart.find((item) => item.id === productID)
             state.cart = state.cart.filter((item) => item.id !== action.payload)
 
-
+            setLocalStorage("cart", state.cart);
         },
 
 
         clearCart: (state, action) => {
             state.cart = [];
+            setLocalStorage("cart", state.cart);
         },
 
 
@@ -60,6 +60,8 @@ const cartSlice = createSlice({
             } else {
 
             }
+
+            setLocalStorage("cart", state.cart);
         },
 
 
@@ -73,6 +75,8 @@ const cartSlice = createSlice({
             } else {
 
             }
+
+            setLocalStorage("cart", state.cart);
         }
 
 
