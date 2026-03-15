@@ -14,6 +14,11 @@ import ProductCard from '../../Components/ProductCard';
 // React ICons
 import { TiArrowRight } from "react-icons/ti";
 import { FiArrowRight } from "react-icons/fi";
+import { PiRocketLaunchDuotone } from "react-icons/pi";
+import { IoReloadCircleOutline } from "react-icons/io5";
+import { MdOutlineDiscount } from "react-icons/md";
+import { MdSupportAgent } from "react-icons/md";
+
 
 // Import Framer Motion Library For Animation
 import { motion } from 'framer-motion';
@@ -215,10 +220,76 @@ const Home = () => {
 
 
 
+            <section className='w-full '>
 
-            <section className='p-2'>
+                <div className=' flex flex-col justify-center items-center mb-12 rounded-md  lg:py-16 lg:px-7 gap-y-8 lg:gap-y-14'>
 
-                <div className=' flex flex-col justify-center items-center mb-12 rounded-md  gap-y-6 py-14 bg-linear-to-r from-stone-700 to-stone-500'>
+                    <div className='text-center'>
+                        <h1 className='text-2xl md:text-3xl lg:text-5xl font-black '>What we believe</h1>
+                    </div>
+
+                    <div className=' grid grid-cols-2 md:grid-cols-4 justify-items-center items-start space-y-10 w-full '>
+
+                        <div className='flex items-center gap-x-3'>
+                            <div className='text-2xl md:text-3xl lg:text-4xl'>
+                                <PiRocketLaunchDuotone />
+                            </div>
+
+                            <div>
+                                <p className='text-sm lg:text-lg font-bold'>Free Shipping</p>
+                                <span className='text-sm lg:text-md font-normal text-gray-500'>Orders $50 or moree</span>
+                            </div>
+                        </div>
+
+                        <div className='flex items-center gap-x-3'>
+                            <div className='text-2xl md:text-3xl lg:text-4xl'>
+                                <IoReloadCircleOutline />
+                            </div>
+
+                            <div>
+                                <p className='text-sm lg:text-lg font-bold'>Free returns</p>
+                                <span className='text-sm lg:text-md font-normal text-gray-500'>Within 30 days</span>
+                            </div>
+                        </div>
+
+                        <div className='flex items-center gap-x-3'>
+                            <div className='text-2xl md:text-3xl lg:text-4xl'>
+                                <MdOutlineDiscount />
+                            </div>
+
+                            <div>
+                                <p className='text-sm lg:text-lg font-bold'>Get 10 to 20% off </p>
+                                <span className='text-sm lg:text-md font-normal text-gray-500'>When you sign up</span>
+                            </div>
+                        </div>
+
+                        <div className='flex items-center gap-x-3 '>
+                            <div className='text-2xl md:text-3xl lg:text-4xl'>
+                                <MdSupportAgent />
+                            </div>
+
+                            <div>
+                                <p className='text-sm lg:text-lg font-bold'>We support</p>
+                                <span className='text-sm lg:text-md font-normal text-gray-500'>24/7 amazing service</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+
+
+
+
+
+            <section className=''>
+
+                <div className=' flex flex-col justify-center items-center mb-12 rounded-md  gap-y-6 py-14 bg-linear-to-r from-stone-400 to-stone-300'>
 
                     <div className='text-center space-y-4'>
                         <h1 className='text-5xl font-black text-white'>Ready to shop?</h1>
