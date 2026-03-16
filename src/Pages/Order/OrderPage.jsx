@@ -1,11 +1,20 @@
 import React, { useState } from 'react'
 
+
+// Component
+import ButtonComp from "../../Components/ButtonComp";
+
+
+
 // React Icons
 import { LuBox } from "react-icons/lu";
 import { FaBox } from "react-icons/fa6";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaDollarSign } from "react-icons/fa6";
 
+
+// Action
+import { clearOrder } from './orderSlice';
 
 
 // Motion
@@ -26,11 +35,13 @@ const OrderPage = () => {
 
   const navigate = useNavigate();
 
+  const dispatch = useDispatch();
+
   return (
-    <section className=' p-2 py-4 '>
+    <section className=' p-2 py-4  '>
 
       <motion.div
-        className='px-3'
+        className='p-2 py-4 space-y-2 bg-linear-to-r from-slate-200 via-gray-300 to-gray-200'
 
         initial={{ y: -30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -52,7 +63,7 @@ const OrderPage = () => {
       >
         {orders.length === 0 ?
           (
-            <div className='h-98 flex flex-col justify-center items-center gap-4'>
+            <div className='h-98 flex flex-col justify-center items-center gap-4 '>
               <LuBox className="text-7xl lg:text-8xl text-gray-400" />
               <p className="text-md md:text-xl lg:text-3xl font-light">
                 {orderMsg}
@@ -126,6 +137,9 @@ const OrderPage = () => {
               ))}
 
 
+              <div className=' flex justify-center items-center mt-5'>
+                <button className=' bg-black text-sm text-white px-2 py-3 lg:px-4 lg:py-3 rounded-sm hover:bg-gray-800' onClick={() => dispatch(clearOrder())}>Clear order</button>
+              </div>
 
 
             </div>

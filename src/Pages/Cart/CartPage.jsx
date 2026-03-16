@@ -48,7 +48,7 @@ const CartPage = () => {
         <section className=" p-2 py-4 ">
             {/* ================= HEADING AND ITEMS COUNT================= */}
             <motion.div
-                className="px-2"
+                className="p-2 py-4 space-y-2"
                 initial={{ y: -30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8 }}

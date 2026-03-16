@@ -220,7 +220,7 @@ const Home = () => {
 
 
             {/* WHAT WE BELIEVE SECTION */}
-            <section className='w-full p-4 bg-linear-to-r from-gray-200 via-zinc-200 to-neutral-300'>
+            <section className='w-full p-4 bg-linear-to-r from-gray-200/30 via-zinc-200 to-neutral-100 '>
 
                 <div className=' flex flex-col justify-center items-center mb-12 rounded-md py-10  lg:py-18 lg:px-7 gap-y-15 lg:gap-y-25'>
 
@@ -230,7 +230,7 @@ const Home = () => {
 
                     <div className='grid gird-cols-1 md:grid-cols-2 lg:grid-cols-4  justify-items-center items-start gap-x-5 space-y-10 w-full p-2'>
 
-                        <div className='flex items-center gap-x-3 w-full '>
+                        <div className='flex items-center gap-x-3 w-full  '>
                             <div className='text-4xl'>
                                 <PiRocketLaunchDuotone />
                             </div>
@@ -241,7 +241,7 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <div className='flex items-center gap-x-3 w-full'>
+                        <div className='flex items-center gap-x-3 w-full '>
                             <div className='text-4xl'>
                                 <IoReloadCircleOutline />
                             </div>
@@ -252,7 +252,7 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <div className='flex items-center gap-x-3 w-full'>
+                        <div className='flex items-center gap-x-3 w-full '>
                             <div className='text-4xl'>
                                 <MdOutlineDiscount />
                             </div>
@@ -263,7 +263,7 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <div className='flex items-center gap-x-3 w-full '>
+                        <div className='flex items-center gap-x-3 w-full  '>
                             <div className='text-4xl'>
                                 <MdSupportAgent />
                             </div>

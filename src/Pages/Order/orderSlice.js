@@ -15,11 +15,16 @@ const orderSlice = createSlice({
         addOrder: (state, action) => {
             state.orders.push(action.payload);
 
-            // save updated orders
             setLocalStorage("order", state.orders);
+        },
+
+        clearOrder: (state, action) => {
+            state.orders = [];
+            setLocalStorage("order", state.orders);
+
         }
     }
 });
 
-export const { addOrder } = orderSlice.actions;
+export const { addOrder, clearOrder } = orderSlice.actions;
 export default orderSlice.reducer;
