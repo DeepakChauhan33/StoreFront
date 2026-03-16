@@ -5,6 +5,9 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 
 
+import ScrollTop from './Components/ScrollTop';
+
+
 
 
 import { Provider } from 'react-redux';
@@ -14,6 +17,7 @@ createRoot(document.getElementById('root')).render(
 
   <BrowserRouter>
 
+    <ScrollTop />
     <StrictMode>
       <Provider store={Store}>
         <App />

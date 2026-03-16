@@ -87,7 +87,7 @@ const CartBill = ({ setLoader }) => {
 
                     </div>
 
-                    {/* Divider */}
+                    
                     <hr className="my-4" />
 
                     <div className='flex justify-between '>
