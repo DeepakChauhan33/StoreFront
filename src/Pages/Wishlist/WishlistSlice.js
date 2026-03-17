@@ -33,6 +33,12 @@ const wishlistSlice = createSlice({
 
             // Save updated wishlist
             setLocalStorage("wishlist", state.wishlist);   //Here we storre updated wislist in local storage
+        },
+
+        removeFromWishlist: (state, action) => {
+
+            state.wishlist = state.wishlist.filter((item) => item.id !== action.payload);
+            setLocalStorage("wishlist", state.wishlist);
         }
     }
 })

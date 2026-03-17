@@ -57,7 +57,7 @@ const ProductCard = React.memo(({ product }) => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true, amount: 0.4 }}
 
-            className='flex flex-col justify-between rounded-lg border shadow-md border-gray-200 min-h-[450px] p-2 pb-4 space-y-2.5 overflow-hidden'
+            className='flex flex-col justify-between rounded-lg border shadow-md border-gray-200 min-h-[450px] p-2 pb-4 space-y-2.5 overflow-hidden bg-white'
             id={product.id}>
 
 

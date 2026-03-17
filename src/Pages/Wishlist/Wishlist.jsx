@@ -14,6 +14,8 @@ import { motion } from 'framer-motion';
 import { LuBox } from "react-icons/lu";
 import { IoIosClose } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
+import { PiCalendarHeartLight } from "react-icons/pi";
+import { TbShoppingBagHeart } from "react-icons/tb";
 
 
 
@@ -36,14 +38,14 @@ const Wishlist = () => {
   return (
     <section className=' py-4 p-3'>
 
-      <motion.div className='flex flex-col items-start gap-1 mb-6'
+      <motion.div className='flex flex-col items-start gap-2 lg:gap-3 mb-6 px-2'
 
         initial={{ y: -30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className='text-2xl sm:text-3xl lg:text-4xl font-semibold lg:font-light'>My Wishlist</h2>
-        <p>{wishlist.length} items in wishlist</p>
+        <h1 className='text-2xl sm:text-3xl lg:text-4xl text-center font-semibold lg:font-extrabold'><TbShoppingBagHeart className='inline text-6xl text-slate-800' /> My Wishlist</h1>
+        {wishlist.length === 0 ? (<p className='pl-3 text-md lg:text-xl'>Add your favorite products to come back to them later</p>) : (<p className='pl-3 text-md lg:text-xl'>You have {wishlist.length} items in your wishlist</p>)}
       </motion.div>
 
       <div>
@@ -57,7 +59,7 @@ const Wishlist = () => {
 
           >
             <div className='flex flex-col justify-center items-center gap-4'>
-              <LuBox className="text-7xl lg:text-8xl text-gray-400" />
+              <PiCalendarHeartLight className="text-7xl lg:text-9xl  text-gray-400" />
 
               <p className="text-md md:text-xl lg:text-3xl font-light">
                 No items in your wishlist
@@ -81,7 +83,7 @@ const Wishlist = () => {
               {wishlist.map((item) => (
                 <div className=' flex shadow-sm bg-gray-100 gap-1.5' key={item.id}>
                   {/* Image */}
-                  <div className='relative h-40 w-50 p-2 bg-gray-200 ' title="product details">
+                  <div className='relative h-38 w-50 p-2 bg-gray-200 ' title="product details">
 
                     <NavLink to={`/product/${item.id}`} >
                       <img src={item.image} alt={item.category} className='h-full w-full object-contain' />
@@ -193,7 +195,7 @@ const Wishlist = () => {
 
             </div>
 
-            <div className='text-center mt-5'>
+            <div className='text-center mt-7 py-4'>
               <button
                 onClick={() => navigate("/products")}
                 className='bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors duration-200'>

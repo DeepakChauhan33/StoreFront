@@ -41,7 +41,7 @@ const OrderPage = () => {
     <section className=' p-2 py-4  '>
 
       <motion.div
-        className='p-2 py-4 space-y-2 bg-linear-to-r from-slate-200 via-gray-300 to-gray-200'
+        className='p-2 py-4 space-y-2 bg-linear-to-r from-blue-50 via-blue-100 to-blue-200'
 
         initial={{ y: -30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

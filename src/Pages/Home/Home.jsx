@@ -85,13 +85,13 @@ const Home = () => {
 
                 >
 
-                    <motion.h2 className="text-3xl xl:text-7xl text-gray-800 font-bold text-center mt-30"
+                    <motion.h1 className="text-3xl xl:text-7xl text-gray-800 font-bold text-center mt-30"
                         initial={{ opacity: 0, y: -40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
                     >
                         Welcome to StoreMart
-                    </motion.h2>
+                    </motion.h1>
 
                     <div className='text-center'>
                         <motion.p
@@ -129,7 +129,7 @@ const Home = () => {
             {/* SHOP BY CATEGORY */}
             <motion.section
 
-                className='py-12 px-5 space-y-8 sm:space-y-10 lg:space-y-12'
+                className='py-12 px-5 space-y-8 sm:space-y-10 lg:space-y-12 bg-linear-to-r from-zinc-50 to-neutral-100'
 
             // initial={{ opacity: 0, y: 40 }}  //Animation
             // whileInView={{ opacity: 1, y: 0 }}
@@ -138,7 +138,7 @@ const Home = () => {
             >
 
                 {/* Title and Description */}
-                <div className=''>
+                <div className=' '>
 
                     <motion.h2
 
@@ -170,20 +170,20 @@ const Home = () => {
 
                 <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-7 '>
 
-                    <div className='py-4 px-3 rounded-md bg-gray-100 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
+                    <div className='py-4 px-3 rounded-md bg-linear-to-r from-fuchsia-50/50 to-purple-50/60 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
 
                         <CategoryCard product={filterProduct("women's clothing")} heading={"Women's Wear"} isLoading={isLoading} />
                     </div>
 
-                    <div className='py-4 px-3 rounded-md bg-gray-100 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
+                    <div className='py-4 px-3 rounded-md bg-linear-to-r from-amber-200/10 to-yellow-100/10 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
                         <CategoryCard product={filterProduct("jewelery")} heading={"Jewelry"} isLoading={isLoading} />
                     </div>
 
-                    <div className='py-4 px-3 rounded-md bg-gray-100 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
+                    <div className='py-4 px-3 rounded-md bg-linear-to-r from-stone-400/10 to-zinc-700/10 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
                         <CategoryCard product={filterProduct("men's clothing")} heading={"Men's Wear"} isLoading={isLoading} />
                     </div>
 
-                    <div className='py-4 px-3 rounded-md bg-gray-100 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
+                    <div className='py-4 px-3 rounded-md bg-linear-to-r from-slate-500/20 to-gray-600/20 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
                         <CategoryCard product={filterProduct("electronics")} heading={"Electronics"} isLoading={isLoading} />
                     </div>
 
@@ -218,14 +218,39 @@ const Home = () => {
 
 
 
+            {/* READAY TO SHOP */}
+            <section className='py-5 lg:py-10 border-t border-stone-200 bg-linear-to-r from-slate-50 via-gray-100 to-gray-50'>
+
+                <div className=' flex flex-col justify-center items-center mb-12 rounded-md  gap-y-6 py-9 '>
+
+                    <div className='text-center space-y-3 md:space-y-4'>
+                        <h3 className='text-3xl sm:text-4xl lg:text-5xl font-black '>Ready to shop?</h3>
+                        <p className='p-2 lg:px-2 text-center text-sm md:text-lg font-normal '>Explore an extensive collection of products across all categories,<br className='hidden md:block' /> and find the perfect items that match your style, preferences, and everyday needs.</p>
+                    </div>
+
+                    <div className=''>
+                        <button
+                            className='inline-block cursor-pointer text-white bg-stone-800 px-8 py-2 rounded-sm shadow-sm shadow-gray-50/50 transition-transform hover:scale-102 duration-500 ease-in-out hover:text-md'
+                            onClick={() => navigate('/products')}>
+                            Browse All Products <FiArrowRight className='inline' />
+                        </button>
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
 
             {/* WHAT WE BELIEVE SECTION */}
-            <section className='w-full p-4 bg-linear-to-r from-gray-200/30 via-zinc-200 to-neutral-100 '>
+            <section className='w-full p-4 '>
 
                 <div className=' flex flex-col justify-center items-center mb-12 rounded-md py-10  lg:py-18 lg:px-7 gap-y-15 lg:gap-y-25'>
 
                     <div className='w-full px-3 text-center'>
-                        <h1 className='text-3xl lg:text-5xl font-black '>What we believe</h1>
+                        <h3 className='text-3xl lg:text-5xl font-black '>What we believe</h3>
                     </div>
 
                     <div className='grid gird-cols-1 md:grid-cols-2 lg:grid-cols-4  justify-items-center items-start gap-x-5 space-y-10 w-full p-2'>
@@ -286,28 +311,7 @@ const Home = () => {
 
 
 
-            {/* READAY TO SHOP */}
-            <section className='py-5 lg:py-10 border-t border-stone-200 bg-linear-to-r from-slate-50 via-gray-100 to-gray-50'>
 
-                <div className=' flex flex-col justify-center items-center mb-12 rounded-md  gap-y-6 py-9 '>
-
-                    <div className='text-center space-y-4'>
-                        <h1 className='text-3xl sm:text-4xl lg:text-5xl font-black '>Ready to shop?</h1>
-                        <p className='p-2 lg:px-2 text-center text-sm md:text-lg font-normal '>Explore an extensive collection of products across all categories,<br className='hidden md:block' /> and find the perfect items that match your style, preferences, and everyday needs.</p>
-                    </div>
-
-                    <div className=''>
-                        <button
-                            className='inline-block cursor-pointer text-white bg-stone-800 px-8 py-2 rounded-sm shadow-sm shadow-gray-50/50 transition-transform hover:scale-102 duration-500 ease-in-out hover:text-md'
-                            onClick={() => navigate('/products')}>
-                            Browse All Products <FiArrowRight className='inline' />
-                        </button>
-                    </div>
-
-                </div>
-
-
-            </section>
 
 
         </>
