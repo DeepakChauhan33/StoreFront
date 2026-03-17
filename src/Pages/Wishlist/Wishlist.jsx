@@ -44,7 +44,7 @@ const Wishlist = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className='text-3xl lg:text-4xl font-black lg:font-semibold ' ><TbShoppingBagHeart className='inline text-5xl  md:text-6xl text-slate-700' /> My Wishlist</h1>
+        <h1 className='text-3xl lg:text-4xl font-bold lg:font-semibold ' ><TbShoppingBagHeart className='inline text-5xl  md:text-6xl text-slate-700' /> My Wishlist</h1>
         {wishlist.length === 0 ? (<p className='pl-3 text-md lg:text-xl font-normal'>Add your favorite products to come back to them later</p>) : (<p className='pl-3 text-md lg:text-xl'>You have {wishlist.length} items in your wishlist</p>)}
       </motion.div>
 
@@ -82,7 +82,7 @@ const Wishlist = () => {
 
           <>
             {/* Wishlist for Mobile */}
-            <div className="block sm:hidden space-y-4">
+            <div className="block sm:hidden space-y-4 mt-10">
 
               {wishlist.map((item) => (
                 <div className=' flex shadow-sm bg-gray-100 gap-1.5' key={item.id}>
@@ -101,7 +101,7 @@ const Wishlist = () => {
                     {/* Product Title */}
                     <p className='text-md font-semibold line-clamp-2'>{item.title}</p>
 
-                    <p className='text-xl font-black'>$ {item.price.toFixed(2)}</p>
+                    <p className='text-xl font-bold'>$ {item.price.toFixed(2)}</p>
 
 
                     <div className='flex gap-4'>

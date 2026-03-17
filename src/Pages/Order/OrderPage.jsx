@@ -32,7 +32,6 @@ const OrderPage = () => {
 
 
 
-  const [orderMsg, setOrderMsg] = useState("No orders here—why not start shopping?");
 
   const navigate = useNavigate();
 
@@ -76,8 +75,8 @@ const OrderPage = () => {
               <div className='flex flex-col justify-center items-center gap-4'>
                 <LuBox className="text-7xl lg:text-8xl text-gray-400" />
 
-                <p className="text-lg md:text-xl lg:text-3xl font-light">
-                  {orderMsg}
+                <p className="text-lg md:text-xl lg:text-2xl font-light">
+                  No orders here—why not start shopping?
                 </p>
 
                 <motion.button

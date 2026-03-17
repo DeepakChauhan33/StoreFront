@@ -47,7 +47,7 @@ const LoginPage = () => {
     return (
 
         <section
-            className={`bg-gray-100 h-fit     flex flex-col justify-center items-center ${isLogin ? " " : "px-4 py-6"}  `} >
+            className={`bg-gray-100 h-fit     flex flex-col justify-center items-center ${isLogin ? " " : "px-4 py-14"}  `} >
 
             {isLogin ?
                 (

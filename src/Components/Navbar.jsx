@@ -10,6 +10,11 @@ import { CgProfile } from "react-icons/cg";
 
 
 
+// LOGO
+import logo from '../Images/logo.jpg'
+import logo2 from "../Images/logo2.png";
+
+
 // Motion
 import { motion } from "framer-motion";
 
@@ -35,21 +40,22 @@ const Navbar = () => {
                     {/* Logo */}
                     <motion.div
 
-                        className="text-2xl font-bold p-1 cursor-pointer border-2 border-transparent hover:border-2 hover:border-purple-700"
+                        className="p-1 flex items-center cursor-pointer border-2 border-transparent  hover:border-2 hover:border-purple-700"
 
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                     >
                         <NavLink to="/">
-                            <span className="text-black">Store</span>
-                            <span className="text-purple-700">Mart</span>
+                            {/* <span className="text-black">Store</span>
+                            <span className="text-purple-700">Mart</span> */}
+                            <img src={logo2} alt="logo" className='h-14 w-30 object-cover  ' />
                         </NavLink>
                     </motion.div>
 
 
 
-                    <div className="hidden h-full  md:flex space-x-9 text-lg text-gray-900 font-medium">
+                    <div className="hidden h-full  md:flex space-x-9 text-lg text-gray-900 font-bold">
 
                         <NavLink to="/" className="h-full flex justify-center px-2 items-center border-b-3 border-transparent  hover:border-b-3 hover:border-purple-700  hover:text-purple-700 transition transform hover:scale-100  ease-in-out duration-400">
                             Home

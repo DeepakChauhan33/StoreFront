@@ -23,13 +23,14 @@ const CartPage = () => {
 
     const cart = useSelector((state) => state.cart.cart);
 
+    const isLogin = useSelector((state) => state.auth.isLogin);
+
     const dispatch = useDispatch();
 
     const navigate = useNavigate();
 
     const [loader, setLoader] = useState(false);
 
-    const cartMsg = "No orders here—why not start shopping?";
 
 
     if (loader) {
@@ -47,16 +48,25 @@ const CartPage = () => {
         <section className=" p-3 py-4 ">
             {/* ================= HEADING AND ITEMS COUNT================= */}
             <motion.div
-                className="flex flex-col items-start gap-2 mb-6 "
+                className="flex flex-col md:flex-row justify-between items-center mb-6 gap-y-4 "
                 initial={{ y: -30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8 }}
             >
-                <h1 className='text-3xl lg:text-4xl font-black lg:font-semibold ' >
-                    <CgShoppingCart className='inline text-5xl  md:text-6xl text-slate-700' />
-                    My Cart
-                </h1>
-                <p className='pl-3 text-md lg:text-xl font-normal'>Your cart have {cart.length} items</p>
+                <div className="w-full lg:w-auto flex-col items-start  gap-2 ">
+                    <h1 className='text-3xl lg:text-4xl font-bold lg:font-semibold ' >
+                        <CgShoppingCart className='inline text-5xl  md:text-6xl text-slate-700' />
+                        My Cart
+                    </h1>
+                    <p className='pl-3 text-md lg:text-xl font-normal'>Your cart have {cart.length} items</p>
+                </div>
+
+                {isLogin ? " " :
+                    (
+                        <div className="w-full lg:w-auto border border-red-400 bg-red-100 rounded-4xl p-2 lg:p-3 lg:mr-6">
+                            <p className="text:xs md:text-lg font-semibold">Please log in to proceed with checkout. <NavLink to="/login" className="text-purple-700 underline">Login</NavLink></p>
+                        </div>
+                    )}
             </motion.div>
 
             <motion.div
@@ -75,8 +85,8 @@ const CartPage = () => {
                             <div className='flex flex-col justify-center items-center gap-4'>
                                 <LuBox className="text-7xl lg:text-8xl text-gray-400" />
 
-                                <p className="text-lg md:text-xl lg:text-3xl font-light">
-                                    {cartMsg}
+                                <p className="text-lg md:text-xl lg:text-2xl font-light">
+                                    Nothing here yet—start shopping now!
                                 </p>
 
                                 <motion.button
@@ -93,7 +103,7 @@ const CartPage = () => {
 
                         </div>
                     ) : (
-                        <div className="flex flex-col lg:flex-row gap-8 ">
+                        <div className="flex flex-col lg:flex-row gap-8 mt-10 p-3">
                             {/* Cart for Mobile */}
 
                             <div className="block sm:hidden w-full space-y-4">
