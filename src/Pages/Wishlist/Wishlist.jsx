@@ -38,14 +38,14 @@ const Wishlist = () => {
   return (
     <section className=' py-4 p-3'>
 
-      <motion.div className='flex flex-col items-start gap-2 lg:gap-3 mb-6 px-2'
+      <motion.div className='flex flex-col items-start gap-2 mb-6'
 
         initial={{ y: -30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className='text-2xl sm:text-3xl lg:text-4xl text-center font-semibold lg:font-extrabold'><TbShoppingBagHeart className='inline text-6xl text-slate-800' /> My Wishlist</h1>
-        {wishlist.length === 0 ? (<p className='pl-3 text-md lg:text-xl'>Add your favorite products to come back to them later</p>) : (<p className='pl-3 text-md lg:text-xl'>You have {wishlist.length} items in your wishlist</p>)}
+        <h1 className='text-3xl lg:text-4xl font-black lg:font-semibold ' ><TbShoppingBagHeart className='inline text-5xl  md:text-6xl text-slate-700' /> My Wishlist</h1>
+        {wishlist.length === 0 ? (<p className='pl-3 text-md lg:text-xl font-normal'>Add your favorite products to come back to them later</p>) : (<p className='pl-3 text-md lg:text-xl'>You have {wishlist.length} items in your wishlist</p>)}
       </motion.div>
 
       <div>
@@ -61,15 +61,19 @@ const Wishlist = () => {
             <div className='flex flex-col justify-center items-center gap-4'>
               <PiCalendarHeartLight className="text-7xl lg:text-9xl  text-gray-400" />
 
-              <p className="text-md md:text-xl lg:text-3xl font-light">
+              <p className="text-lg md:text-xl lg:text-3xl font-light">
                 No items in your wishlist
               </p>
 
-              <button
+              <motion.button
+
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8 }}
                 onClick={() => navigate("/products")}
                 className="bg-gray-800 text-white text-sm lg:text-lg px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors duration-200">
                 Shop Now
-              </button>
+              </motion.button>
             </div>
           </motion.div>
         ) : (
@@ -195,7 +199,12 @@ const Wishlist = () => {
 
             </div>
 
-            <div className='text-center mt-7 py-4'>
+            <div className='text-center mt-7 py-4'
+
+              initial={{ y: -30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+            >
               <button
                 onClick={() => navigate("/products")}
                 className='bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors duration-200'>

@@ -142,7 +142,7 @@ const Home = () => {
 
                     <motion.h2
 
-                        className='text-3xl lg:text-4xl font-bold mb-1 md:mb-2 lg:mb-3' //Styling
+                        className='text-3xl lg:text-4xl font-extrabold mb-1 md:mb-2 lg:mb-3' //Styling
 
                         initial={{ opacity: 0, x: -40 }} // Animation
                         whileInView={{ opacity: 1, x: 0 }}

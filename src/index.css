@@ -3,6 +3,7 @@
 
 html{
     overflow-y: scroll;
+    scroll-behavior: smooth;
 
 }
 
@@ -12,9 +13,14 @@ body {
 }
 
 h2, h3 {
-  font-family: "Poppins";
+  font-family: "Inter";
 }
 
 h1{
   font-family: "poppins";
+}
+
+
+p{
+  font-family: "Inter", sans-serif;
 }

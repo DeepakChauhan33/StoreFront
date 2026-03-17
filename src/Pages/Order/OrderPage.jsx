@@ -23,6 +23,7 @@ import { motion } from 'framer-motion';
 // Hooks
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { FiBox } from 'react-icons/fi';
 
 const OrderPage = () => {
 
@@ -38,24 +39,24 @@ const OrderPage = () => {
   const dispatch = useDispatch();
 
   return (
-    <section className=' p-2 py-4  '>
+    <section className=' p-3 py-4  '>
 
       <motion.div
-        className='p-2 py-4 space-y-2 bg-linear-to-r from-blue-50 via-blue-100 to-blue-200'
+        className='flex flex-col items-start gap-2 mb-6 '
 
         initial={{ y: -30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className='text-4xl font-light'>My Orders</h2>
-        <p>You have {orders.length} orders</p>
+        <h1 className='text-3xl lg:text-4xl font-black lg:font-semibold ' > <FiBox className='inline text-5xl  md:text-6xl text-slate-700' /> My Orders</h1>
+        <p className='pl-3 text-md lg:text-xl font-normal'>You have {orders.length} orders</p>
       </motion.div>
 
 
 
 
 
-      <motion.div className='h-auto w-full p-3 gap-y-6'
+      <motion.div className=''
 
         initial={{ y: 0, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -63,19 +64,33 @@ const OrderPage = () => {
       >
         {orders.length === 0 ?
           (
-            <div className='h-98 flex flex-col justify-center items-center gap-4 '>
-              <LuBox className="text-7xl lg:text-8xl text-gray-400" />
-              <p className="text-md md:text-xl lg:text-3xl font-light">
-                {orderMsg}
-              </p>
 
-              <button
-                onClick={() => navigate("/products")}
-                className="bg-gray-800 text-white text-sm lg:text-lg px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors duration-200">
-                Shop Now
+            <motion.div
+              className='h-98 flex justify-center items-center rounded-lg bg-gray-100'
 
-              </button>
-            </div>
+              initial={{ y: 0, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1.5 }}
+
+            >
+              <div className='flex flex-col justify-center items-center gap-4'>
+                <LuBox className="text-7xl lg:text-8xl text-gray-400" />
+
+                <p className="text-lg md:text-xl lg:text-3xl font-light">
+                  {orderMsg}
+                </p>
+
+                <motion.button
+
+                  initial={{ y: 30, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.8 }}
+                  onClick={() => navigate("/products")}
+                  className="bg-gray-800 text-white text-sm lg:text-lg px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors duration-200">
+                  Shop Now
+                </motion.button>
+              </div>
+            </motion.div>
           )
           :
           (

@@ -84,11 +84,11 @@ const ProductCard = React.memo(({ product }) => {
 
             {/* Product Name */}
 
-            <span className='text-lg text-gray-800 font-semibold cursor-pointer'>
+            <h2 className='text-lg text-gray-800 font-extrabold line-clamp-3 cursor-pointer'>
                 <NavLink to={`/product/` + product.id}>
                     {product.title}
                 </NavLink>
-            </span>
+            </h2>
 
 
             {/* Product Rating*/}

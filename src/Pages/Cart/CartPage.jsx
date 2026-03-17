@@ -12,6 +12,7 @@ import { removeFromCart } from "./CartSlice";
 // React Icons
 import { LuBox } from "react-icons/lu";
 import { MdDelete } from "react-icons/md";
+import { CgShoppingCart } from "react-icons/cg";
 
 // Motion
 import { motion } from "framer-motion";
@@ -28,9 +29,7 @@ const CartPage = () => {
 
     const [loader, setLoader] = useState(false);
 
-    const [orderMsg, setOrderMsg] = useState(
-        "No orders here—why not start shopping?",
-    );
+    const cartMsg = "No orders here—why not start shopping?";
 
 
     if (loader) {
@@ -45,22 +44,23 @@ const CartPage = () => {
 
 
     return (
-        <section className=" p-2 py-4 ">
+        <section className=" p-3 py-4 ">
             {/* ================= HEADING AND ITEMS COUNT================= */}
             <motion.div
-                className="p-2 py-4 space-y-2"
+                className="flex flex-col items-start gap-2 mb-6 "
                 initial={{ y: -30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8 }}
             >
-                <h2 className="text-2xl md:text-4xl font-black md:font-light">
-                    Your Cart
-                </h2>
-                <p>Your cart have {cart.length} items</p>
+                <h1 className='text-3xl lg:text-4xl font-black lg:font-semibold ' >
+                    <CgShoppingCart className='inline text-5xl  md:text-6xl text-slate-700' />
+                    My Cart
+                </h1>
+                <p className='pl-3 text-md lg:text-xl font-normal'>Your cart have {cart.length} items</p>
             </motion.div>
 
             <motion.div
-                className="min-h-96 flex justify-center items-center "
+                className=" "
                 initial={{ y: 0, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1.5 }}
@@ -68,20 +68,29 @@ const CartPage = () => {
 
 
 
-                <div className="w-full mt-8">
+                <div className="">
                     {cart.length === 0 ? (
-                        <div className="flex flex-col justify-center items-center gap-4">
-                            <LuBox className="text-7xl lg:text-8xl text-gray-400" />
-                            <p className="text-md md:text-xl lg:text-3xl font-light">
-                                {orderMsg}
-                            </p>
+                        <div className="h-98 flex justify-center items-center rounded-lg bg-gray-100">
 
-                            <button
-                                onClick={() => navigate("/products")}
-                                className="bg-gray-800 text-white text-sm lg:text-lg px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors duration-200"
-                            >
-                                Shop Now
-                            </button>
+                            <div className='flex flex-col justify-center items-center gap-4'>
+                                <LuBox className="text-7xl lg:text-8xl text-gray-400" />
+
+                                <p className="text-lg md:text-xl lg:text-3xl font-light">
+                                    {cartMsg}
+                                </p>
+
+                                <motion.button
+
+                                    initial={{ y: 30, opacity: 0 }}
+                                    animate={{ y: 0, opacity: 1 }}
+                                    transition={{ duration: 0.8 }}
+                                    onClick={() => navigate("/products")}
+                                    className="bg-gray-800 text-white text-sm lg:text-lg px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors duration-200">
+                                    Shop Now
+                                </motion.button>
+                            </div>
+
+
                         </div>
                     ) : (
                         <div className="flex flex-col lg:flex-row gap-8 ">
