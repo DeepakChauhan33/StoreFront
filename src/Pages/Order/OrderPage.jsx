@@ -93,7 +93,7 @@ const OrderPage = () => {
           )
           :
           (
-            <div className='h-auto flex flex-col gap-4 rounded-lg overflow-hidden mt-6 '>
+            <div className='h-auto flex flex-col gap-4 rounded-lg overflow-hidden mt-10 '>
 
               {orders.map((order) => (
                 <div key={order.id}  >

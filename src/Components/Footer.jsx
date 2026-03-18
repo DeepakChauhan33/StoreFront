@@ -1,7 +1,12 @@
 // HOOKS
 import { useNavigate } from "react-router-dom";
-
 import { NavLink } from "react-router-dom";
+
+
+// LOGO
+import logo from "../Images/STORE FRONT.jpg";
+
+
 
 // ICONS
 import { FaInstagram, FaTwitter, FaFacebookF } from "react-icons/fa";
@@ -9,7 +14,6 @@ import { FaInstagram, FaTwitter, FaFacebookF } from "react-icons/fa";
 
 const Footer = () => {
 
-  const navigate = useNavigate();
 
   return (
     <footer className="bg-[#0f0d11] text-gray-300 pb-12 md:p-0">
@@ -19,8 +23,18 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
 
-          <div>
-            <h2 className="text-2xl font-bold text-white mb-4">StoreFront.</h2>
+          <div className="flex flex-col items-start">
+
+            {/* Logo */}
+            <div
+              className="p-1 flex flex-col items-start  mb-4"
+            >
+
+              <img src={logo} alt="logo" className='h-16 w-auto object-cover   ' />
+
+              <h2 className="text-2xl font-bold text-white ">StoreFront.</h2>
+            </div>
+
             <p className="text-sm text-gray-400 leading-6 mb-6">
               Minimal fashion for the modern world. Redefining style with
               sustainability and authenticity at our core.
@@ -44,21 +58,21 @@ const Footer = () => {
               Categories
             </h2>
 
-            <ul>
+            <ul className="">
               <NavLink to="/">
-                <li className="hover:text-white cursor-pointer">Home</li>
+                <li className="hover:text-white cursor-pointer mb-2">Home</li>
               </NavLink>
 
               <NavLink to="/products">
-                <li className="hover:text-white cursor-pointer">Products</li>
+                <li className="hover:text-white cursor-pointer mb-2">Products</li>
               </NavLink>
 
               <NavLink to="/cart">
-                <li className="hover:text-white cursor-pointer">Cart</li>
+                <li className="hover:text-white cursor-pointer mb-2">Cart</li>
               </NavLink>
 
               <NavLink to="orders">
-                <li className="hover:text-white cursor-pointer">Orders</li>
+                <li className="hover:text-white cursor-pointer mb-2">Orders</li>
               </NavLink>
             </ul>
           </div>
@@ -74,19 +88,19 @@ const Footer = () => {
             <ul>
 
               <NavLink to="/products">
-                <li className=" hover:text-white cursor-pointer">Men's</li>
+                <li className=" hover:text-white cursor-pointer mb-2">Men's</li>
               </NavLink>
 
               <NavLink to="/products">
-                <li className=" hover:text-white cursor-pointer">Women's</li>
+                <li className=" hover:text-white cursor-pointer mb-2">Women's</li>
               </NavLink>
 
               <NavLink to="/products">
-                <li className=" hover:text-white cursor-pointer">Electronics</li>
+                <li className=" hover:text-white cursor-pointer mb-2">Electronics</li>
               </NavLink>
 
               <NavLink to="/products">
-                <li className=" hover:text-white cursor-pointer">Jewelry</li>
+                <li className=" hover:text-white cursor-pointer mb-2">Jewelry</li>
               </NavLink>
 
 

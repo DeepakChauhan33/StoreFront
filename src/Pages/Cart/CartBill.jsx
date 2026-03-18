@@ -54,7 +54,6 @@ const CartBill = ({ setLoader }) => {
             }, 2000);
         } else {
 
-            navigate('/login');
             (toast(`Please login first `, { icon: "➜]", position: "top-right", duration: 2000, style: { marginTop: "80px", color: 'red' } }))
         }
     }
@@ -87,7 +86,7 @@ const CartBill = ({ setLoader }) => {
 
                     </div>
 
-                    
+
                     <hr className="my-4" />
 
                     <div className='flex justify-between '>

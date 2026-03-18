@@ -61,7 +61,7 @@ const CartPage = () => {
                     <p className='pl-3 text-md lg:text-xl font-normal'>Your cart have {cart.length} items</p>
                 </div>
 
-                {isLogin ? " " :
+                {!isLogin && cart.length > 0 &&
                     (
                         <div className="w-full lg:w-auto border border-red-400 bg-red-100 rounded-4xl p-2 lg:p-3 lg:mr-6">
                             <p className="text:xs md:text-lg font-semibold">Please log in to proceed with checkout. <NavLink to="/login" className="text-purple-700 underline">Login</NavLink></p>
