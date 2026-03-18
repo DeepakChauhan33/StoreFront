@@ -6,8 +6,6 @@ import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 
 
-import { useState } from "react";
-
 const categories = [
     "All Products",
     "electronics",

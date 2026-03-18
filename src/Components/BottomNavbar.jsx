@@ -4,12 +4,10 @@ import { BiBox, BiStoreAlt } from "react-icons/bi";
 import { FaRegHeart } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { FiShoppingCart } from "react-icons/fi";
-import { FaBoxOpen } from "react-icons/fa";
 
 
 // HOOKS
 import { useSelector } from "react-redux";
-
 import { NavLink } from "react-router-dom";
 
 
@@ -18,7 +16,6 @@ import { NavLink } from "react-router-dom";
 
 const BottomNavbar = () => {
 
-    const isLogin = useSelector((state) => state.auth.isLogin);
 
     const cart = useSelector((state) => state.cart.cart)
     const cartCount = cart.length;
@@ -64,7 +61,7 @@ const BottomNavbar = () => {
                 </NavLink>
 
 
-                {/* LOGIN */}
+                {/* PROFILE */}
                 <NavLink to="/login">
                     <li className="flex flex-col justify-center items-center gap-1.5">
                         <CgProfile />

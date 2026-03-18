@@ -29,6 +29,7 @@ const ProductCard = React.memo(({ product }) => {
 
 
 
+    // FUNCTION RETURN STARS BASED ON PRODUCT RATING
     function handleRating(rate) {
         let rateStar = "";
 
@@ -68,12 +69,6 @@ const ProductCard = React.memo(({ product }) => {
                 <NavLink to={`/product/` + product.id}>
                     <img src={product.image} alt={product.title} className='h-full w-full bg-gray-200 p-3 object-contain ' />
                 </NavLink>
-
-                {/* <button className=' absolute top-2 right-2  bg-white p-2 rounded-full hover:scale-107 transition-transform duration-200'
-                    onClick={() => dispatch(toggleWishlist(product))}
-                >
-                    {checkIsInWishlist ? (<FaHeart className='text-lg md:text-xl ' />) : (<FaRegHeart className='text-lg md:text-xl ' />)}
-                </button> */}
 
                 <WishlistBtn product={product} position={'absolute'} />
 

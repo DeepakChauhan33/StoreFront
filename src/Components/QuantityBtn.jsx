@@ -13,10 +13,12 @@ const QuantityBtn = ({ id, quantity }) => {
 
     const dispatch = useDispatch();
 
+    // FUNCTION
     function hannleDecrease() {
         dispatch(decreaseQunatity(id));
     }
 
+    // FUNCTION
     function handleIncrease() {
         dispatch(increaseQuantity(id));
     }

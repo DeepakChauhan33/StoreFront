@@ -3,7 +3,7 @@
 import { useSelector } from 'react-redux';
 
 
-
+// Custom Hook
 import { useGetProductsQuery } from '../Product/ProductApi';
 
 // Components
@@ -25,7 +25,7 @@ import { motion } from 'framer-motion';
 import { NavLink, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { useEffect } from 'react';
-import Loader from '../../Components/Loader';
+
 
 
 
@@ -44,7 +44,7 @@ const Home = () => {
 
 
 
-
+    // Filter product based on category
     const filterProduct = (category) => {
         return Products?.filter((item) => item.category === category);
     }
@@ -55,24 +55,29 @@ const Home = () => {
     }
 
 
-    // This is not work properly as I come back from product page to home it show toast again and twice
+    // Appeal user for login 
     useEffect(() => {
-        { isLogin ? (" ") : (toast(`Please login first `, { icon: "➜]", position: "top-right", duration: 2000, style: { marginTop: "80px" } })) }
-    }, [])
-
-
+        if (!isLogin) {
+            toast("Please login first", {
+                icon: "➜",
+                position: "top-right",
+                duration: 2000,
+                style: { marginTop: "80px" }
+            });
+        }
+    }, [isLogin]);
 
 
 
     return (
 
 
-        <>
+        <main>
 
 
+            {/* ================= HERO SECTION ================= */}
 
-
-            <div
+            <section
                 className='h-[85dvh] md:h-screen w-full flex justify-center items-center space-y-10 
                         bg-[url("https://i.pinimg.com/1200x/09/ab/dd/09abdd904702ef068837a7ac010e926b.jpg")]  bg-cover bg-no-repeat bg-center'>
 
@@ -122,19 +127,16 @@ const Home = () => {
 
 
 
-            </div>
+            </section>
 
 
 
-            {/* SHOP BY CATEGORY */}
+            {/* ================= SHOP BY CATEGORY ================= */}
+
             <motion.section
 
                 className='py-12 px-5 space-y-8 sm:space-y-10 lg:space-y-12 bg-linear-to-r from-zinc-50 to-neutral-100'
 
-            // initial={{ opacity: 0, y: 40 }}  //Animation
-            // whileInView={{ opacity: 1, y: 0 }}
-            // transition={{ duration: 1 }}
-            // viewport={{ once: true, amount: 0.4 }}
             >
 
                 {/* Title and Description */}
@@ -168,27 +170,27 @@ const Home = () => {
 
 
 
-                <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-7 '>
+                <ul className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-7 '>
 
-                    <div className='py-4 px-3 rounded-md bg-linear-to-r from-fuchsia-50/50 to-purple-50/60 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
+                    <li className='py-4 px-3 rounded-md bg-linear-to-r from-fuchsia-50/50 to-purple-50/60 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
 
                         <CategoryCard product={filterProduct("women's clothing")} heading={"Women's Wear"} isLoading={isLoading} />
-                    </div>
+                    </li>
 
-                    <div className='py-4 px-3 rounded-md bg-linear-to-r from-amber-200/10 to-yellow-100/10 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
+                    <li className='py-4 px-3 rounded-md bg-linear-to-r from-amber-200/10 to-yellow-100/10 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
                         <CategoryCard product={filterProduct("jewelery")} heading={"Jewelry"} isLoading={isLoading} />
-                    </div>
+                    </li>
 
-                    <div className='py-4 px-3 rounded-md bg-linear-to-r from-stone-400/10 to-zinc-700/10 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
+                    <li className='py-4 px-3 rounded-md bg-linear-to-r from-stone-400/10 to-zinc-700/10 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
                         <CategoryCard product={filterProduct("men's clothing")} heading={"Men's Wear"} isLoading={isLoading} />
-                    </div>
+                    </li>
 
-                    <div className='py-4 px-3 rounded-md bg-linear-to-r from-slate-500/20 to-gray-600/20 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
+                    <li className='py-4 px-3 rounded-md bg-linear-to-r from-slate-500/20 to-gray-600/20 shadow-md hover:shadow-lg hover:scale-103 transition-transform duration-400 ease-in-out'>
                         <CategoryCard product={filterProduct("electronics")} heading={"Electronics"} isLoading={isLoading} />
-                    </div>
+                    </li>
 
 
-                </div>
+                </ul>
             </motion.section>
 
 
@@ -196,7 +198,9 @@ const Home = () => {
 
 
 
-            {/* FEATURE PRODUCTS SECTION*/}
+
+            {/* ================= FEATURE PRODUCTS SECTION ================= */}
+
             <section className='py-12 px-4 space-y-8 sm:space-y-10 lg:space-y-8'>
 
                 <div className=''>
@@ -218,7 +222,8 @@ const Home = () => {
 
 
 
-            {/* READAY TO SHOP */}
+            {/* ================= READAY TO SHOP ================= */}
+
             <section className='py-5 lg:py-10 border-t border-stone-200 bg-linear-to-r from-slate-50 via-gray-100 to-gray-50'>
 
                 <div className=' flex flex-col justify-center items-center mb-12 rounded-md  gap-y-6 py-9 '>
@@ -244,7 +249,10 @@ const Home = () => {
 
 
 
-            {/* WHAT WE BELIEVE SECTION */}
+
+
+            {/* ================= WHAT WE BELIEVE SECTION ================= */}
+
             <section className='w-full p-4 '>
 
                 <div className=' flex flex-col justify-center items-center mb-12 rounded-md py-10  lg:py-18 lg:px-7 gap-y-15 lg:gap-y-25'>
@@ -253,9 +261,9 @@ const Home = () => {
                         <h3 className='text-3xl lg:text-5xl font-black '>What we believe</h3>
                     </div>
 
-                    <div className='grid gird-cols-1 md:grid-cols-2 lg:grid-cols-4  justify-items-center items-start gap-x-5 space-y-10 w-full p-2'>
+                    <ul className='grid gird-cols-1 md:grid-cols-2 lg:grid-cols-4  justify-items-center items-start gap-x-5 space-y-10 w-full p-2'>
 
-                        <div className='flex items-center gap-x-3 w-full  '>
+                        <li className='flex items-center gap-x-3 w-full  '>
                             <div className='text-4xl'>
                                 <PiRocketLaunchDuotone />
                             </div>
@@ -264,9 +272,9 @@ const Home = () => {
                                 <p className='text-lg lg:text-xl font-bold'>Free Shipping</p>
                                 <span className='text-md lg:text-lg font-normal text-gray-500'>Orders $50 or moree</span>
                             </div>
-                        </div>
+                        </li>
 
-                        <div className='flex items-center gap-x-3 w-full '>
+                        <li className='flex items-center gap-x-3 w-full '>
                             <div className='text-4xl'>
                                 <IoReloadCircleOutline />
                             </div>
@@ -275,9 +283,9 @@ const Home = () => {
                                 <p className='text-lg lg:text-xl font-bold'>Free returns</p>
                                 <span className='text-md lg:text-lg font-normal text-gray-500'>Within 30 days</span>
                             </div>
-                        </div>
+                        </li>
 
-                        <div className='flex items-center gap-x-3 w-full '>
+                        <li className='flex items-center gap-x-3 w-full '>
                             <div className='text-4xl'>
                                 <MdOutlineDiscount />
                             </div>
@@ -286,9 +294,9 @@ const Home = () => {
                                 <p className='text-lg lg:text-xl font-bold'>Get 10 to 20% off </p>
                                 <span className='text-md lg:text-lg font-normal text-gray-500'>When you sign up</span>
                             </div>
-                        </div>
+                        </li>
 
-                        <div className='flex items-center gap-x-3 w-full  '>
+                        <li className='flex items-center gap-x-3 w-full  '>
                             <div className='text-4xl'>
                                 <MdSupportAgent />
                             </div>
@@ -297,8 +305,8 @@ const Home = () => {
                                 <p className='text-lg lg:text-xl font-bold'>We support</p>
                                 <span className='text-md lg:text-lg font-normal text-gray-500'>24/7 amazing service</span>
                             </div>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
 
                 </div>
 
@@ -307,14 +315,7 @@ const Home = () => {
 
 
 
-
-
-
-
-
-
-
-        </>
+        </main>
     )
 }
 

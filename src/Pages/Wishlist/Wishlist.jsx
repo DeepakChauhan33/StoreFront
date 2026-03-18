@@ -36,7 +36,7 @@ const Wishlist = () => {
   // }, [wishlist]);
 
   return (
-    <section className=' py-4 p-3'>
+    <main className=' py-4 p-3'>
 
       <motion.div className='flex flex-col items-start gap-2 mb-6'
 
@@ -48,9 +48,9 @@ const Wishlist = () => {
         {wishlist.length === 0 ? (<p className='pl-3 text-md lg:text-xl font-normal'>Add your favorite products to come back to them later</p>) : (<p className='pl-3 text-md lg:text-xl'>You have {wishlist.length} items in your wishlist</p>)}
       </motion.div>
 
-      <div>
+      <section>
         {wishlist.length === 0 ? (
-          <motion.div
+          <motion.section
             className='h-98 flex justify-center items-center rounded-lg bg-gray-100'
 
             initial={{ y: 0, opacity: 0 }}
@@ -75,14 +75,14 @@ const Wishlist = () => {
                 Shop Now
               </motion.button>
             </div>
-          </motion.div>
+          </motion.section>
         ) : (
 
 
 
           <>
             {/* Wishlist for Mobile */}
-            <div className="block sm:hidden space-y-4 mt-10">
+            <section className="block sm:hidden space-y-4 mt-10">
 
               {wishlist.map((item) => (
                 <div className=' flex shadow-sm bg-gray-100 gap-1.5' key={item.id}>
@@ -121,13 +121,13 @@ const Wishlist = () => {
                 </div>
               ))}
 
-            </div>
+            </section>
 
 
 
 
             {/*  Wishlist larger screens greater than sm */}
-            <div className="hidden sm:block p-3">
+            <section className="hidden sm:block p-3">
               <table className="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
 
                 <thead className="bg-gray-300 text-gray-700 text-sm uppercase py-2">
@@ -188,7 +188,6 @@ const Wishlist = () => {
                       </td>
 
 
-
                     </tr>
                   ))}
 
@@ -197,7 +196,7 @@ const Wishlist = () => {
               </table>
 
 
-            </div>
+            </section>
 
             <div className='text-center mt-7 py-4'
 
@@ -216,8 +215,8 @@ const Wishlist = () => {
         )}
 
 
-      </div>
-    </section>
+      </section>
+    </main>
   )
 }
 

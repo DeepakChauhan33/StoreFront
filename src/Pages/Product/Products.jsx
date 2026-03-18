@@ -1,5 +1,5 @@
-import React, { Suspense } from 'react'
 
+// Hooks
 import { useState, useMemo } from 'react';
 
 
@@ -27,12 +27,9 @@ const ProductPage = ({ ...rest }) => {
     const { data: Products, isLoading } = useGetProductsQuery();
 
 
-
-
-
-
-
     const [selected, setSelected] = useState("All Products");
+
+
 
     if (isLoading) {
         return <ContentLoader height="500" style={{ width: "100%" }} viewBox="0 0 275 240" {...rest}>
@@ -66,14 +63,20 @@ const ProductPage = ({ ...rest }) => {
 
 
     // Filter products based on selected category
-    const filterProducts = selected === "All Products" ? Products : Products?.filter((item) => item.category === selected);
+    const filterProducts = useMemo(() => {
+        if (!Products) return [];
+
+        return selected === "All Products"
+            ? Products
+            : Products.filter(item => item.category === selected);
+    }, [Products, selected]);
+
 
 
     return (
         <main className='w-full p-2 md:p-3'>
 
-            {/* Product page header */}
-
+            {/* ================= PRODUCT PAGE HEADER ================= */}
 
             <motion.div
 
@@ -86,10 +89,14 @@ const ProductPage = ({ ...rest }) => {
                 <p className='text-sm lg:text-xl font-normal'>{msg}</p>
             </motion.div>
 
-            {/* COntainer for products */}
+
+            {/* ================= CONTAINER ================= */}
+
             <div className=' flex flex-col md:flex-row justify-start items-start py-6 space-x-0 md:space-x-10 space-y-5 md:space-y-0 md:p-3 mt-2 lg:mt-5 '>
 
-                {/* Category container */}
+
+                {/* ================= CATEGORY ACCORDION ================= */}
+
                 <motion.div
                     className='w-full md:w-[20%] border border-gray-300  rounded-lg md:sticky top-24  '
 
@@ -100,8 +107,13 @@ const ProductPage = ({ ...rest }) => {
                     <CategoryAccordion selected={selected} setSelected={setSelected} />
 
                 </motion.div>
-                {/* Products Container */}
-                <div className='w-full md:w-[80%]'>
+
+
+
+
+                {/* ================= PRODUCTS CONTAINER ================= */}
+
+                <section className='w-full md:w-[80%]'>
 
                     <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7 '>
 
@@ -110,7 +122,7 @@ const ProductPage = ({ ...rest }) => {
                         }
 
                     </div>
-                </div>
+                </section>
             </div>
         </main >
     )
