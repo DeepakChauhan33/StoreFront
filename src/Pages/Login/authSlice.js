@@ -15,7 +15,6 @@ const authSlice = createSlice({
 
         userDetails: (state, action) => {
             state.loginDetails.push(action.payload);
-            console.log(state.loginDetails)
         },
 
 

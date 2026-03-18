@@ -36,22 +36,26 @@ const Wishlist = () => {
   // }, [wishlist]);
 
   return (
-    <main className=' py-4 p-3'>
+    <main className=' w-full  md:p-3 space-y-4'>
 
-      <motion.div className='flex flex-col items-start gap-2 mb-6'
+      {/* ================= HEADER SECTION ================= */}
+
+      <motion.div className=' m-1 py-3 px-1.5 md:px-2 md:py-3 space-y-1.5 md:space-y-2  '
 
         initial={{ y: -30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className='text-3xl lg:text-4xl font-bold lg:font-semibold ' ><TbShoppingBagHeart className='inline text-5xl  md:text-6xl text-slate-700' /> My Wishlist</h1>
-        {wishlist.length === 0 ? (<p className='pl-3 text-md lg:text-xl font-normal'>Add your favorite products to come back to them later</p>) : (<p className='pl-3 text-md lg:text-xl'>You have {wishlist.length} items in your wishlist</p>)}
+        <h1 className='text-2xl lg:text-4xl font-bold lg:font-semibold ' ><TbShoppingBagHeart className='inline text-4xl  md:text-6xl text-slate-700' /> My Wishlist</h1>
+        {wishlist.length === 0 ? (<p className='pl-3 text-md lg:text-xl font-normal'>No items in your wishlist</p>) : (<p className='pl-2 md:pl-3 text-sm lg:text-xl font-semibold'>You have {wishlist.length} items in your wishlist</p>)}
       </motion.div>
 
-      <section>
+
+
+      <section className='bg-purple-100/30  p-2.5'>
         {wishlist.length === 0 ? (
           <motion.section
-            className='h-98 flex justify-center items-center rounded-lg bg-gray-100'
+            className='h-120 flex justify-center items-center '
 
             initial={{ y: 0, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -61,8 +65,8 @@ const Wishlist = () => {
             <div className='flex flex-col justify-center items-center gap-4'>
               <PiCalendarHeartLight className="text-7xl lg:text-9xl  text-gray-400" />
 
-              <p className="text-lg md:text-xl lg:text-3xl font-light">
-                No items in your wishlist
+              <p className="text-lg md:text-xl lg:text-3xl text-center font-light">
+                Add your favorite products to come back to them later
               </p>
 
               <motion.button
@@ -81,27 +85,30 @@ const Wishlist = () => {
 
 
           <>
-            {/* Wishlist for Mobile */}
-            <section className="block sm:hidden space-y-4 mt-10">
+
+            {/* ================= WISHLIST ON MOBILE VIEW  ================= */}
+
+
+            <section className="block sm:hidden space-y-4 pt-5">
 
               {wishlist.map((item) => (
-                <div className=' flex shadow-sm bg-gray-100 gap-1.5' key={item.id}>
+                <div className=' flex shadow-sm bg-white gap-1.5 border  border-purple-200/40  rounded-sm overflow-hidden' key={item.id}>
                   {/* Image */}
-                  <div className='relative h-38 w-50 p-2 bg-gray-200 ' title="product details">
+                  <div className='relative h-36 w-40  p-2 bg-gray-200  ' title="product details">
 
                     <NavLink to={`/product/${item.id}`} >
-                      <img src={item.image} alt={item.category} className='h-full w-full object-contain' />
+                      <img src={item.image} alt={item.category} className='h-full w-full object-contain ' />
                     </NavLink>
 
                   </div>
 
                   {/* Details */}
-                  <div className='relative w-full flex flex-col justify-evenly p-2 gap-2'>
+                  <div className='relative w-full flex flex-col justify-evenly p-1 gap-2'>
 
-                    {/* Product Title */}
-                    <p className='text-md font-semibold line-clamp-2'>{item.title}</p>
+                    {/* Product Title & Price */}
+                    <p className='text-sm font-semibold line-clamp-2'>{item.title}</p>
 
-                    <p className='text-xl font-bold'>$ {item.price.toFixed(2)}</p>
+                    <p className='text-xl font-black'>$ {item.price.toFixed(2)}</p>
 
 
                     <div className='flex gap-4'>
@@ -125,8 +132,8 @@ const Wishlist = () => {
 
 
 
+            {/* ================= WISHLIST ON LARGE SCREEN VIEW  ================= */}
 
-            {/*  Wishlist larger screens greater than sm */}
             <section className="hidden sm:block p-3">
               <table className="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
 

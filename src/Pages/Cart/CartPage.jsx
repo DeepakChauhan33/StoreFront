@@ -45,8 +45,10 @@ const CartPage = () => {
 
 
     return (
-        <section className=" p-3 py-4 ">
-            {/* ================= HEADING AND ITEMS COUNT================= */}
+        <main className=" p-3 py-4 ">
+
+            {/* ================= CART HEADER ================= */}
+
             <motion.div
                 className="flex flex-col md:flex-row justify-between items-center mb-6 gap-y-4 "
                 initial={{ y: -30, opacity: 0 }}
@@ -58,7 +60,7 @@ const CartPage = () => {
                         <CgShoppingCart className='inline text-5xl  md:text-6xl text-slate-700' />
                         My Cart
                     </h1>
-                    <p className='pl-3 text-md lg:text-xl font-normal'>Your cart have {cart.length} items</p>
+                    <p className='pl-3 text-md lg:text-xl font-normal'>Your cart has {cart.length} items</p>
                 </div>
 
                 {!isLogin && cart.length > 0 &&
@@ -78,9 +80,15 @@ const CartPage = () => {
 
 
 
-                <div className="">
+                <section className="">
+
                     {cart.length === 0 ? (
-                        <div className="h-98 flex justify-center items-center rounded-lg bg-gray-100">
+
+
+                        <section className="h-98 flex justify-center items-center rounded-lg bg-gray-100">
+
+
+                            {/* ================= CART  WHEN EMPTY ================= */}
 
                             <div className='flex flex-col justify-center items-center gap-4'>
                                 <LuBox className="text-7xl lg:text-8xl text-gray-400" />
@@ -101,10 +109,11 @@ const CartPage = () => {
                             </div>
 
 
-                        </div>
+                        </section>
                     ) : (
-                        <div className="flex flex-col lg:flex-row gap-8 mt-10 p-3">
-                            {/* Cart for Mobile */}
+                        <section className="flex flex-col lg:flex-row gap-8 mt-10 p-3">
+
+                            {/* ================= CART ON MOBILE VIEW  ================= */}
 
                             <div className="block sm:hidden w-full space-y-4">
                                 {cart.map((item) => (
@@ -157,8 +166,10 @@ const CartPage = () => {
                                 ))}
                             </div>
 
-                            {/*  Cart larger screens greater than sm */}
-                            <div className="hidden sm:block p-3 w-full lg:w-[60%] h-fit border rounded-lg">
+
+                            {/* ================= CART ON LARGE SCREEN VIEW  ================= */}
+
+                            <section className="hidden sm:block p-3 w-full lg:w-[60%] h-fit border rounded-lg">
                                 <table className="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
                                     <thead className="bg-gray-300 text-gray-700 text-sm uppercase py-2">
                                         <tr>
@@ -226,18 +237,19 @@ const CartPage = () => {
                                         ))}
                                     </tbody>
                                 </table>
-                            </div>
+                            </section>
 
-                            {/* Bill Summary */}
+
+                            {/* ================= BILL SUMMARY ================= */}
 
                             <div className="p-4 border w-full lg:w-[40%] h-fit lg:sticky lg:top-38 rounded-lg">
                                 <CartBill setLoader={setLoader} />
                             </div>
-                        </div>
+                        </section>
                     )}
-                </div>
+                </section>
             </motion.div>
-        </section>
+        </main>
     );
 };
 

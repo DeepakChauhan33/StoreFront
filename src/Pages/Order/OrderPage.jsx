@@ -1,9 +1,3 @@
-import React, { useState } from 'react'
-
-
-// Component
-import ButtonComp from "../../Components/ButtonComp";
-
 
 
 // React Icons
@@ -17,7 +11,7 @@ import { FaDollarSign } from "react-icons/fa6";
 import { clearOrder } from './orderSlice';
 
 
-// Motion
+// Motion 
 import { motion } from 'framer-motion';
 
 // Hooks
@@ -25,37 +19,39 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { FiBox } from 'react-icons/fi';
 
+
+
+
 const OrderPage = () => {
 
 
   const orders = useSelector((state) => state.orders.orders);
 
 
-
-
   const navigate = useNavigate();
-
   const dispatch = useDispatch();
 
   return (
-    <section className=' p-3 py-4  '>
+    <main className=' w-full md:p-3 space-y-4'>
+
+      {/* ================= ORDERS PAGE HEADER  ================= */}
 
       <motion.div
-        className='flex flex-col items-start gap-2 mb-6 '
+        className='m-1 py-3 px-1.5 md:px-2 md:py-3 space-y-1.5 md:space-y-2 '
 
         initial={{ y: -30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className='text-3xl lg:text-4xl font-black lg:font-semibold ' > <FiBox className='inline text-5xl  md:text-6xl text-slate-700' /> My Orders</h1>
-        <p className='pl-3 text-md lg:text-xl font-normal'>You have {orders.length} orders</p>
+        <h1 className='text-2xl lg:text-4xl font-black lg:font-semibold ' > <FiBox className='inline text-4xl  md:text-6xl text-slate-700' /> My Orders</h1>
+        <p className='pl-3 text-md lg:text-xl font-semibold'>You have {orders.length} orders</p>
       </motion.div>
 
 
 
 
 
-      <motion.div className=''
+      <motion.div className=' bg-gray-100 p-2.5'
 
         initial={{ y: 0, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -64,14 +60,17 @@ const OrderPage = () => {
         {orders.length === 0 ?
           (
 
-            <motion.div
-              className='h-98 flex justify-center items-center rounded-lg bg-gray-100'
+
+            <motion.section
+              className='h-120 flex justify-center items-center  '
 
               initial={{ y: 0, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1.5 }}
 
             >
+              {/* ================= EMPTY ODER PAGE ================= */}
+
               <div className='flex flex-col justify-center items-center gap-4'>
                 <LuBox className="text-7xl lg:text-8xl text-gray-400" />
 
@@ -89,11 +88,13 @@ const OrderPage = () => {
                   Shop Now
                 </motion.button>
               </div>
-            </motion.div>
+            </motion.section>
           )
           :
           (
             <div className='h-auto flex flex-col gap-4 rounded-lg overflow-hidden mt-10 '>
+
+              {/* =================  ODER PRODUCT SUMMARY ================= */}
 
               {orders.map((order) => (
                 <div key={order.id}  >
@@ -121,7 +122,7 @@ const OrderPage = () => {
                   <div className='p-3'>
                     <p className='text-md font-semibold mb-3'>Order items</p>
                     {order.products.map((item) => (
-                      <div className='flex justify-between space-y-4'>
+                      <div key={item.id} className='flex justify-between space-y-4'>
                         <div className='w-[70%] '>
                           <p className='text-sm'>{item.title}</p>
                           <p className='text-sm font-medium text-gray-600'>Qty : {item.quantity}</p>
@@ -129,7 +130,7 @@ const OrderPage = () => {
                         </div>
 
                         <div className='text-end'>
-                          <p className='text-sm'>${item.price}</p>
+                          <p className='text-sm'>${item.price.toFixed(2)}</p>
                           <p className='text-sm font-normal text-gray-600'>sub total : {(item.price * item.quantity).toFixed(2)}</p>
 
                         </div>
@@ -147,9 +148,11 @@ const OrderPage = () => {
 
                 </div>
 
-
               ))}
 
+
+
+              {/* Clear orders button */}
 
               <div className=' flex justify-center items-center mt-5'>
                 <button className=' bg-black text-sm text-white px-2 py-3 lg:px-4 lg:py-3 rounded-sm hover:bg-gray-800' onClick={() => dispatch(clearOrder())}>Clear order</button>
@@ -159,16 +162,12 @@ const OrderPage = () => {
             </div>
 
 
-
-
           )
-
 
         }
 
-
       </motion.div>
-    </section>
+    </main>
   )
 }
 

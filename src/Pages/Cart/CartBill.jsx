@@ -23,16 +23,14 @@ const CartBill = ({ setLoader }) => {
 
 
     const total = useMemo(() => {
-        console.log("called");
         return calculateTotal(cart);
 
     }, [cart])
 
 
 
-    // Here i created an object, which have all the information of cart and then dispatch it
 
-    function handleOrder() {
+    function handleOrder() {  // Here i created an object, which have all the information of cart and then dispatch it
 
         if (isLogin) {
 
@@ -66,7 +64,8 @@ const CartBill = ({ setLoader }) => {
 
             <div className='p-0.5 md:p-2 '>
 
-                <div className='flex justify-between items-center gap-3 sm:gap-7 md:gap-10 lg:gap-6 mb-5 '>
+                {/* VOucher Container */}
+                <div className='flex justify-between items-center gap-2 sm:gap-7 md:gap-10 lg:gap-6 mb-5 '>
                     <input type="text" placeholder='Discount voucher' className='flex-1 border p-1.5 lg:p-2.5 rounded-3xl uppercase' />
                     <button className='border rounded-3xl px-3.5 py-1.5 text-md font-light cursor-pointer hover:bg-black hover:text-white transition-colors duration-200 ease-in-out'>Apply</button>
                 </div>
@@ -75,7 +74,7 @@ const CartBill = ({ setLoader }) => {
                 <div className="space-y-2 text-sm">
 
 
-
+                    {/* Item Price */}
                     <div className='  '>
                         {cart.map((item) => (
                             <div className='flex justify-between space-y-2'>
@@ -89,6 +88,7 @@ const CartBill = ({ setLoader }) => {
 
                     <hr className="my-4" />
 
+                    {/* Sub-Total  */}
                     <div className='flex justify-between '>
                         <span>SUb-total</span>
                         <span>{(total).toFixed(2)}</span>
