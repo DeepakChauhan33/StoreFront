@@ -58,7 +58,7 @@ const CartBill = ({ setLoader }) => {
 
 
     return (
-        <section>
+        <section className='bg-white p-4 '>
             <h2 className='text-xl font-semibold mb-3'>Order Smmary</h2>
 
 

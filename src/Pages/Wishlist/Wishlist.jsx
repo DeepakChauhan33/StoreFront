@@ -36,7 +36,7 @@ const Wishlist = () => {
   // }, [wishlist]);
 
   return (
-    <main className=' w-full  md:p-3 space-y-4'>
+    <main className=' w-full   md:p-3 space-y-4'>
 
       {/* ================= HEADER SECTION ================= */}
 
@@ -52,7 +52,8 @@ const Wishlist = () => {
 
 
 
-      <section className='bg-purple-100/30  p-2.5'>
+      <section className='bg-purple-200/30 m-1.5 rounded-xl  p-2.5'>
+
         {wishlist.length === 0 ? (
           <motion.section
             className='h-120 flex justify-center items-center '
@@ -65,7 +66,7 @@ const Wishlist = () => {
             <div className='flex flex-col justify-center items-center gap-4'>
               <PiCalendarHeartLight className="text-7xl lg:text-9xl  text-gray-400" />
 
-              <p className="text-lg md:text-xl lg:text-3xl text-center font-light">
+              <p className="text-lg md:text-xl lg:text-3xl text-center font-normal">
                 Add your favorite products to come back to them later
               </p>
 

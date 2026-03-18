@@ -79,7 +79,7 @@ const Home = () => {
 
             <section
                 className='h-[85dvh] md:h-screen w-full flex justify-center items-center space-y-10 
-                        bg-[url("https://i.pinimg.com/1200x/09/ab/dd/09abdd904702ef068837a7ac010e926b.jpg")]  bg-cover bg-no-repeat bg-center'>
+                        bg-[url("https://i.pinimg.com/236x/a4/e8/7f/a4e87f77a37610077e81af5287f95163.jpg")] object-cover  bg-cover bg-no-repeat bg-center'>
 
                 <motion.div
                     className='flex flex-col justify-center items-center space-y-10 border border-gray-200 rounded-lg p-4 md:p-6 lg:p-8 xl:p-10 bg-white/10 backdrop-blur-xs'

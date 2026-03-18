@@ -13,6 +13,7 @@ import { removeFromCart } from "./CartSlice";
 import { LuBox } from "react-icons/lu";
 import { MdDelete } from "react-icons/md";
 import { CgShoppingCart } from "react-icons/cg";
+import { FaLuggageCart } from "react-icons/fa";
 
 // Motion
 import { motion } from "framer-motion";
@@ -45,19 +46,19 @@ const CartPage = () => {
 
 
     return (
-        <main className=" p-3 py-4 ">
+        <main className="w-full md:p-3 space-y-4 ">
 
             {/* ================= CART HEADER ================= */}
 
             <motion.div
-                className="flex flex-col md:flex-row justify-between items-center mb-6 gap-y-4 "
+                className="m-1 py-3 px-1.5 md:px-2 md:py-3 space-y-1.5 md:space-y-2 flex flex-col lg:flex-row justify-between"
                 initial={{ y: -30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8 }}
             >
                 <div className="w-full lg:w-auto flex-col items-start  gap-2 ">
-                    <h1 className='text-3xl lg:text-4xl font-bold lg:font-semibold ' >
-                        <CgShoppingCart className='inline text-5xl  md:text-6xl text-slate-700' />
+                    <h1 className='text-2xl lg:text-4xl font-bold lg:font-semibold ' >
+                        <CgShoppingCart className='inline text-4xl  md:text-6xl text-slate-700' />
                         My Cart
                     </h1>
                     <p className='pl-3 text-md lg:text-xl font-normal'>Your cart has {cart.length} items</p>
@@ -65,8 +66,8 @@ const CartPage = () => {
 
                 {!isLogin && cart.length > 0 &&
                     (
-                        <div className="w-full lg:w-auto border border-red-400 bg-red-100 rounded-4xl p-2 lg:p-3 lg:mr-6">
-                            <p className="text:xs md:text-lg font-semibold">Please log in to proceed with checkout. <NavLink to="/login" className="text-purple-700 underline">Login</NavLink></p>
+                        <div className="w-full h-fit lg:w-auto border border-red-400 bg-red-100 rounded-4xl p-2 lg:px-3 lg:p-3 lg:mr-6 mt-5 lg:mt-0">
+                            <p className="text-sm md:text-lg font-semibold">Please log in to proceed with checkout. <NavLink to="/login" className="text-purple-700 underline">Login</NavLink></p>
                         </div>
                     )}
             </motion.div>
@@ -80,20 +81,20 @@ const CartPage = () => {
 
 
 
-                <section className="">
+                <section className="bg-linear-to-r from-slate-100 via-gray-200/10 to-gray-300/20 m-1.5 rounded-xl  p-2.5">
 
                     {cart.length === 0 ? (
 
 
-                        <section className="h-98 flex justify-center items-center rounded-lg bg-gray-100">
+                        <section className="h-120 flex justify-center items-center ">
 
 
                             {/* ================= CART  WHEN EMPTY ================= */}
 
                             <div className='flex flex-col justify-center items-center gap-4'>
-                                <LuBox className="text-7xl lg:text-8xl text-gray-400" />
+                                <FaLuggageCart className="text-7xl lg:text-8xl text-gray-400" />
 
-                                <p className="text-lg md:text-xl lg:text-2xl font-light">
+                                <p className="text-lg md:text-xl lg:text-3xl text-center font-normal">
                                     Nothing here yet—start shopping now!
                                 </p>
 
@@ -111,15 +112,15 @@ const CartPage = () => {
 
                         </section>
                     ) : (
-                        <section className="flex flex-col lg:flex-row gap-8 mt-10 p-3">
+                        <section className="flex flex-col lg:flex-row gap-8 md:mt-10 ">
 
                             {/* ================= CART ON MOBILE VIEW  ================= */}
 
-                            <div className="block sm:hidden w-full space-y-4">
+                            <div className="block sm:hidden space-y-4 pt-5 ">
                                 {cart.map((item) => (
-                                    <div className="flex  bg-gray-200/30 shadow-md gap-3 overflow-hidden ">
+                                    <div className="flex shadow-sm bg-white gap-1.5 border  border-gray-600/40  rounded-sm overflow-hidden">
                                         {/* Image Div */}
-                                        <div className="h-auto w-20 md:w-25 p-1">
+                                        <div className="h-auto w-25 md:w-25 p-2 bg-gray-400/40 ">
                                             <NavLink to={`/product/${item.id}`}>
                                                 <img
                                                     src={item.image}
@@ -169,7 +170,7 @@ const CartPage = () => {
 
                             {/* ================= CART ON LARGE SCREEN VIEW  ================= */}
 
-                            <section className="hidden sm:block p-3 w-full lg:w-[60%] h-fit border rounded-lg">
+                            <section className="hidden sm:block p-3 bg-white w-full lg:w-[60%] h-fit border rounded-lg">
                                 <table className="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
                                     <thead className="bg-gray-300 text-gray-700 text-sm uppercase py-2">
                                         <tr>
@@ -242,7 +243,7 @@ const CartPage = () => {
 
                             {/* ================= BILL SUMMARY ================= */}
 
-                            <div className="p-4 border w-full lg:w-[40%] h-fit lg:sticky lg:top-38 rounded-lg">
+                            <div className=" border overflow-hidden w-full lg:w-[40%] h-fit lg:sticky lg:top-38 rounded-lg">
                                 <CartBill setLoader={setLoader} />
                             </div>
                         </section>

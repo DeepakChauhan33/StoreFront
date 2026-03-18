@@ -33,7 +33,7 @@ const Navbar = () => {
     const cartCount = cart.length;
 
     return (
-        <header className="w-full bg-white  opacity-90   drop-shadow-lg fixed top-0 left-0 z-50">
+        <header className="w-full bg-white  opacity-90 shadow-purple-900  drop-shadow-lg  fixed top-0 left-0 z-50">
             <nav className=" mx-auto px-2 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-18">
 

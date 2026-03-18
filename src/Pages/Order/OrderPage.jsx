@@ -5,6 +5,7 @@ import { LuBox } from "react-icons/lu";
 import { FaBox } from "react-icons/fa6";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaDollarSign } from "react-icons/fa6";
+import { FaBoxOpen } from "react-icons/fa";
 
 
 // Action
@@ -44,14 +45,14 @@ const OrderPage = () => {
         transition={{ duration: 0.8 }}
       >
         <h1 className='text-2xl lg:text-4xl font-black lg:font-semibold ' > <FiBox className='inline text-4xl  md:text-6xl text-slate-700' /> My Orders</h1>
-        <p className='pl-3 text-md lg:text-xl font-semibold'>You have {orders.length} orders</p>
+        <p className='pl-3 text-md lg:text-xl font-normal'>You have {orders.length} orders</p>
       </motion.div>
 
 
 
 
 
-      <motion.div className=' bg-gray-100 p-2.5'
+      <motion.div className=' bg-gray-100 m-1.5 rounded-sm  p-2'
 
         initial={{ y: 0, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -72,9 +73,9 @@ const OrderPage = () => {
               {/* ================= EMPTY ODER PAGE ================= */}
 
               <div className='flex flex-col justify-center items-center gap-4'>
-                <LuBox className="text-7xl lg:text-8xl text-gray-400" />
+                <FaBoxOpen className="text-7xl lg:text-8xl text-gray-400" />
 
-                <p className="text-lg md:text-xl lg:text-2xl font-light">
+                <p className="text-lg md:text-xl lg:text-3xl text-center font-normal">
                   No orders here—why not start shopping?
                 </p>
 
@@ -92,14 +93,14 @@ const OrderPage = () => {
           )
           :
           (
-            <div className='h-auto flex flex-col gap-4 rounded-lg overflow-hidden mt-10 '>
+            <div className='h-auto flex flex-col gap-4 mt-6 lg:mt-10 p-1 '>
 
               {/* =================  ODER PRODUCT SUMMARY ================= */}
 
               {orders.map((order) => (
-                <div key={order.id}  >
+                <div key={order.id} className="bg-gray-50 rounded-lg overflow-hidden border border-slate-300"  >
 
-                  <div className='flex justify-between bg-gray-100 px-1.5 py-2 lg:px-6 lg:py-2.5 text-sm  md:text-md lg:text-lg'>
+                  <div className='flex justify-between bg-slate-200/60 px-1.5 py-2 lg:px-6 lg:py-2.5 text-sm  md:text-md lg:text-lg'>
                     {/* Order ID */}
                     <div className='flex flex-col justify-center items-center lg:items-start gap-3 p-2 lg:p-3'>
                       <FaBox />
@@ -139,7 +140,7 @@ const OrderPage = () => {
                     ))}
                   </div>
 
-                  <div className='flex justify-between p-2 lg:p-3.5 lg:px-5 bg-gray-200'>
+                  <div className='flex justify-between p-2 lg:p-3.5 lg:px-5 bg-slate-200/60 '>
                     <span className=' p-2 hover:underline'>View Details</span>
                     <button
                       className='shadow-md rounded-md px-2 lg:px-3 py-1 text-sm  bg-white cursor-pointer transition-transform hover:scale-101'
