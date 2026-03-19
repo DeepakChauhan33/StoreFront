@@ -218,7 +218,11 @@ const LoginForm = () => {
 
 
 
-                <button className=' w-full py-2.5 rounded-md mt-5 transition-colors bg-linear-to-r from-violet-600/60 to-purple-600/60 hover:bg-purple-700 hover:text-white  duration-400 ease-in-out cursor-pointer'>
+                <button
+                    className=' w-full py-2.5 rounded-md mt-5 transition-colors bg-linear-to-r from-violet-600/60 to-purple-600/60 hover:bg-purple-700 hover:text-white  duration-400 ease-in-out cursor-pointer'
+
+                    data-testid="formSubmit"
+                >
                     Submit
                 </button>
             </form>

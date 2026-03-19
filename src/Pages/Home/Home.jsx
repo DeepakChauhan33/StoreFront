@@ -78,9 +78,9 @@ const Home = () => {
 
             <section
                 className='h-[85dvh] md:h-screen w-full flex justify-center items-center space-y-10 
-                        bg-[url("https://i.pinimg.com/236x/a4/e8/7f/a4e87f77a37610077e81af5287f95163.jpg")] object-cover  bg-cover bg-no-repeat bg-center'>
+                        bg-[url("https://i.pinimg.com/1200x/7f/c5/ad/7fc5ad7b135a748c954346e61bb85c32.jpg")] object-cover  bg-cover bg-no-repeat bg-center'>
 
-                <motion.div
+                {/* <motion.div
                     className='flex flex-col justify-center items-center space-y-10 border border-gray-200 rounded-lg p-4 md:p-6 lg:p-8 xl:p-10 bg-white/10 backdrop-blur-xs'
 
                     initial={{ y: -100, opacity: 0 }}
@@ -122,7 +122,7 @@ const Home = () => {
                         </button>
                     </div>
 
-                </motion.div>
+                </motion.div> */}
 
 
 
