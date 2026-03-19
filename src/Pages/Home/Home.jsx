@@ -68,7 +68,6 @@ const Home = () => {
     }, [isLogin]);
 
 
-
     return (
 
 
@@ -135,7 +134,7 @@ const Home = () => {
 
             <motion.section
 
-                className='py-12 px-5 space-y-8 sm:space-y-10 lg:space-y-12 bg-linear-to-r from-zinc-50 to-neutral-100'
+                className='py-12 px-5 space-y-8 sm:space-y-10 lg:space-y-12 bg-linear-to-t from-blue-50/50 via-indigo-100/40 to-violet-100/20'
 
             >
 
@@ -195,10 +194,6 @@ const Home = () => {
 
 
 
-
-
-
-
             {/* ================= FEATURE PRODUCTS SECTION ================= */}
 
             <section className='py-12 px-4 space-y-8 sm:space-y-10 lg:space-y-8'>
@@ -245,9 +240,6 @@ const Home = () => {
 
 
             </section>
-
-
-
 
 
 
@@ -310,9 +302,7 @@ const Home = () => {
 
                 </div>
 
-
             </section>
-
 
 
         </main>
