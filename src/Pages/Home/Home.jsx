@@ -80,7 +80,7 @@ const Home = () => {
                 className='h-[85dvh] md:h-screen w-full flex justify-center items-center space-y-10 
                         bg-[url("https://i.pinimg.com/1200x/7f/c5/ad/7fc5ad7b135a748c954346e61bb85c32.jpg")] bg-cover bg-no-repeat bg-center'>
 
-                {/* <motion.div
+                <motion.div
                     className='flex flex-col justify-center items-center space-y-10 border border-gray-200 rounded-lg p-4 md:p-6 lg:p-8 xl:p-10 bg-white/10 backdrop-blur-xs'
 
                     initial={{ y: -100, opacity: 0 }}
@@ -117,12 +117,23 @@ const Home = () => {
                             Shop Now <TiArrowRight size={22} className='inline' />
                         </button>
 
-                        <button className='p-2 text-black border border-gray-200 rounded-md'>
+                        <button
+
+                            className='p-2 text-black border border-gray-200 rounded-md'
+
+                            onClick={() => {
+                                document.getElementById("about").scrollIntoView({
+                                    behavior: "smooth",
+
+                                });
+                            }}
+                        >
+
                             Learn More
                         </button>
                     </div>
 
-                </motion.div> */}
+                </motion.div>
 
 
 
@@ -243,6 +254,86 @@ const Home = () => {
 
 
 
+            {/* ================= ABOUT SECTION ================= */}
+
+            <section id='about' className=" py-22 px-4 md:px-10 lg:px-20 scroll-mt-10 bg-linear-to-r from-[#FFFFFF] to-[#eae6ec]">
+
+                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+
+                    <div>
+                        <p className="text-xl  font-bold text-purple-700 mb-3">
+                            OUR STORY
+                        </p>
+
+                        <h1 className="text-3xl md:text-5xl font-bold text-gray-700 mb-6 leading-tight">
+                            Quality Over Quantity
+                        </h1>
+
+                        <p className="text-gray-400 mb-4 text-sm md:text-lg">
+                            StoreMart was founded with a simple mission: to bring curated,
+                            high-quality products directly to customers who value excellence.
+                            In a world of mass-produced goods and endless choices, we stand as a
+                            beacon for those who believe in intentionality.
+                        </p>
+
+                        <p className="text-gray-400 mb-8 text-sm md:text-lg">
+                            Our approach is different. We carefully select every product in our
+                            catalog, ensuring authenticity, durability, and value. We don’t
+                            chase trends—we create experiences that matter and build lasting
+                            relationships with our customers.
+                        </p>
+
+                        <div className="grid grid-cols-3 sm:grid-cols-3 gap-6">
+
+                            <div className='text-center md:text-start space-y-2'>
+                                <h2 className="text-2xl font-bold text-purple-700">01</h2>
+                                <p className="text-black text-sm md:text-lg font-medium md:font-semibold lg:font-extrabold">QUALITY FIRST</p>
+                                <p className="text-xs md:text-lg text-gray-400">
+                                    Rigorous selection process for every item
+                                </p>
+                            </div>
+
+                            <div className='text-center md:text-start space-y-2'>
+                                <h2 className="text-2xl font-bold text-purple-700">02</h2>
+                                <p className="text-black text-sm md:text-lg font-medium md:font-semibold lg:font-extrabold">TRANSPARENCY</p>
+                                <p className="text-xs md:text-lg text-gray-400">
+                                    Open communication with our community
+                                </p>
+                            </div>
+
+                            <div className='text-center md:text-start space-y-2'>
+                                <h2 className="text-2xl font-bold text-purple-700">03</h2>
+                                <p className="text-black text-sm md:text-lg font-medium md:font-semibold lg:font-extrabold">RELIABILITY</p>
+                                <p className="text-xs md:text-lg text-gray-400">
+                                    Consistent service you can trust
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div className="bg-white overflow-hidden">
+
+                        <div className="rounded-2xl overflow-hidden shadow-lg p-4">
+
+                            <img
+                                src="https://images.pexels.com/photos/3538028/pexels-photo-3538028.jpeg"
+                                alt="About"
+                                className="w-full h-[350px]  lg:h-160 object-contain md:object-top lg:object-cover rounded-xl overflow-hidden"
+                            />
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+
+
+
             {/* ================= WHAT WE BELIEVE SECTION ================= */}
 
             <section className='w-full p-4 '>
@@ -303,6 +394,11 @@ const Home = () => {
                 </div>
 
             </section>
+
+
+
+
+
 
 
         </main>
