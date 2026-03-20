@@ -78,7 +78,7 @@ const Home = () => {
 
             <section
                 className='h-[85dvh] md:h-screen w-full flex justify-center items-center space-y-10 
-                        bg-[url("https://i.pinimg.com/1200x/7f/c5/ad/7fc5ad7b135a748c954346e61bb85c32.jpg")] object-cover  bg-cover bg-no-repeat bg-center'>
+                        bg-[url("https://i.pinimg.com/1200x/7f/c5/ad/7fc5ad7b135a748c954346e61bb85c32.jpg")] bg-cover bg-no-repeat bg-center'>
 
                 {/* <motion.div
                     className='flex flex-col justify-center items-center space-y-10 border border-gray-200 rounded-lg p-4 md:p-6 lg:p-8 xl:p-10 bg-white/10 backdrop-blur-xs'
@@ -134,7 +134,7 @@ const Home = () => {
 
             <motion.section
 
-                className='py-12 px-5 space-y-8 sm:space-y-10 lg:space-y-12 bg-linear-to-t from-blue-50/50 via-indigo-100/40 to-violet-100/20'
+                className='py-14 lg:py-20 px-4 space-y-8 sm:space-y-10 lg:space-y-12 bg-[#f3f3f5]'
 
             >
 
@@ -155,7 +155,7 @@ const Home = () => {
 
                     <motion.p
 
-                        className='text-gray-500 text-sm md:text-md lg:text-lg font-medium'//Styling
+                        className='text-gray-500 text-xl lg:text-2xl font-normal'//Styling
 
                         initial={{ opacity: 0, x: -40 }} // Animation
                         whileInView={{ opacity: 1, x: 0 }}
@@ -196,14 +196,14 @@ const Home = () => {
 
             {/* ================= FEATURE PRODUCTS SECTION ================= */}
 
-            <section className='py-12 px-4 space-y-8 sm:space-y-10 lg:space-y-8'>
+            <section className='py-14 lg:py-20 px-4 space-y-8 sm:space-y-10 lg:space-y-8 bg-linear-to-b from-gray-200 via-stone-50 to-slate-50'>
 
-                <div className=''>
-                    <h2 className='text-3xl lg:text-4xl font-bold mb-1 md:mb-2 lg:mb-3'>
+                <div className='space-y-1'>
+                    <h3 className='text-3xl sm:text-4xl  font-black '>
                         Featured Products
-                    </h2>
+                    </h3>
 
-                    <p className='text-gray-500 text-sm md:text-md lg:text-lg font-medium'>Check out our carefully curated selection</p>
+                    <p className='text-gray-500 text-lg lg:text-2xl font-normal'>Check out our carefully curated selection</p>
                 </div>
 
 

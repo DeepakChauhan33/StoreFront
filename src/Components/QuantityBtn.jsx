@@ -9,8 +9,6 @@ import { increaseQuantity, decreaseQunatity } from '../Pages/Cart/CartSlice';
 
 const QuantityBtn = ({ id, quantity }) => {
 
-
-
     const dispatch = useDispatch();
 
     // FUNCTION
@@ -36,9 +34,6 @@ const QuantityBtn = ({ id, quantity }) => {
                 className='px-2 bg-gray-300 hover:bg-gray-400 transition-colors duration-300 ease-in-out'
                 onClick={handleIncrease}>+</button>
         </div>
-
-
-
 
     )
 }

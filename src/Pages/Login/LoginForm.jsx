@@ -203,7 +203,7 @@ const LoginForm = () => {
 
                 <div className='flex flex-col space-y-2'>
 
-                    <label htmlFor="name" className='font-bold'>Password</label>
+                    <label htmlFor="password" className='font-bold'>Password</label>
                     <input
                         type="password"
                         id='password'

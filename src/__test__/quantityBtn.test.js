@@ -1,12 +1,11 @@
-import { expect } from "vitest";
-import QuantityBtn from "../Components/QuantityBtn";
+import reducer, { increaseQuantity } from "../Pages/Cart/CartSlice";
 
-import { render, fireEvent } from "@testing-library/react";
+test(" increase quantity", () => {
+    const initialState = {
+        cart: [{ id: 1, quantity: 1 }],
+    };
 
-it("increment Quantity", () => {
-    const { getByTestID } = render(<QuantityBtn />);
+    const newState = reducer(initialState, increaseQuantity(1));
 
-    fireEvent.click(getByTestID("inc"));
-
-    expect(getByTestID("quantity")).toHaveTextContent("1");
-})
+    expect(newState.cart[0].quantity).toBe(2);
+});

@@ -12,8 +12,6 @@ const initState = {
 const cartSlice = createSlice({
 
 
-
-
     name: "cart",
     initialState: initState,
 

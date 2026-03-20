@@ -45,7 +45,7 @@ const OrderPage = () => {
         transition={{ duration: 0.8 }}
       >
         <h1 className='text-2xl lg:text-4xl font-black lg:font-semibold ' > <FiBox className='inline text-4xl  md:text-6xl text-slate-700' /> My Orders</h1>
-        <p className='pl-3 text-md lg:text-xl font-normal'>You have {orders.length} orders</p>
+        <p className='pl-3 text-md lg:text-xl font-normal'>You have {orders.length} order</p>
       </motion.div>
 
 
