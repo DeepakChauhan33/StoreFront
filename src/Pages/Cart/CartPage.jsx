@@ -81,7 +81,7 @@ const CartPage = () => {
 
 
 
-                <section className="bg-linear-to-r from-slate-100 via-gray-200/10 to-gray-300/20 m-1.5 rounded-xl  p-2.5">
+                <section className="bg-stone-200/40 m-1.5 rounded-xl  p-2.5">
 
                     {cart.length === 0 ? (
 

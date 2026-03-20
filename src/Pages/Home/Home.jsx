@@ -77,7 +77,7 @@ const Home = () => {
             {/* ================= HERO SECTION ================= */}
 
             <section
-                className='h-[85dvh] md:h-screen w-full flex justify-center items-center space-y-10 
+                className='h-[85dvh] md:h-screen w-full flex justify-center items-center space-y-10 drop-shadow-xl
                         bg-[url("https://i.pinimg.com/1200x/7f/c5/ad/7fc5ad7b135a748c954346e61bb85c32.jpg")] bg-cover bg-no-repeat bg-center'>
 
                 <motion.div
@@ -145,7 +145,7 @@ const Home = () => {
 
             <motion.section
 
-                className='py-14 lg:py-20 px-4 space-y-8 sm:space-y-10 lg:space-y-12 bg-[#f3f3f5]'
+                className='py-14 lg:py-20 px-4 space-y-8 sm:space-y-10 lg:space-y-12 bg-gradient-to-r from-neutral-300/20 to-stone-400/10'
 
             >
 
@@ -230,7 +230,7 @@ const Home = () => {
 
             {/* ================= READAY TO SHOP ================= */}
 
-            <section className='py-5 lg:py-10 border-t border-stone-200 bg-linear-to-r from-slate-50 via-gray-100 to-gray-50'>
+            <section className='py-5 lg:py-10 border-t border-stone-200 bg-linear-to-r from-zinc-300/20 via-slate-50 to-zinc-300/10  drop-shadow-sm'>
 
                 <div className=' flex flex-col justify-center items-center mb-12 rounded-md  gap-y-6 py-9 '>
 
@@ -256,40 +256,69 @@ const Home = () => {
 
             {/* ================= ABOUT SECTION ================= */}
 
-            <section id='about' className=" py-22 px-4 md:px-10 lg:px-20 scroll-mt-10 bg-linear-to-r from-[#FFFFFF] to-[#eae6ec]">
+            <section id='about' className=" py-22 px-4 md:px-10 lg:px-20 scroll-mt-10 bg-linear-to-r from-[#e4e3e3a5] to-[#eae6ec]">
 
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
 
-                    <div>
+                    <div
+
+                        initial={{ opacity: 0, x: -40 }} // Animation
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true, amount: 0.4 }}
+                    >
                         <p className="text-xl  font-bold text-purple-700 mb-3">
                             OUR STORY
                         </p>
 
-                        <h1 className="text-3xl md:text-5xl font-bold text-gray-700 mb-6 leading-tight">
+                        <motion.h1 className="text-3xl md:text-5xl font-bold text-gray-700 mb-6 leading-tight"
+                            initial={{ opacity: 0, x: -40 }} // Animation
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true, amount: 0.4 }}
+                        >
                             Quality Over Quantity
-                        </h1>
+                        </motion.h1>
 
-                        <p className="text-gray-400 mb-4 text-sm md:text-lg">
+                        <motion.p className="text-gray-500 mb-4 text-sm md:text-lg"
+                            initial={{ opacity: 0, x: -40 }} // Animation
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.9 }}
+                            viewport={{ once: true, amount: 0.4 }}
+                        >
+
                             StoreMart was founded with a simple mission: to bring curated,
                             high-quality products directly to customers who value excellence.
                             In a world of mass-produced goods and endless choices, we stand as a
                             beacon for those who believe in intentionality.
-                        </p>
+                        </motion.p>
 
-                        <p className="text-gray-400 mb-8 text-sm md:text-lg">
+                        <motion.p className="text-gray-500 mb-8 text-sm md:text-lg"
+                            initial={{ opacity: 0, x: -40 }} // Animation
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.9 }}
+                            viewport={{ once: true, amount: 0.4 }}>
+
                             Our approach is different. We carefully select every product in our
                             catalog, ensuring authenticity, durability, and value. We don’t
                             chase trends—we create experiences that matter and build lasting
                             relationships with our customers.
-                        </p>
+                        </motion.p>
 
-                        <div className="grid grid-cols-3 sm:grid-cols-3 gap-6">
+                        <motiondiv className="grid grid-cols-3 sm:grid-cols-3 gap-6"
+
+                            initial={{ opacity: 0, x: -40 }} // Animation
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.9 }}
+                            viewport={{ once: true, amount: 0.4 }}
+                        >
+
 
                             <div className='text-center md:text-start space-y-2'>
                                 <h2 className="text-2xl font-bold text-purple-700">01</h2>
                                 <p className="text-black text-sm md:text-lg font-medium md:font-semibold lg:font-extrabold">QUALITY FIRST</p>
-                                <p className="text-xs md:text-lg text-gray-400">
+                                <p className="text-xs font-light md:text-lg text-gray-400">
                                     Rigorous selection process for every item
                                 </p>
                             </div>
@@ -297,7 +326,7 @@ const Home = () => {
                             <div className='text-center md:text-start space-y-2'>
                                 <h2 className="text-2xl font-bold text-purple-700">02</h2>
                                 <p className="text-black text-sm md:text-lg font-medium md:font-semibold lg:font-extrabold">TRANSPARENCY</p>
-                                <p className="text-xs md:text-lg text-gray-400">
+                                <p className="text-xs font-light md:text-lg text-gray-400">
                                     Open communication with our community
                                 </p>
                             </div>
@@ -305,16 +334,23 @@ const Home = () => {
                             <div className='text-center md:text-start space-y-2'>
                                 <h2 className="text-2xl font-bold text-purple-700">03</h2>
                                 <p className="text-black text-sm md:text-lg font-medium md:font-semibold lg:font-extrabold">RELIABILITY</p>
-                                <p className="text-xs md:text-lg text-gray-400">
+                                <p className="text-xs font-light md:text-lg text-gray-400">
                                     Consistent service you can trust
                                 </p>
                             </div>
 
-                        </div>
+                        </motiondiv>
                     </div>
 
 
-                    <div className="bg-white overflow-hidden">
+                    <motion.div className="bg-white overflow-hidden "
+
+                        initial={{ opacity: 0, y: -60 }} // Animation
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1 }}
+                        viewport={{ once: true, amount: 0.4 }}
+
+                    >
 
                         <div className="rounded-2xl overflow-hidden shadow-lg p-4">
 
@@ -326,7 +362,7 @@ const Home = () => {
 
                         </div>
 
-                    </div>
+                    </motion.div>
 
                 </div>
             </section>
@@ -336,9 +372,9 @@ const Home = () => {
 
             {/* ================= WHAT WE BELIEVE SECTION ================= */}
 
-            <section className='w-full p-4 '>
+            <section className='w-full py-10 px-4 md:px-10 lg:px-18'>
 
-                <div className=' flex flex-col justify-center items-center mb-12 rounded-md py-10  lg:py-18 lg:px-7 gap-y-15 lg:gap-y-25'>
+                <div className='max-w-8xl flex flex-col justify-center items-center mb-12 rounded-md py-10  lg:py-18 lg:px-7 gap-y-15 lg:gap-y-25'>
 
                     <div className='w-full px-3 text-center'>
                         <h3 className='text-3xl lg:text-5xl font-black '>What we believe</h3>
@@ -401,7 +437,7 @@ const Home = () => {
 
 
 
-        </main>
+        </main >
     )
 }
 

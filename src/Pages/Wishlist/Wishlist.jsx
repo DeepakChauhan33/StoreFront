@@ -52,7 +52,7 @@ const Wishlist = () => {
 
 
 
-      <section className='bg-purple-200/20 m-1.5 rounded-xl  p-2.5'>
+      <section className='bg-gray-300/40 m-1.5 rounded-xl  p-2.5'>
 
         {wishlist.length === 0 ? (
           <motion.section
@@ -188,6 +188,7 @@ const Wishlist = () => {
 
                       <td className="px-6 py-4">
                         <button
+                          title='remove'
                           className="  hover:bg-red-200 rounded-full transition-colors duration-200"
                           onClick={() => dispatch(removeFromWishlist(item.id))}
                         >
