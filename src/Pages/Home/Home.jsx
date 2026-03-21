@@ -27,7 +27,7 @@ import toast from 'react-hot-toast';
 import { useEffect } from 'react';
 
 
-
+import bannerImg from "../../Images/E-comm banner.jpg";
 
 
 
@@ -77,11 +77,13 @@ const Home = () => {
             {/* ================= HERO SECTION ================= */}
 
             <section
-                className='h-[85dvh] md:h-screen w-full flex justify-center items-center space-y-10 drop-shadow-xl bg-stone-300/50
-                         bg-cover bg-no-repeat bg-center'>
+                className='h-[85dvh] md:h-screen w-full flex justify-start items-center drop-shadow-xl bg-[#5134211a]
+                         bg-cover bg-no-repeat bg-center lg:bg-top'
 
-                {/* <motion.div
-                    className='flex flex-col justify-center items-center space-y-10 border border-gray-200 rounded-lg p-4 md:p-6 lg:p-8 xl:p-10 bg-white/10 backdrop-blur-xs'
+                style={{ backgroundImage: `url(${bannerImg})` }}>
+
+                <motion.div
+                    className='h-full flex flex-col justify-center items-start space-y-8 border  rounded-lg p-4 md:p-6   '
 
                     initial={{ y: -100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
@@ -89,7 +91,7 @@ const Home = () => {
 
                 >
 
-                    <motion.h1 className="text-3xl xl:text-7xl text-white font-bold text-center mt-30"
+                    <motion.h1 className="text-3xl xl:text-7xl bg-linear-to-r from-slate-900 via-gray-800 to-gray-200 bg-clip-text text-transparent font-black text-center mt-30"
                         initial={{ opacity: 0, y: -40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
@@ -97,9 +99,9 @@ const Home = () => {
                         Welcome to StoreFront
                     </motion.h1>
 
-                    <div className='text-center'>
+                    <div className='text-start '>
                         <motion.p
-                            className='text-sm xl:text-lg font-medium text-white'
+                            className='text-sm lg:text-2xl  font-normal text-gray-500'
                             initial={{ opacity: 0, y: -40 }}
                             animate={{ opacity: 1, y: 20 }}
                             transition={{ duration: 1 }}
@@ -110,7 +112,7 @@ const Home = () => {
                     </div>
 
 
-                    <div className='flex gap-3'>
+                    <div className='flex gap-3 mt-8'>
                         <button className='p-2 px-4 bg-black text-white rounded-md hover:text-black hover:bg-white transition transform hover:scale-105 duration-300'
                             onClick={handleClick}
                         >
@@ -133,73 +135,14 @@ const Home = () => {
                         </button>
                     </div>
 
-                </motion.div> */}
+                </motion.div>
 
 
 
 
 
-                <div className='h-full w-1/2 '>
-                    <img src="https://i.pinimg.com/1200x/35/74/7e/35747ed4d30ed8fbbd0bd2da87bd6dcd.jpg" alt="" className='h-full w-full  object-cover' />
-                </div>
 
 
-                <div className='w-1/2'>
-                    <motion.div
-                        className='flex flex-col justify-center items-center space-y-10 border border-gray-200 rounded-lg p-4 md:p-6 lg:p-8 xl:p-10 bg-white/10 backdrop-blur-xs'
-
-                        initial={{ y: -100, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 0.9 }}
-
-                    >
-
-                        <motion.h1 className="text-3xl xl:text-7xl text-white font-bold text-center mt-30"
-                            initial={{ opacity: 0, y: -40 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1 }}
-                        >
-                            Welcome to StoreFront
-                        </motion.h1>
-
-                        <div className='text-center'>
-                            <motion.p
-                                className='text-sm xl:text-lg font-medium text-white'
-                                initial={{ opacity: 0, y: -40 }}
-                                animate={{ opacity: 1, y: 20 }}
-                                transition={{ duration: 1 }}
-                            >
-                                Discover an amazing collection of products at unbeatable prices. <br />
-                                Shop your favorite categories and enjoy fast, reliable delivery.
-                            </motion.p>
-                        </div>
-
-
-                        <div className='flex gap-3'>
-                            <button className='p-2 px-4 bg-black text-white rounded-md hover:text-black hover:bg-white transition transform hover:scale-105 duration-300'
-                                onClick={handleClick}
-                            >
-                                Shop Now <TiArrowRight size={22} className='inline' />
-                            </button>
-
-                            <button
-
-                                className='p-2 text-black border border-gray-200 rounded-md'
-
-                                onClick={() => {
-                                    document.getElementById("about").scrollIntoView({
-                                        behavior: "smooth",
-
-                                    });
-                                }}
-                            >
-
-                                Learn More
-                            </button>
-                        </div>
-
-                    </motion.div>
-                </div>
 
 
 

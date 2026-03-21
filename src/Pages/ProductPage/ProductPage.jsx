@@ -179,7 +179,7 @@ const ProductsPage = () => {
                         {/* Product Title and Copy URL Btn */}
 
                         <div className='flex  justify-between items-start'>
-                            <h1 className="lg:underline text-xl  md:text-2xl xl:text-3xl font-bold md:font-semibold">
+                            <h1 className="lg:underline text-xl  md:text-2xl xl:text-3xl font-bold md:font-medium">
                                 {product.title}
                             </h1>
 
