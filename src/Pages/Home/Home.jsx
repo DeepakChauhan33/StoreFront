@@ -77,10 +77,10 @@ const Home = () => {
             {/* ================= HERO SECTION ================= */}
 
             <section
-                className='h-[85dvh] md:h-screen w-full flex justify-center items-center space-y-10 drop-shadow-xl
-                        bg-[url("https://i.pinimg.com/1200x/7f/c5/ad/7fc5ad7b135a748c954346e61bb85c32.jpg")] bg-cover bg-no-repeat bg-center'>
+                className='h-[85dvh] md:h-screen w-full flex justify-center items-center space-y-10 drop-shadow-xl bg-stone-300/50
+                         bg-cover bg-no-repeat bg-center'>
 
-                <motion.div
+                {/* <motion.div
                     className='flex flex-col justify-center items-center space-y-10 border border-gray-200 rounded-lg p-4 md:p-6 lg:p-8 xl:p-10 bg-white/10 backdrop-blur-xs'
 
                     initial={{ y: -100, opacity: 0 }}
@@ -89,12 +89,12 @@ const Home = () => {
 
                 >
 
-                    <motion.h1 className="text-3xl xl:text-7xl text-gray-800 font-bold text-center mt-30"
+                    <motion.h1 className="text-3xl xl:text-7xl text-white font-bold text-center mt-30"
                         initial={{ opacity: 0, y: -40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
                     >
-                        Welcome to StoreMart
+                        Welcome to StoreFront
                     </motion.h1>
 
                     <div className='text-center'>
@@ -133,7 +133,73 @@ const Home = () => {
                         </button>
                     </div>
 
-                </motion.div>
+                </motion.div> */}
+
+
+
+
+
+                <div className='h-full w-1/2 '>
+                    <img src="https://i.pinimg.com/1200x/35/74/7e/35747ed4d30ed8fbbd0bd2da87bd6dcd.jpg" alt="" className='h-full w-full  object-cover' />
+                </div>
+
+
+                <div className='w-1/2'>
+                    <motion.div
+                        className='flex flex-col justify-center items-center space-y-10 border border-gray-200 rounded-lg p-4 md:p-6 lg:p-8 xl:p-10 bg-white/10 backdrop-blur-xs'
+
+                        initial={{ y: -100, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.9 }}
+
+                    >
+
+                        <motion.h1 className="text-3xl xl:text-7xl text-white font-bold text-center mt-30"
+                            initial={{ opacity: 0, y: -40 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1 }}
+                        >
+                            Welcome to StoreFront
+                        </motion.h1>
+
+                        <div className='text-center'>
+                            <motion.p
+                                className='text-sm xl:text-lg font-medium text-white'
+                                initial={{ opacity: 0, y: -40 }}
+                                animate={{ opacity: 1, y: 20 }}
+                                transition={{ duration: 1 }}
+                            >
+                                Discover an amazing collection of products at unbeatable prices. <br />
+                                Shop your favorite categories and enjoy fast, reliable delivery.
+                            </motion.p>
+                        </div>
+
+
+                        <div className='flex gap-3'>
+                            <button className='p-2 px-4 bg-black text-white rounded-md hover:text-black hover:bg-white transition transform hover:scale-105 duration-300'
+                                onClick={handleClick}
+                            >
+                                Shop Now <TiArrowRight size={22} className='inline' />
+                            </button>
+
+                            <button
+
+                                className='p-2 text-black border border-gray-200 rounded-md'
+
+                                onClick={() => {
+                                    document.getElementById("about").scrollIntoView({
+                                        behavior: "smooth",
+
+                                    });
+                                }}
+                            >
+
+                                Learn More
+                            </button>
+                        </div>
+
+                    </motion.div>
+                </div>
 
 
 
@@ -145,7 +211,7 @@ const Home = () => {
 
             <motion.section
 
-                className='py-14 lg:py-20 px-4 space-y-8 sm:space-y-10 lg:space-y-12 bg-gradient-to-r from-neutral-300/20 to-stone-400/10'
+                className='py-14 lg:py-20 px-4 md:px-10 space-y-8 sm:space-y-10 lg:space-y-12 bg-linear-to-b from-white to-stone-400/10'
 
             >
 
@@ -207,7 +273,7 @@ const Home = () => {
 
             {/* ================= FEATURE PRODUCTS SECTION ================= */}
 
-            <section className='py-14 lg:py-20 px-4 space-y-8 sm:space-y-10 lg:space-y-8 bg-linear-to-b from-gray-200 via-stone-50 to-slate-50'>
+            <section className='py-14 lg:py-20 px-4 lg:px-10 space-y-8 sm:space-y-10 lg:space-y-8 '>
 
                 <div className='space-y-1'>
                     <h3 className='text-3xl sm:text-4xl  font-black '>
@@ -272,7 +338,7 @@ const Home = () => {
                             OUR STORY
                         </p>
 
-                        <motion.h1 className="text-3xl md:text-5xl font-bold text-gray-700 mb-6 leading-tight"
+                        <motion.h1 className="text-3xl md:text-5xl font-bold text-gray-700 mb-6 "
                             initial={{ opacity: 0, x: -40 }} // Animation
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8 }}
@@ -382,7 +448,7 @@ const Home = () => {
 
                     <ul className='grid gird-cols-1 md:grid-cols-2 lg:grid-cols-4  justify-items-center items-start gap-x-5 space-y-10 w-full p-2'>
 
-                        <li className='flex items-center gap-x-3 w-full  '>
+                        <li className=' flex items-center gap-x-3 w-full transition-transform hover:scale-103 duration-300 ease-in-out '>
                             <div className='text-4xl'>
                                 <PiRocketLaunchDuotone />
                             </div>
@@ -393,7 +459,7 @@ const Home = () => {
                             </div>
                         </li>
 
-                        <li className='flex items-center gap-x-3 w-full '>
+                        <li className='flex items-center gap-x-3 w-full transition-transform hover:scale-103 duration-300 ease-in-out'>
                             <div className='text-4xl'>
                                 <IoReloadCircleOutline />
                             </div>
@@ -404,7 +470,7 @@ const Home = () => {
                             </div>
                         </li>
 
-                        <li className='flex items-center gap-x-3 w-full '>
+                        <li className='flex items-center gap-x-3 w-full transition-transform hover:scale-103 duration-300 ease-in-out'>
                             <div className='text-4xl'>
                                 <MdOutlineDiscount />
                             </div>
@@ -415,7 +481,7 @@ const Home = () => {
                             </div>
                         </li>
 
-                        <li className='flex items-center gap-x-3 w-full  '>
+                        <li className='flex items-center gap-x-3 w-full transition-transform hover:scale-103 duration-300 ease-in-out '>
                             <div className='text-4xl'>
                                 <MdSupportAgent />
                             </div>
