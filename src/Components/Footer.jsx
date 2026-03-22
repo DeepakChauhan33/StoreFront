@@ -1,5 +1,4 @@
 // HOOKS
-import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
 
@@ -40,6 +39,7 @@ const Footer = () => {
               sustainability and authenticity at our core.
             </p>
 
+            {/* Social Links */}
             <div className="flex gap-4">
               <FaInstagram className="cursor-pointer hover:text-white transition-transform hover:-translate-y-1 duration-200 ease-in-out" />
               <FaTwitter className="cursor-pointer hover:text-white transition-transform hover:-translate-y-1 duration-200 ease-in-out" />
@@ -50,8 +50,7 @@ const Footer = () => {
 
 
 
-          {/* Quick Links */}
-
+          {/* Quick Links Section of website */}
           <div>
 
             <h2 className='text-white font-semibold mb-4'>
@@ -76,6 +75,8 @@ const Footer = () => {
               </NavLink>
             </ul>
           </div>
+
+
 
 
           {/* Categories */}

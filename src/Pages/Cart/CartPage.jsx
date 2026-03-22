@@ -131,10 +131,10 @@ const CartPage = () => {
                                         </div>
 
                                         {/* Product NAme and Quantity */}
-                                        <div className="flex flex-1 justify-between p-2 gap-2 ">
+                                        <div className="flex flex-1 justify-between p-1.5 gap-1 ">
                                             {/* Name and Price */}
-                                            <div className="space-y-3 flex flex-col justify-between">
-                                                <p className="line-clamp-3 md:line-clamp-3 text-md md:text-lg font-semibold ">
+                                            <div className="space-y-3 flex flex-col justify-between ">
+                                                <p className="line-clamp-2 md:line-clamp-3 text-md md:text-lg font-semibold ">
                                                     {item.title}
                                                 </p>
                                                 <span className="text-xl font-black">
@@ -143,20 +143,20 @@ const CartPage = () => {
                                             </div>
 
                                             {/* Quantity & Delete Button */}
-                                            <div className=" flex flex-col justify-between items-end gap-4 ">
+                                            <div className=" flex flex-col justify-between items-end gap-2  ">
                                                 <div className="min-w-26 flex justify-end ">
                                                     <QuantityBtn id={item.id} quantity={item.quantity} />
                                                 </div>
 
                                                 <div>
                                                     <p className="text-sm font-normal">sub total</p>
-                                                    <span className="text-md font-black">
+                                                    <span className="text-md font-extrabold">
                                                         ${(item.price * item.quantity).toFixed(2)}
                                                     </span>
                                                 </div>
 
                                                 <button
-                                                    className="text-2xl  text-red-400 hover:text-red-500 hover:scale-110 transition-transform duration-200 cursor-pointer"
+                                                    className="text-xl  text-red-400 hover:text-red-500 hover:scale-110 transition-transform duration-200 cursor-pointer"
                                                     onClick={() => dispatch(removeFromCart(item.id))}
                                                 >
                                                     <MdDelete />

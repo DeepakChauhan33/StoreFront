@@ -23,7 +23,7 @@ const QuantityBtn = ({ id, quantity }) => {
 
     return (
 
-        <div className='border border-gray-200 inline-block p-0' title='Add quantity'>
+        <div className='border border-gray-200 inline-block p-0 text-sm' title='Add quantity'>
             <button
                 data-testid="inc"
                 className='px-2 bg-gray-300 hover:bg-gray-400 transition-colors duration-300 ease-in-out'

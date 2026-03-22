@@ -1,20 +1,12 @@
 import React from 'react'
 
-// Hooks
-import { useDispatch, useSelector } from 'react-redux';
-
-
-// Actions
-import { addToWishlist, toggleWishlist } from '../Pages/Wishlist/WishlistSlice';
-import { addToCart } from '../Pages/Cart/CartSlice';
 
 // Motion
 import { motion } from 'framer-motion';
 
 // React Icons
-import { FaRegHeart } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
-import { FaHeart } from "react-icons/fa";
+
 
 
 
@@ -58,7 +50,7 @@ const ProductCard = React.memo(({ product }) => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true, amount: 0.4 }}
 
-            className='flex flex-col justify-between rounded-lg border shadow-md border-gray-200 min-h-[450px] p-2 pb-4 space-y-2.5 overflow-hidden bg-white'
+            className='flex flex-col justify-between rounded-lg border shadow-md border-gray-400/30 min-h-[450px] p-2 pb-4 space-y-2.5 overflow-hidden bg-white'
             id={product.id}>
 
 
@@ -106,7 +98,7 @@ const ProductCard = React.memo(({ product }) => {
 
 
                 {/*Add to Cart Button */}
-                <ButtonComp width={"w-[50%]"} product={product}><IoCartOutline className='inline ' /> Add to cart</ButtonComp>
+                <ButtonComp width={"w-[50%] px-2 py-2.5 lg:px-4 lg:py-3"} product={product}><IoCartOutline className='inline ' /> Add to cart</ButtonComp>
 
 
             </div>

@@ -88,7 +88,7 @@ const ProductPage = ({ ...rest }) => {
                 initial={{ y: -30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8 }}>
-                <h1 className='text-3xl lg:text-4xl font-bold lg:font-semibold'> <BsHandbag className='inline text-5xl  md:text-6xl text-slate-700' /> See Products</h1>
+                <h1 className='text-2xl lg:text-4xl font-bold lg:font-semibold '> <BsHandbag className='inline text-4xl  md:text-6xl text-slate-700' /> See Products</h1>
                 <p className='text-sm lg:text-xl font-normal'>{msg}</p>
             </motion.div>
 

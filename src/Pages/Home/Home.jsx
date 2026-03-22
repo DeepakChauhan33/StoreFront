@@ -77,13 +77,13 @@ const Home = () => {
             {/* ================= HERO SECTION ================= */}
 
             <section
-                className='h-[85dvh] md:h-screen w-full flex justify-start items-center drop-shadow-xl bg-[#5134211a]
+                className='h-[85dvh] md:h-screen w-full flex justify-start items-center drop-shadow-xl shadow-stone-500 bg-[#5134211a]
                          bg-cover bg-no-repeat bg-center lg:bg-top'
 
                 style={{ backgroundImage: `url(${bannerImg})` }}>
 
                 <motion.div
-                    className='h-full flex flex-col justify-center items-start space-y-8 border  rounded-lg p-4 md:p-6   '
+                    className='h-[60%]  md:h-full flex flex-col justify-center items-center md:items-start space-y-6 lg:space-y-8   rounded-lg p-4 md:p-6   '
 
                     initial={{ y: -100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
@@ -91,7 +91,7 @@ const Home = () => {
 
                 >
 
-                    <motion.h1 className="text-3xl xl:text-7xl bg-linear-to-r from-slate-900 via-gray-800 to-gray-200 bg-clip-text text-transparent font-black text-center mt-30"
+                    <motion.h1 className="text-3xl md:text-5xl xl:text-7xl bg-linear-to-r from-slate-800 to-slate-100 bg-clip-text text-transparent font-black text-center md:mt-30"
                         initial={{ opacity: 0, y: -40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
@@ -101,19 +101,19 @@ const Home = () => {
 
                     <div className='text-start '>
                         <motion.p
-                            className='text-sm lg:text-2xl  font-normal text-gray-500'
+                            className={`text-md md:text-lg lg:text-2xl font-semibold md:font-normal bg-linear-to-r from-gray-800 via-stone-500 to-slate-50 bg-clip-text text-transparent text-center md:text-start`}
                             initial={{ opacity: 0, y: -40 }}
                             animate={{ opacity: 1, y: 20 }}
                             transition={{ duration: 1 }}
                         >
-                            Discover an amazing collection of products at unbeatable prices. <br />
+                            Discover an amazing collection of products at unbeatable prices. <br className='hidden md:block' />
                             Shop your favorite categories and enjoy fast, reliable delivery.
                         </motion.p>
                     </div>
 
 
-                    <div className='flex gap-3 mt-8'>
-                        <button className='p-2 px-4 bg-black text-white rounded-md hover:text-black hover:bg-white transition transform hover:scale-105 duration-300'
+                    <div className='flex gap-5 mt-8'>
+                        <button className='p-2 px-5 bg-black text-sm md:text-lg lg:text-xl text-white rounded-md hover:text-black hover:bg-white transition transform hover:scale-105 duration-300'
                             onClick={handleClick}
                         >
                             Shop Now <TiArrowRight size={22} className='inline' />
@@ -121,7 +121,7 @@ const Home = () => {
 
                         <button
 
-                            className='p-2 text-black border border-gray-200 rounded-md'
+                            className='p-2 px-5 bg-white/50  md:bg-black/30 backdrop:blur-lg border-2 border-white/20 r-gray-400 text-sm md:text-lg lg:text-xl text-gray-700 rounded-md hover:shadow-lg '
 
                             onClick={() => {
                                 document.getElementById("about").scrollIntoView({
@@ -138,14 +138,6 @@ const Home = () => {
                 </motion.div>
 
 
-
-
-
-
-
-
-
-
             </section>
 
 
@@ -154,7 +146,7 @@ const Home = () => {
 
             <motion.section
 
-                className='py-14 lg:py-20 px-4 md:px-10 space-y-8 sm:space-y-10 lg:space-y-12 bg-linear-to-b from-white to-stone-400/10'
+                className='py-14 lg:py-20 px-4 md:px-10 space-y-8 sm:space-y-10 lg:space-y-12 bg-linear-to-r from-neutral-300/20 to-stone-400/20'
 
             >
 
@@ -163,7 +155,7 @@ const Home = () => {
 
                     <motion.h2
 
-                        className='text-3xl lg:text-4xl font-extrabold mb-1 md:mb-2 lg:mb-3' //Styling
+                        className='text-2xl lg:text-4xl font-black  mb-1 md:mb-2 lg:mb-3 ' //Styling
 
                         initial={{ opacity: 0, x: -40 }} // Animation
                         whileInView={{ opacity: 1, x: 0 }}
@@ -175,7 +167,7 @@ const Home = () => {
 
                     <motion.p
 
-                        className='text-gray-500 text-xl lg:text-2xl font-normal'//Styling
+                        className='text-gray-500 text-lg  lg:text-2xl font-normal'//Styling
 
                         initial={{ opacity: 0, x: -40 }} // Animation
                         whileInView={{ opacity: 1, x: 0 }}
@@ -216,12 +208,19 @@ const Home = () => {
 
             {/* ================= FEATURE PRODUCTS SECTION ================= */}
 
-            <section className='py-14 lg:py-20 px-4 lg:px-10 space-y-8 sm:space-y-10 lg:space-y-8 '>
+            <section className='py-14 lg:py-20 px-2  lg:px-10 space-y-8 sm:space-y-10 lg:space-y-8 '>
 
-                <div className='space-y-1'>
-                    <h3 className='text-3xl sm:text-4xl  font-black '>
-                        Featured Products
-                    </h3>
+                <div className='space-y-1'>                        <motion.h2
+
+                    className='text-2xl lg:text-4xl font-black  mb-1 md:mb-2 lg:mb-3 ' //Styling
+
+                    initial={{ opacity: 0, x: -40 }} // Animation
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true, amount: 0.4 }}
+                >
+                    Featured Products
+                </motion.h2>
 
                     <p className='text-gray-500 text-lg lg:text-2xl font-normal'>Check out our carefully curated selection</p>
                 </div>
@@ -239,7 +238,7 @@ const Home = () => {
 
             {/* ================= READAY TO SHOP ================= */}
 
-            <section className='py-5 lg:py-10 border-t border-stone-200 bg-linear-to-r from-zinc-300/20 via-slate-50 to-zinc-300/10  drop-shadow-sm'>
+            <section className='py-5 lg:py-20 border-t border-stone-200 bg-linear-to-r from-zinc-300/20 via-slate-50 to-zinc-300/10  drop-shadow-sm'>
 
                 <div className=' flex flex-col justify-center items-center mb-12 rounded-md  gap-y-6 py-9 '>
 
@@ -281,7 +280,7 @@ const Home = () => {
                             OUR STORY
                         </p>
 
-                        <motion.h1 className="text-3xl md:text-5xl font-bold text-gray-700 mb-6 "
+                        <motion.h1 className="text-2xl lg:text-4xl font-black  mb-6 text-gray-600 "
                             initial={{ opacity: 0, x: -40 }} // Animation
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8 }}
@@ -297,7 +296,7 @@ const Home = () => {
                             viewport={{ once: true, amount: 0.4 }}
                         >
 
-                            StoreMart was founded with a simple mission: to bring curated,
+                            StoreFront was founded with a simple mission: to bring curated,
                             high-quality products directly to customers who value excellence.
                             In a world of mass-produced goods and endless choices, we stand as a
                             beacon for those who believe in intentionality.
@@ -327,7 +326,7 @@ const Home = () => {
                             <div className='text-center md:text-start space-y-2'>
                                 <h2 className="text-2xl font-bold text-purple-700">01</h2>
                                 <p className="text-black text-sm md:text-lg font-medium md:font-semibold lg:font-extrabold">QUALITY FIRST</p>
-                                <p className="text-xs font-light md:text-lg text-gray-400">
+                                <p className="text-xs font-light md:text-lg text-gray-700">
                                     Rigorous selection process for every item
                                 </p>
                             </div>
@@ -335,7 +334,7 @@ const Home = () => {
                             <div className='text-center md:text-start space-y-2'>
                                 <h2 className="text-2xl font-bold text-purple-700">02</h2>
                                 <p className="text-black text-sm md:text-lg font-medium md:font-semibold lg:font-extrabold">TRANSPARENCY</p>
-                                <p className="text-xs font-light md:text-lg text-gray-400">
+                                <p className="text-xs font-light md:text-lg text-gray-700">
                                     Open communication with our community
                                 </p>
                             </div>
@@ -343,7 +342,7 @@ const Home = () => {
                             <div className='text-center md:text-start space-y-2'>
                                 <h2 className="text-2xl font-bold text-purple-700">03</h2>
                                 <p className="text-black text-sm md:text-lg font-medium md:font-semibold lg:font-extrabold">RELIABILITY</p>
-                                <p className="text-xs font-light md:text-lg text-gray-400">
+                                <p className="text-xs font-light md:text-lg text-gray-700">
                                     Consistent service you can trust
                                 </p>
                             </div>

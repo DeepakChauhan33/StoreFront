@@ -29,12 +29,12 @@ const UserPage = () => {
     }
     return (
         <div
-            className="w-full h-screen flex flex-col justify-center items-center shadow-md bg-center bg-cover bg-no-repeat"
-            style={{ backgroundImage: `url(${UserImg})` }}
+            className="w-full h-screen flex flex-col justify-center items-center shadow-md bg-gray-200"
+        // style={{ backgroundImage: `url(${UserImg})` }}
         >
 
 
-            <div className='w-[70%] lg:w-1/2 h-80 bg-gray-200 opacity-90 p-8 flex flex-col justify-center items-center gap-2  rounded-md '>
+            <div className='w-[70%] lg:w-1/2 h-80 bg-black/20 backdrop:blur-lg    flex flex-col justify-center items-center gap-2  rounded-md'>
 
                 <div className='h-30 w-30 rounded-full border-3 border-blue-400 '>
 
@@ -45,7 +45,7 @@ const UserPage = () => {
 
                 <p className='text-lg font-semibold md:text-2xl'>{user?.name}</p>
 
-                <button className='py-2  w-full mt-4 rounded-md bg-purple-500'
+                <button className='py-2  w-[80%] mt-4 rounded-md bg-black text-white'
                     onClick={handleLogout}>
                     Logout
                 </button>

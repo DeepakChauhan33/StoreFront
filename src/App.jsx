@@ -3,10 +3,6 @@
 import { Routes, Route } from 'react-router-dom';
 
 
-
-// Importing Navbar
-import Navbar from './Components/Navbar'
-
 // Importing Pages
 import Home from './Pages/Home/Home';
 import Products from './Pages/Product/Products';
@@ -33,13 +29,6 @@ import { Toaster } from "react-hot-toast";
 
 
 
-// Spinner
-import { FaSpinner } from 'react-icons/fa';
-
-
-
-
-
 
 function App() {
 
@@ -52,9 +41,8 @@ function App() {
       <Toaster position="bottom-right" reverseOrder={false} />
 
 
+      {/* Routes */}
       <Routes>
-
-
 
         <Route path='/' element={<Layout />}>
           <Route path='/' element={<Home />}></Route>
@@ -66,12 +54,15 @@ function App() {
           <Route path="/login" element={<LoginPage />}></Route>
         </Route>
 
+
+
+        {/* These pages don't show navbar and footer */}
         <Route path="/search" element={<Search />}></Route>
         <Route path='*' element={<ErrorPage />}></Route>
 
       </Routes>
 
-
+      {/* Bottom navbar for mobile  */}
       <div className='md:hidden fixed bottom-0 left-0 w-full z-50'>
         <BottomNavbar />
       </div>

@@ -52,7 +52,7 @@ const Wishlist = () => {
 
 
 
-      <section className='bg-gray-300/40 m-1.5 rounded-xl  p-2.5'>
+      <section className=' m-1.5 rounded-xl  md:p-2.5'>
 
         {wishlist.length === 0 ? (
           <motion.section
@@ -93,9 +93,9 @@ const Wishlist = () => {
             <section className="block sm:hidden space-y-4 pt-5">
 
               {wishlist.map((item) => (
-                <div className=' flex shadow-sm bg-white gap-1.5 border  border-purple-100/40  rounded-sm overflow-hidden' key={item.id}>
+                <div className=' flex shadow-sm bg-white gap-1.5 border  border-stone-400/40  rounded-sm overflow-hidden' key={item.id}>
                   {/* Image */}
-                  <div className='relative h-32 w-40  p-2 bg-gray-200  ' title="product details">
+                  <div className='relative h-33 w-40  p-2 bg-gray-200  ' title="product details">
 
                     <NavLink to={`/product/${item.id}`} >
                       <img src={item.image} alt={item.category} className='h-full w-full object-contain ' />
@@ -104,16 +104,16 @@ const Wishlist = () => {
                   </div>
 
                   {/* Details */}
-                  <div className='relative w-full flex flex-col justify-evenly p-1 gap-0.5'>
+                  <div className='relative w-full flex flex-col justify-evenly p-1 gap-1'>
 
                     {/* Product Title & Price */}
-                    <p className='text-sm font-semibold line-clamp-2'>{item.title}</p>
+                    <p className='text-md font-semibold line-clamp-2'>{item.title}</p>
 
-                    <p className='text-xl font-black'>$ {item.price.toFixed(2)}</p>
+                    <p className='text-xl font-extrabold py-1'>$ {item.price.toFixed(2)}</p>
 
 
                     <div className='flex gap-4'>
-                      <ButtonComp width={"w-full cursor-pointer"} product={item} >Add to cart</ButtonComp>
+                      <ButtonComp width={"w-full cursor-pointer  py-1.5"} product={item} >Add to cart</ButtonComp>
 
                       <button
                         className="  bg-white  px-1.5"
@@ -178,7 +178,7 @@ const Wishlist = () => {
 
                       <td>
                         <ButtonComp
-                          width={"w-32 cursor-pointer"}
+                          width={"w-32 cursor-pointer py-2"}
                           product={item}
                         >
                           Add to Cart

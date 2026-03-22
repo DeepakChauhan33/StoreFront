@@ -1,7 +1,6 @@
 // React Icons
 import { RiHome2Line } from "react-icons/ri";
 import { BiBox, BiStoreAlt } from "react-icons/bi";
-import { FaRegHeart } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { FiShoppingCart } from "react-icons/fi";
 
@@ -9,8 +8,6 @@ import { FiShoppingCart } from "react-icons/fi";
 // HOOKS
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-
-
 
 
 
