@@ -63,7 +63,7 @@ function App() {
       </Routes>
 
       {/* Bottom navbar for mobile  */}
-      <div className='md:hidden fixed bottom-0 left-0 w-full z-50'>
+      <div className='lg:hidden fixed bottom-0 left-0 w-full z-50'>
         <BottomNavbar />
       </div>
     </>

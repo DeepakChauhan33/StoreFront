@@ -2,6 +2,9 @@
 // Hooks
 import { useDispatch } from 'react-redux';
 
+// Toast message Library
+import toast from 'react-hot-toast';
+
 
 // Action
 import { addToCart } from '../Pages/Cart/CartSlice';
@@ -13,6 +16,11 @@ const ButtonComp = ({ children, width, product }) => {
 
   function handleCart() {
     dispatch(addToCart(product))
+    toast.success("Item added", {
+      position: "bottom-right",
+      duration: 1000,
+      style: { marginTop: "80px" }
+    })
   }
 
 

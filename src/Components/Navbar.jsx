@@ -53,7 +53,7 @@ const Navbar = () => {
 
 
                     {/* Navigation Link */}
-                    <div className="hidden h-full  md:flex space-x-12 text-lg font-sans text-black font-bold">
+                    <div className="hidden h-full  lg:flex space-x-12 text-lg font-sans text-black font-bold">
                         
                         {/* Home */}
                         <NavLink to="/" className="h-full flex justify-center px-2 items-center border-b-3 border-transparent  hover:border-b-3 hover:border-purple-700  hover:text-purple-700 transition transform hover:scale-100  ease-in-out duration-400">
