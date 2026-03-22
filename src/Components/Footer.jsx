@@ -28,8 +28,9 @@ const Footer = () => {
             <div
               className="p-1 flex flex-col items-start  mb-4"
             >
-
-              <img src={logo} alt="logo" className='h-16 w-auto object-cover   ' />
+              <div className="h-16 w-auto bg-white">
+                <img src={logo} alt="logo" className='h-full w-full object-cover  ' />
+              </div>
 
               <h2 className="text-2xl font-bold text-white ">StoreFront.</h2>
             </div>
