@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 
 // LOGO
-import logo from "../Images/STORE FRONT.jpg";
+import logo from "../Images/STORE FRONT.png";
 
 
 

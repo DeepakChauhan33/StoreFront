@@ -12,7 +12,7 @@ import { CgProfile } from "react-icons/cg";
 
 
 // LOGO
-import logo from "../Images/STORE FRONT.jpg";
+import logo from "../Images/STORE FRONT.png";
 
 
 // Motion
@@ -54,7 +54,7 @@ const Navbar = () => {
 
                     {/* Navigation Link */}
                     <div className="hidden h-full  lg:flex space-x-12 text-lg font-sans text-black font-bold">
-                        
+
                         {/* Home */}
                         <NavLink to="/" className="h-full flex justify-center px-2 items-center border-b-3 border-transparent  hover:border-b-3 hover:border-purple-700  hover:text-purple-700 transition transform hover:scale-100  ease-in-out duration-400">
                             Home
@@ -106,7 +106,7 @@ const Navbar = () => {
 
 
                         {/* Profile Icon */}
-                        <div className={`hidden md:block relative cursor-pointer p-2  }`} title="Profile">
+                        <div className={`hidden lg:block relative cursor-pointer p-2  }`} title="Profile">
                             <NavLink to="/login">
                                 <CgProfile size={26} className={`${isLogin ? 'text-purple-600' : 'text-gray-900'}`} />
                             </NavLink>
