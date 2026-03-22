@@ -23,9 +23,8 @@ import { TbShoppingBagHeart } from "react-icons/tb";
 import { removeFromWishlist } from './WishlistSlice';
 
 
-const Wishlist = () => {
 
-  const isLogin = useSelector((state) => state.auth.isLogin);
+const Wishlist = () => {
 
   const navigate = useNavigate();
 
@@ -50,13 +49,14 @@ const Wishlist = () => {
       >
         <h1 className='text-2xl lg:text-4xl font-bold lg:font-semibold ' ><TbShoppingBagHeart className='inline text-4xl  md:text-6xl text-slate-700' /> My Wishlist</h1>
         {wishlist.length === 0 ? (<p className='pl-3 text-md lg:text-xl font-normal'>No items in your wishlist</p>) : (<p className='pl-2 md:pl-3 text-sm lg:text-xl font-normal'>You have {wishlist.length} items in your wishlist</p>)}
+
       </motion.div>
 
 
 
       <section className=' m-1.5 rounded-xl  md:p-2.5'>
 
-        {wishlist.length === 0 || !isLogin ? (
+        {wishlist.length === 0 ? (
           <motion.section
             className='h-120 flex justify-center items-center '
 

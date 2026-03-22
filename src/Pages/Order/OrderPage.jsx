@@ -23,6 +23,7 @@ import { FiBox } from 'react-icons/fi';
 
 
 
+
 const OrderPage = () => {
 
   const isLogin = useSelector((state) => state.auth.isLogin);
@@ -46,7 +47,8 @@ const OrderPage = () => {
         transition={{ duration: 0.8 }}
       >
         <h1 className='text-2xl lg:text-4xl font-black lg:font-semibold ' > <FiBox className='inline text-4xl  md:text-6xl text-slate-700' /> My Orders</h1>
-        <p className='pl-3 text-md lg:text-xl font-normal'>You have {orders.length} order</p>
+        <p className='pl-3 text-md lg:text-xl font-normal inline'>You have {orders.length} order</p>
+        {!isLogin && <span className="text-red-500 ml-4 font-semibold"> (login first)</span>}
       </motion.div>
 
 
