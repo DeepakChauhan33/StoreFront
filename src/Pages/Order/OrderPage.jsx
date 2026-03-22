@@ -25,6 +25,7 @@ import { FiBox } from 'react-icons/fi';
 
 const OrderPage = () => {
 
+  const isLogin = useSelector((state) => state.auth.isLogin);
 
   const orders = useSelector((state) => state.orders.orders);
 
@@ -58,7 +59,7 @@ const OrderPage = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.5 }}
       >
-        {orders.length === 0 ?
+        {orders.length === 0 || !isLogin ?
           (
 
 

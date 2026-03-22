@@ -25,6 +25,8 @@ import { removeFromWishlist } from './WishlistSlice';
 
 const Wishlist = () => {
 
+  const isLogin = useSelector((state) => state.auth.isLogin);
+
   const navigate = useNavigate();
 
   const wishlist = useSelector((state) => state.wishlist.wishlist);
@@ -54,7 +56,7 @@ const Wishlist = () => {
 
       <section className=' m-1.5 rounded-xl  md:p-2.5'>
 
-        {wishlist.length === 0 ? (
+        {wishlist.length === 0 || !isLogin ? (
           <motion.section
             className='h-120 flex justify-center items-center '
 
