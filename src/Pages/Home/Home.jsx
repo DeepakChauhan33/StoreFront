@@ -44,7 +44,7 @@ const Home = ({ ...rest }) => {
 
 
 
-    const { data: Products, isLoading } = useGetProductsQuery();
+    const { data: Products, isLoading, error } = useGetProductsQuery();
 
     const isLogin = useSelector((state) => state.auth.isLogin);
 
@@ -236,7 +236,7 @@ const Home = ({ ...rest }) => {
 
 
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5'>
-                    {isLoading
+                    {isLoading || error
                         ? Array.from({ length: 4 }).map((_, index) => (
                             <ContentLoader height="500" style={{ width: "100%" }} viewBox="0 0 275 240" {...rest}>
                                 <rect x="15" y="15" rx="4" ry="4" width="25" height="25" />

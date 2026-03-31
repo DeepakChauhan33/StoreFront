@@ -27,7 +27,7 @@ import { useGetProductsQuery } from '../Product/ProductApi';
 
 const ProductPage = ({ ...rest }) => {
 
-    const { data: Products, isLoading } = useGetProductsQuery();
+    const { data: Products, isLoading, error } = useGetProductsQuery();
 
 
     const [selected, setSelected] = useState("All Products");
@@ -41,6 +41,19 @@ const ProductPage = ({ ...rest }) => {
             <rect x="15" y="230" rx="2" ry="2" width="170" height="20" />
             <rect x="60" y="230" rx="2" ry="2" width="170" height="20" />
         </ContentLoader>
+    } else if (error) {
+        return (
+            <section className='h-[70vh] flex flex-col items-center justify-center gap-y-5'>
+                <p className='text-md lg:text-xl font-semibold'>We're having trouble reaching our servers!</p>
+                {/* Added onClick to trigger the reload */}
+                <button
+                    onClick={() => window.location.reload()}
+                    className='border py-1 px-8 rounded-xl hover:bg-gray-100 transition-colors text-red-500'
+                >
+                    Try Again
+                </button>
+            </section>
+        );
     }
 
 
