@@ -1,25 +1,51 @@
 // Hooks
 import { useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // Component
 import Loader from '../../Components/Loader';
 
 // API Action
-import { useGetProductsQuery } from '../Product/ProductApi';
+// import { useGetProductsQuery } from '../Product/ProductApi';
 
 
 // Icons
 import { BsArrowLeft } from "react-icons/bs";
 import { CiSearch } from "react-icons/ci";
-import { useState } from "react";
+
+
+
+import productsData from "../../data/products.json"; // Delete
+
 
 
 
 const Search = () => {
 
-    const { data: Products, isLoading } = useGetProductsQuery();
+    // const { data: Products, isLoading } = useGetProductsQuery();
+
+
+
+
+    const [Products, setProducts] = useState([]); // Delete
+    const [isLoading, setIsLoading] = useState(true); // Delete
+    const error = null; // Delete
+
+    useEffect(() => {
+        setIsLoading(true);
+
+        setTimeout(() => {
+            setProducts(productsData);
+            setIsLoading(false);
+        }, 500); // simulate API delay
+    }, []);
+
+
+
+
+
+
 
     const navigate = useNavigate();
 
