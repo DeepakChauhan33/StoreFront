@@ -17,7 +17,7 @@
         "price": 22.3,
         "description": "Slim-fitting style with raglan sleeves, lightweight and soft fabric for breathable and comfortable wearing.",
         "category": "men's clothing",
-        "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500",
+        "image": "https://tiimg.tistatic.com/fp/1/007/413/grey-black-color-full-sleeves-henley-neck-mens-t-shirt-988.jpg",
         "rating": {
             "rate": 4.1,
             "count": 259
@@ -29,7 +29,7 @@
         "price": 55.99,
         "description": "Great outerwear jacket for spring, autumn, and winter. Suitable for hiking, traveling, and casual wear.",
         "category": "men's clothing",
-        "image": "https://images.unsplash.com/photo-1520975916090-3105956dac38?w=500",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNwIQnAYPXXvaeo0UysrxOs1AG5onJb-MiTA&s",
         "rating": {
             "rate": 4.7,
             "count": 500
@@ -41,7 +41,7 @@
         "price": 15.99,
         "description": "Casual slim fit t-shirt made with soft and comfortable material for daily wear.",
         "category": "men's clothing",
-        "image": "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500",
+        "image": "https://i.pinimg.com/564x/48/29/56/4829563dc56d12d80caed6ccf14d96f9.jpg",
         "rating": {
             "rate": 2.1,
             "count": 430
@@ -101,7 +101,7 @@
         "price": 64,
         "description": "USB 3.0 compatible external hard drive for fast data transfer and secure storage.",
         "category": "electronics",
-        "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRliq264Jqm7N3xMOQYp9yVdGMAY3iHVTT-lw&s",
         "rating": {
             "rate": 3.3,
             "count": 203
@@ -113,7 +113,7 @@
         "price": 109,
         "description": "Improve system performance with faster boot-up and data transfer speeds.",
         "category": "electronics",
-        "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkJlRAr2DdiECP0_t5tZotDofFwlaCagk2Uw&s",
         "rating": {
             "rate": 2.9,
             "count": 470
@@ -125,7 +125,7 @@
         "price": 109,
         "description": "High-speed storage solution with 3D NAND flash technology for reliability.",
         "category": "electronics",
-        "image": "https://images.unsplash.com/photo-1580910051074-3eb694886505?w=500",
+        "image": "https://www.lapcare.com/cdn/shop/files/256gbssd.png?v=1757326554&width=2048",
         "rating": {
             "rate": 4.8,
             "count": 319
@@ -137,7 +137,7 @@
         "price": 114,
         "description": "Expand your gaming storage with high-speed performance and durability.",
         "category": "electronics",
-        "image": "https://images.unsplash.com/photo-1587202372580-49330a15584d?w=500",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiu9cMRBA6ARk6p6zg019Hlf71L5Dqb9W-2g&s",
         "rating": {
             "rate": 4.8,
             "count": 400
