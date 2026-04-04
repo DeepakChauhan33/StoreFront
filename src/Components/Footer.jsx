@@ -55,7 +55,7 @@ const Footer = () => {
           <div>
 
             <h2 className='text-white font-semibold mb-4'>
-              Categories
+              Pages
             </h2>
 
             <ul className="">
