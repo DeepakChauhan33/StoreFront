@@ -1,0 +1,242 @@
+[
+    {
+        "id": 1,
+        "title": "Fjallraven Backpack",
+        "price": 109.95,
+        "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop in the padded sleeve and your essentials in the main compartment.",
+        "category": "men's clothing",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpJEmE1sOnIe4O5ES_Vy-HZQfzzPOKedlltw&s",
+        "rating": {
+            "rate": 3.9,
+            "count": 120
+        }
+    },
+    {
+        "id": 2,
+        "title": "Mens Casual Premium Slim Fit T-Shirts",
+        "price": 22.3,
+        "description": "Slim-fitting style with raglan sleeves, lightweight and soft fabric for breathable and comfortable wearing.",
+        "category": "men's clothing",
+        "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500",
+        "rating": {
+            "rate": 4.1,
+            "count": 259
+        }
+    },
+    {
+        "id": 3,
+        "title": "Mens Cotton Jacket",
+        "price": 55.99,
+        "description": "Great outerwear jacket for spring, autumn, and winter. Suitable for hiking, traveling, and casual wear.",
+        "category": "men's clothing",
+        "image": "https://images.unsplash.com/photo-1520975916090-3105956dac38?w=500",
+        "rating": {
+            "rate": 4.7,
+            "count": 500
+        }
+    },
+    {
+        "id": 4,
+        "title": "Mens Casual Slim Fit",
+        "price": 15.99,
+        "description": "Casual slim fit t-shirt made with soft and comfortable material for daily wear.",
+        "category": "men's clothing",
+        "image": "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500",
+        "rating": {
+            "rate": 2.1,
+            "count": 430
+        }
+    },
+    {
+        "id": 5,
+        "title": "John Hardy Women's Bracelet",
+        "price": 695,
+        "description": "Inspired by the mythical water dragon that protects the ocean's pearl. Symbolizes love and abundance.",
+        "category": "jewelery",
+        "image": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500",
+        "rating": {
+            "rate": 4.6,
+            "count": 400
+        }
+    },
+    {
+        "id": 6,
+        "title": "Gold Petite Micropave",
+        "price": 168,
+        "description": "Elegant micropave jewelry piece with a timeless design, perfect for any occasion.",
+        "category": "jewelery",
+        "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500",
+        "rating": {
+            "rate": 3.9,
+            "count": 70
+        }
+    },
+    {
+        "id": 7,
+        "title": "White Gold Ring",
+        "price": 9.99,
+        "description": "Classic engagement ring with a modern touch, crafted for durability and shine.",
+        "category": "jewelery",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLEnbiWhaPOFFjzt3Dnr2HNqi3uyAxcPu-mg&s",
+        "rating": {
+            "rate": 3.0,
+            "count": 400
+        }
+    },
+    {
+        "id": 8,
+        "title": "Rose Gold Earrings",
+        "price": 10.99,
+        "description": "Stylish rose gold earrings with a polished finish for everyday elegance.",
+        "category": "jewelery",
+        "image": "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=500",
+        "rating": {
+            "rate": 1.9,
+            "count": 100
+        }
+    },
+    {
+        "id": 9,
+        "title": "WD 2TB External Hard Drive",
+        "price": 64,
+        "description": "USB 3.0 compatible external hard drive for fast data transfer and secure storage.",
+        "category": "electronics",
+        "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500",
+        "rating": {
+            "rate": 3.3,
+            "count": 203
+        }
+    },
+    {
+        "id": 10,
+        "title": "SanDisk SSD PLUS 1TB",
+        "price": 109,
+        "description": "Improve system performance with faster boot-up and data transfer speeds.",
+        "category": "electronics",
+        "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
+        "rating": {
+            "rate": 2.9,
+            "count": 470
+        }
+    },
+    {
+        "id": 11,
+        "title": "256GB SSD",
+        "price": 109,
+        "description": "High-speed storage solution with 3D NAND flash technology for reliability.",
+        "category": "electronics",
+        "image": "https://images.unsplash.com/photo-1580910051074-3eb694886505?w=500",
+        "rating": {
+            "rate": 4.8,
+            "count": 319
+        }
+    },
+    {
+        "id": 12,
+        "title": "4TB Gaming Drive",
+        "price": 114,
+        "description": "Expand your gaming storage with high-speed performance and durability.",
+        "category": "electronics",
+        "image": "https://images.unsplash.com/photo-1587202372580-49330a15584d?w=500",
+        "rating": {
+            "rate": 4.8,
+            "count": 400
+        }
+    },
+    {
+        "id": 13,
+        "title": "Acer Full HD Monitor",
+        "price": 599,
+        "description": "21.5-inch full HD monitor with vibrant colors and ultra-thin design.",
+        "category": "electronics",
+        "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500",
+        "rating": {
+            "rate": 2.9,
+            "count": 250
+        }
+    },
+    {
+        "id": 14,
+        "title": "Samsung Curved Monitor",
+        "price": 999.99,
+        "description": "Immersive curved monitor for gaming and productivity with ultra-wide display.",
+        "category": "electronics",
+        "image": "https://images.unsplash.com/photo-1588702547919-26089e690ecc?w=500",
+        "rating": {
+            "rate": 2.2,
+            "count": 140
+        }
+    },
+    {
+        "id": 15,
+        "title": "Women's Jacket",
+        "price": 56.99,
+        "description": "Windbreaker jacket with adjustable waist and detachable hood.",
+        "category": "women's clothing",
+        "image": "https://m.media-amazon.com/images/I/91Mshq+BhjL._AC_UY1100_.jpg",
+        "rating": {
+            "rate": 3.8,
+            "count": 679
+        }
+    },
+    {
+        "id": 16,
+        "title": "Women's Hooded Jacket",
+        "price": 29.95,
+        "description": "Soft and comfortable jacket ideal for casual wear.",
+        "category": "women's clothing",
+        "image": "https://m.media-amazon.com/images/I/719kwckaiTL._AC_UY350_.jpg",
+        "rating": {
+            "rate": 4.7,
+            "count": 130
+        }
+    },
+    {
+        "id": 17,
+        "title": "Rain Jacket Women",
+        "price": 39.99,
+        "description": "Lightweight rain jacket perfect for travel and outdoor activities.",
+        "category": "women's clothing",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtPC0UUa-m80_ZmEyEkkvhs9S4JWpV2vIeeg&s",
+        "rating": {
+            "rate": 4.5,
+            "count": 146
+        }
+    },
+    {
+        "id": 18,
+        "title": "Women's Short Sleeve T-Shirt",
+        "price": 9.85,
+        "description": "Comfortable cotton t-shirt for everyday wear.",
+        "category": "women's clothing",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTH0qu5ARjpG4TwTolIcIq5ZwsS5INXu7yGg&s",
+        "rating": {
+            "rate": 4.3,
+            "count": 145
+        }
+    },
+    {
+        "id": 19,
+        "title": "Women's Moisture T-Shirt",
+        "price": 7.95,
+        "description": "Breathable and moisture-wicking fabric for workouts.",
+        "category": "women's clothing",
+        "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500",
+        "rating": {
+            "rate": 4.0,
+            "count": 300
+        }
+    },
+    {
+        "id": 20,
+        "title": "Women's Casual T-Shirt",
+        "price": 12.99,
+        "description": "Casual t-shirt with soft fabric and relaxed fit.",
+        "category": "women's clothing",
+        "image": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=500",
+        "rating": {
+            "rate": 4.1,
+            "count": 259
+        }
+    }
+]

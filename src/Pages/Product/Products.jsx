@@ -1,6 +1,6 @@
 
 // Hooks
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 
 
 // Icons
@@ -19,7 +19,15 @@ import ContentLoader from 'react-content-loader'
 import { motion } from 'framer-motion';
 
 // API Actions
-import { useGetProductsQuery } from '../Product/ProductApi';
+// import { useGetProductsQuery } from '../Product/ProductApi';  // uncomment later
+
+
+
+// Delete later
+import productsData from "../../data/products.json";
+
+
+// 
 
 
 
@@ -27,7 +35,20 @@ import { useGetProductsQuery } from '../Product/ProductApi';
 
 const ProductPage = ({ ...rest }) => {
 
-    const { data: Products, isLoading, error } = useGetProductsQuery();
+    // const { data: Products, isLoading, error } = useGetProductsQuery();
+
+    const [Products, setProducts] = useState([]); // Delete
+    const [isLoading, setIsLoading] = useState(true); // Delete
+    const error = null; // Delete
+
+    useEffect(() => {
+        setIsLoading(true);
+
+        setTimeout(() => {
+            setProducts(productsData);
+            setIsLoading(false);
+        }, 500); // simulate API delay
+    }, []);
 
 
     const [selected, setSelected] = useState("All Products");

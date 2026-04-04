@@ -1,13 +1,13 @@
 
 // Hooks
 import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 
 // Custom Hook
-import { useGetProductsQuery } from '../Product/ProductApi';
+// import { useGetProductsQuery } from '../Product/ProductApi'; 
 
 // Components
 import CategoryCard from './CategoryCard';
@@ -38,13 +38,28 @@ import toast from 'react-hot-toast';
 import bannerImg from "../../Images/E-comm banner.jpg";
 
 
-
+import productsData from "../../data/products.json"; // Delete
 
 const Home = ({ ...rest }) => {
 
 
 
-    const { data: Products, isLoading, error } = useGetProductsQuery();
+    // const { data: Products, isLoading, error } = useGetProductsQuery(); 
+
+    const [Products, setProducts] = useState([]); // Delete
+    const [isLoading, setIsLoading] = useState(true); // Delete
+    const error = null; // Delete
+
+    useEffect(() => {
+        setIsLoading(true);
+
+        setTimeout(() => {
+            setProducts(productsData);
+            setIsLoading(false);
+        }, 500); // simulate API delay
+    }, []);
+
+
 
     const isLogin = useSelector((state) => state.auth.isLogin);
 
@@ -332,7 +347,7 @@ const Home = ({ ...rest }) => {
                             relationships with our customers.
                         </motion.p>
 
-                        <motiondiv className="grid grid-cols-3 sm:grid-cols-3 gap-6"
+                        <motion.div className="grid grid-cols-3 sm:grid-cols-3 gap-6"
 
                             initial={{ opacity: 0, x: -40 }} // Animation
                             whileInView={{ opacity: 1, x: 0 }}
@@ -365,7 +380,7 @@ const Home = ({ ...rest }) => {
                                 </p>
                             </div>
 
-                        </motiondiv>
+                        </motion.div>
                     </div>
 
 
