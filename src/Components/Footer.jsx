@@ -60,19 +60,19 @@ const Footer = () => {
 
             <ul className="">
               <NavLink to="/">
-                <li className="hover:text-white cursor-pointer mb-2">Home</li>
+                <li className="hover:text-white cursor-pointer mb-2 w-fit">Home</li>
               </NavLink>
 
               <NavLink to="/products">
-                <li className="hover:text-white cursor-pointer mb-2">Products</li>
+                <li className="hover:text-white cursor-pointer mb-2 w-fit">Products</li>
               </NavLink>
 
               <NavLink to="/cart">
-                <li className="hover:text-white cursor-pointer mb-2">Cart</li>
+                <li className="hover:text-white cursor-pointer mb-2 w-fit">Cart</li>
               </NavLink>
 
               <NavLink to="orders">
-                <li className="hover:text-white cursor-pointer mb-2">Orders</li>
+                <li className="hover:text-white cursor-pointer mb-2 w-fit">Orders</li>
               </NavLink>
             </ul>
           </div>
@@ -90,19 +90,19 @@ const Footer = () => {
             <ul>
 
               <NavLink to="/products">
-                <li className=" hover:text-white cursor-pointer mb-2">Men's</li>
+                <li className=" hover:text-white cursor-pointer mb-2 w-fit">Men's</li>
               </NavLink>
 
               <NavLink to="/products">
-                <li className=" hover:text-white cursor-pointer mb-2">Women's</li>
+                <li className=" hover:text-white cursor-pointer mb-2 w-fit">Women's</li>
               </NavLink>
 
               <NavLink to="/products">
-                <li className=" hover:text-white cursor-pointer mb-2">Electronics</li>
+                <li className=" hover:text-white cursor-pointer mb-2 w-fit">Electronics</li>
               </NavLink>
 
               <NavLink to="/products">
-                <li className=" hover:text-white cursor-pointer mb-2">Jewelry</li>
+                <li className=" hover:text-white cursor-pointer mb-2 w-fit">Jewelry</li>
               </NavLink>
 
 

@@ -54,7 +54,6 @@ const cartSlice = createSlice({
 
             if (product) {
                 product.quantity += 1;
-                console.log("called")
             } else {
 
             }
@@ -69,7 +68,6 @@ const cartSlice = createSlice({
 
             if (product && product.quantity > 1) {  // Here it decrease only if quantity is greater than 1
                 product.quantity -= 1;
-                console.log("decrease CLicked")
             } else {
 
             }

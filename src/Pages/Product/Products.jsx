@@ -19,36 +19,18 @@ import ContentLoader from 'react-content-loader'
 import { motion } from 'framer-motion';
 
 // API Actions
-// import { useGetProductsQuery } from '../Product/ProductApi';  // uncomment later
+import { useGetProductsQuery } from '../Product/ProductApi';  
 
 
-
-// Delete later
-import productsData from "../../data/products.json";
-
-
-// 
 
 
 
 
 
 const ProductPage = ({ ...rest }) => {
+    
 
-    // const { data: Products, isLoading, error } = useGetProductsQuery();
-
-    const [Products, setProducts] = useState([]); // Delete
-    const [isLoading, setIsLoading] = useState(true); // Delete
-    const error = null; // Delete
-
-    useEffect(() => {
-        setIsLoading(true);
-
-        setTimeout(() => {
-            setProducts(productsData);
-            setIsLoading(false);
-        }, 500); // simulate API delay
-    }, []);
+    const { data: Products, isLoading, error } = useGetProductsQuery();
 
 
     const [selected, setSelected] = useState("All Products");

@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 // Custom Hook
-// import { useGetProductsQuery } from '../Product/ProductApi'; 
+import { useGetProductsQuery } from '../Product/ProductApi'; 
 
 // Components
 import CategoryCard from './CategoryCard';
@@ -38,26 +38,14 @@ import toast from 'react-hot-toast';
 import bannerImg from "../../Images/E-comm banner.jpg";
 
 
-import productsData from "../../data/products.json"; // Delete
+
 
 const Home = ({ ...rest }) => {
 
 
 
-    // const { data: Products, isLoading, error } = useGetProductsQuery(); 
+    const { data: Products, isLoading, error } = useGetProductsQuery(); 
 
-    const [Products, setProducts] = useState([]); // Delete
-    const [isLoading, setIsLoading] = useState(true); // Delete
-    const error = null; // Delete
-
-    useEffect(() => {
-        setIsLoading(true);
-
-        setTimeout(() => {
-            setProducts(productsData);
-            setIsLoading(false);
-        }, 500); // simulate API delay
-    }, []);
 
 
 

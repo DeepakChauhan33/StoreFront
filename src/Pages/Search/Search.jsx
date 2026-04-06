@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import Loader from '../../Components/Loader';
 
 // API Action
-// import { useGetProductsQuery } from '../Product/ProductApi';
+import { useGetProductsQuery } from '../Product/ProductApi';
 
 
 // Icons
@@ -16,31 +16,12 @@ import { CiSearch } from "react-icons/ci";
 
 
 
-import productsData from "../../data/products.json"; // Delete
-
 
 
 
 const Search = () => {
 
-    // const { data: Products, isLoading } = useGetProductsQuery();
-
-
-
-
-    const [Products, setProducts] = useState([]); // Delete
-    const [isLoading, setIsLoading] = useState(true); // Delete
-    const error = null; // Delete
-
-    useEffect(() => {
-        setIsLoading(true);
-
-        setTimeout(() => {
-            setProducts(productsData);
-            setIsLoading(false);
-        }, 500); // simulate API delay
-    }, []);
-
+    const { data: Products, isLoading } = useGetProductsQuery();
 
 
 
